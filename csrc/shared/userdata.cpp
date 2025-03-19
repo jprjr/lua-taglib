@@ -46,7 +46,11 @@ namespace LuaTagLib {
 
 #if LUA_VERSION_NUM > 501
         lua_callk(L, args, LUA_MULTRET, 0, callWrapperCont);
+#if LUA_VERSION_NUM == 502
+        return callWrapperCont(L);
+#else
         return callWrapperCont(L, LUA_OK, 0);
+#endif
 #else
         lua_call(L, args, LUA_MULTRET);
         return lua_gettop(L);

@@ -35,6 +35,9 @@ jobs:
         with:
           luaVersion: ${{ matrix.lua_version }}
 
+      - name: list .lua directory
+        run: find $(pwd)/.lua
+
       - name: install taglib ${{ matrix.taglib_version }}
         run: perl testsuite/install-taglib.pl ${{ matrix.taglib_version }}
       

@@ -25,7 +25,6 @@ jobs:
       - name: build lua-taglib ${{ matrix.target }}
         run: 'cmake --build build-${{ matrix.target }} --config Debug'
 
-    steps:
   build-linux:
     strategy:
       matrix:

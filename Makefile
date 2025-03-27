@@ -22,7 +22,7 @@ release: csrc/TagLib.so
 	cd dist && gzip -k lua-taglib-$(VERSION).tar
 	cd dist && xz lua-taglib-$(VERSION).tar
 
-csrc/TagLib.so: csrc/version.c
+csrc/TagLib.so: csrc/version.c csrc/version.h
 	$(CC) $(CFLAGS) -o $@ $^ $(LDFLAGS)
 
 

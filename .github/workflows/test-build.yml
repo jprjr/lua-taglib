@@ -44,7 +44,7 @@ jobs:
       - name: configure lua-taglib
         env:
           PKG_CONFIG_LIBDIR: ''
-        run: cmake -DLUA_INCLUDE_DIR=$(pwd)/.lua/include -DTAGLIB_INCLUDE_DIR=$(pwd)/.taglib/include -DTAGLIB_LIBRARY=$(pwd)/.taglib/lib/libtag.so -B build
+        run: cmake -DLUA_INCLUDE_DIR=$(pwd)/.lua/include -DLUA_LIBRARY=$(pwd)/.lua/lib/liblua.a -DTAGLIB_INCLUDE_DIR=$(pwd)/.taglib/include -DTAGLIB_LIBRARY=$(pwd)/.taglib/lib/libtag.so -B build
 
       - name: build lua-taglib
         run: make -C build

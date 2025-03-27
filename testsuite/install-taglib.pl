@@ -7,6 +7,7 @@ use File::Spec;
 
 sub sys {
     my @args = @_;
+    print STDERR join(' ', @args) . "\n";
     my $rc = system(@args);
     if($rc != 0) {
         print STDERR "Command " . join(' ', @args) . " failed with $rc\n";
@@ -82,7 +83,7 @@ if(-e $patchfile) {
 if($taglib_config->{'use_cmake'}) {
     my @args = ('cmake', '-DCMAKE_INSTALL_PREFIX=' . $install_dir, '-B', 'build');
     if($taglib_major_ver == 1) {
-        push(@args, '-DWITH_MP4=on, -DWITH_ASF=on');
+        push(@args, '-DWITH_MP4=on', '-DWITH_ASF=on');
     }
     push(@args, '.');
     sys(@args);

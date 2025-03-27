@@ -39,8 +39,7 @@ static int Page_header(lua_State* L) {
 #if LTAGLIB_ATLEAST(LTAGLIB_1_6) && LTAGLIB_UNDER(LTAGLIB_1_12)
 static int Page_getCopyWithNewPageSequenceNumber(lua_State* L) {
     TagLib::Ogg::Page* p = Ogg::Page::checkPtr(L, 1);
-    Ogg::Page::pushPtr(L, p->getCopyWithNewPageSequenceNumber(luaL_checkinteger(L,2)), 0);
-    Ogg::Page::checkInstance(L, -1)->setDelete();
+    Ogg::Page::pushPtr(L, p->getCopyWithNewPageSequenceNumber(luaL_checkinteger(L,2)));
     return 1;
 }
 #endif

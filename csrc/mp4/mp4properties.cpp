@@ -85,6 +85,8 @@ const UserdataMetatable MP4::Properties::base::metatable = {
     NULL, /* indexfunc */
 };
 
+#undef T
+
 #if LTAGLIB_ATLEAST(LTAGLIB_1_10)
 
 #define E(x) { #x, sizeof(#x) - 1, TagLib::MP4::Properties::x }
@@ -98,7 +100,6 @@ const MP4::Properties::Codec::enum_type* MP4::Properties::Codec::m_values = mp4C
 template<>
 const size_t MP4::Properties::Codec::m_len = sizeof(mp4Codec) / sizeof(mp4Codec[0]);
 
-#undef T
 #include "../shared/enum.tcc"
 template class Enum<TagLib::MP4::Properties::Codec>;
 

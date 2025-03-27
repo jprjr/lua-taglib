@@ -1,0 +1,50 @@
+name: test build success
+
+on: [push]
+
+jobs:
+  build-linux:
+    strategy:
+      matrix:
+        taglib_version:
+          - '1.0'
+          - '1.1'
+          - '1.2'
+          - '1.3.1'
+          - '1.4'
+          - '1.5'
+          - '1.6.3'
+          - '1.7.2'
+          - '1.8'
+          - '1.9.1'
+          - '2.0.2'
+        lua_version:
+          - '5.1.5'
+          - '5.2.4'
+          - '5.3.6'
+          - '5.4.7'
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+
+      - name: install lua ${{ matrix.lua_version }}
+        uses: leafo/gh-actions-lua@v11
+        with:
+          luaVersion: ${{ matrix.lua_version }}
+
+      - name: list .lua directory
+        run: find $(pwd)/.lua
+
+      - name: install taglib ${{ matrix.taglib_version }}
+        run: perl testsuite/install-taglib.pl ${{ matrix.taglib_version }}
+      
+      - name: configure lua-taglib
+        env:
+          PKG_CONFIG_LIBDIR: ''
+        run: cmake -DLUA_INCLUDE_DIR=$(pwd)/.lua/include -DLUA_LIBRARY=$(pwd)/.lua/lib/liblua.a -DTAGLIB_INCLUDE_DIR=$(pwd)/.taglib/include/taglib -DTAGLIB_LIBRARY=$(pwd)/.taglib/lib/libtag.so -B build
+
+      - name: build lua-taglib
+        run: make -C build

@@ -1,0 +1,12 @@
+diff --git a/taglib/toolkit/taglib.h b/taglib/toolkit/taglib.h
+index f5a8133..ad50522 100644
+--- a/taglib/toolkit/taglib.h
++++ b/taglib/toolkit/taglib.h
+@@ -26,6 +26,7 @@
+ #define TAGLIB_MINOR_VERSION 96
+ 
+ #include <string>
++#include <cstring>
+ 
+ //! A namespace for all TagLib related classes and functions
+ 

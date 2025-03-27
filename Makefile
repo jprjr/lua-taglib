@@ -18,7 +18,7 @@ release: csrc/TagLib.so
 	rsync -a README.md dist/lua-taglib-$(VERSION)/README.md
 	rsync -a CMakeLists.txt dist/lua-taglib-$(VERSION)/CMakeLists.txt
 	sed 's/@VERSION@/$(VERSION)/g' < rockspec/taglib-template.rockspec > dist/lua-taglib-$(VERSION)/taglib-$(VERSION)-1.rockspec
-	cd dist && tar -c -f lua-taglib-$(VERSION).tar lua-taglib-$(VERSION)
+	cd dist && tar --owner=0 --group=0 -c -f lua-taglib-$(VERSION).tar lua-taglib-$(VERSION)
 	cd dist && gzip -k lua-taglib-$(VERSION).tar
 	cd dist && xz lua-taglib-$(VERSION).tar
 

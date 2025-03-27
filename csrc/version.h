@@ -10,7 +10,7 @@ extern "C" {
 #include <lua.h>
 #include <lauxlib.h>
 
-#define LTAGLIB_LIBRARY_VERSION "1.0.2"
+#define LTAGLIB_LIBRARY_VERSION "1.1.0"
 
 LTAGLIB_PUBLIC
 int luaopen_TagLib__VERSION(lua_State* L);

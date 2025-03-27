@@ -7,6 +7,7 @@
 #include "tbytevector.h"
 #include "tbytevectorstream.h"
 #include "tfile.h"
+#include "tfilestream.h"
 #include "tiostream.h"
 #include "tstring.h"
 #include "tvariant.h"
@@ -52,6 +53,9 @@ int luaopen_TagLib(lua_State* L) {
     load(FileRef)
 #if LTAGLIB_HAS_IOSTREAM
     load(IOStream)
+#endif
+#if LTAGLIB_HAS_FILESTREAM
+    load(FileStream)
 #endif
     load(String)
     load(Tag)

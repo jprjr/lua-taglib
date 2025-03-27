@@ -89,7 +89,7 @@ if($taglib_config->{'use_cmake'}) {
     sys(@args);
     chdir('build');
 } else {
-    my @args = ('./configure', '--prefix', $install_dir);
+    my @args = ('./configure', '--prefix', $install_dir, '--enable-shared', '--disable-static');
     if($taglib_major_ver == 1 and $taglib_minor_ver >= 6) {
         push(@args, '--enable-mp4', '--enable-asf');
     }

@@ -14,7 +14,7 @@ static int Properties__call(lua_State* L) {
     switch(args) {
 #if LTAGLIB_VERSION < LTAGLIB_VERSION_NUM(1,10,0)
         case 1: {
-            p = TagLib::APE::Properties(APE::File::checkPtr(L, 1));
+            p = new TagLib::APE::Properties(APE::File::checkPtr(L, 1));
             break;
         }
 #endif

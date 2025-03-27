@@ -1,0 +1,50 @@
+diff --git a/bindings/c/tag_c.cpp b/bindings/c/tag_c.cpp
+index f133481..4407b0a 100644
+--- a/bindings/c/tag_c.cpp
++++ b/bindings/c/tag_c.cpp
+@@ -21,6 +21,8 @@
+ 
+ #include "tag_c.h"
+ 
++#include <cstring>
++
+ #include <fileref.h>
+ #include <tfile.h>
+ #include <vorbisfile.h>
+diff --git a/taglib/toolkit/tbytevector.cpp b/taglib/toolkit/tbytevector.cpp
+index 7dff746..ccfe949 100644
+--- a/taglib/toolkit/tbytevector.cpp
++++ b/taglib/toolkit/tbytevector.cpp
+@@ -20,6 +20,7 @@
+  ***************************************************************************/
+ 
+ #include <iostream>
++#include <cstring>
+ 
+ #include <tstring.h>
+ #include <tdebug.h>
+diff --git a/taglib/toolkit/tfile.cpp b/taglib/toolkit/tfile.cpp
+index 464ba28..0799ff3 100644
+--- a/taglib/toolkit/tfile.cpp
++++ b/taglib/toolkit/tfile.cpp
+@@ -26,6 +26,8 @@
+ #include <stdio.h>
+ #include <sys/stat.h>
+ #include <unistd.h>
++#include <cstdlib>
++#include <cstring>
+ 
+ using namespace TagLib;
+ 
+diff --git a/taglib/toolkit/tstring.cpp b/taglib/toolkit/tstring.cpp
+index 1707a94..7495e7b 100644
+--- a/taglib/toolkit/tstring.cpp
++++ b/taglib/toolkit/tstring.cpp
+@@ -24,6 +24,7 @@
+ #include "tdebug.h"
+ 
+ #include <iostream>
++#include <cstring>
+ 
+ namespace TagLib {
+ 

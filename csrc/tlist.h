@@ -75,7 +75,7 @@ namespace LuaTagLib {
     T List<T, Impl>::checkList(lua_State* L, int idx) {
         int tidx = lua_gettop(L) + 1;
         lua_Integer i;
-        T list = T();
+        T list;
 
         luaL_checktype(L, idx, LUA_TTABLE);
 

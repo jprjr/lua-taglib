@@ -19,6 +19,9 @@ jobs:
       - name: install dependencies
         run: vcpkg install lua:${{ matrix.target }} taglib:${{ matrix.target }}
 
+      - name: list taglib files
+        run:  'Get-ChildItem -Path "C:/vcpkg/packages/taglib_${{ matrix.target }}" -Recurse'
+
       - name: configure lua-taglib ${{ matrix.target }}
         run: 'cmake -B build-${{ matrix.target }} -DCMAKE_BUILD_TYPE=Debug -DVCPKG_TARGET_TRIPLET=${{ matrix.target }} -DCMAKE_TOOLCHAIN_FILE=C:\vcpkg\scripts\buildsystems\vcpkg.cmake -S .'
 
@@ -56,9 +59,6 @@ jobs:
         uses: leafo/gh-actions-lua@v11
         with:
           luaVersion: ${{ matrix.lua_version }}
-
-      - name: list .lua directory
-        run: find $(pwd)/.lua
 
       - name: install taglib ${{ matrix.taglib_version }}
         run: perl testsuite/install-taglib.pl ${{ matrix.taglib_version }}

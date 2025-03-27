@@ -54,7 +54,7 @@ if(length($taglib_minor_ver) == 0) {
 $taglib_major_ver += 0;
 $taglib_minor_ver += 0;
 
-if($taglib_major_ver >= 2 or $taglib_minor_ver >= 5) {
+if($taglib_major_ver >= 2) {
     $taglib_config->{'use_git'} = 1;
 }
 

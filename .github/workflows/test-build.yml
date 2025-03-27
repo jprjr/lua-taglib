@@ -23,25 +23,26 @@ jobs:
           - '5.2.4'
           - '5.3.6'
           - '5.4.7'
-      runs-on: ubuntu-latest
 
-      steps:
-        - name: checkout
-          uses: actions/checkout@v4
+    runs-on: ubuntu-latest
 
-        - name: install lua ${{ matrix.lua_version }}
-          uses: leafo/gh-actions-lua@v11
-          with:
-            luaVersion: ${{ matrix.lua_version }}
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
 
-        - name: install taglib ${{ matrix.taglib_version }}
-          run: perl testsuite/install-taglib.pl ${{ matrix.taglib_version }}
-        
-        - name: configure lua-taglib
-          env:
-            PKG_CONFIG_PATH: $(pwd)/.lua/lib/pkgconfig
-            PKG_CONFIG_LIBDIR: ''
-          run: cmake -DTAGLIB_INCLUDE_DIR=$(pwd)/.taglib/include -DTAGLIB_LIBRARY=$(pwd)/.taglib/lib/libtag.so -B build
+      - name: install lua ${{ matrix.lua_version }}
+        uses: leafo/gh-actions-lua@v11
+        with:
+          luaVersion: ${{ matrix.lua_version }}
 
-        - name: build lua-taglib
-          run: make -C build
+      - name: install taglib ${{ matrix.taglib_version }}
+        run: perl testsuite/install-taglib.pl ${{ matrix.taglib_version }}
+      
+      - name: configure lua-taglib
+        env:
+          PKG_CONFIG_PATH: $(pwd)/.lua/lib/pkgconfig
+          PKG_CONFIG_LIBDIR: ''
+        run: cmake -DTAGLIB_INCLUDE_DIR=$(pwd)/.taglib/include -DTAGLIB_LIBRARY=$(pwd)/.taglib/lib/libtag.so -B build
+
+      - name: build lua-taglib
+        run: make -C build

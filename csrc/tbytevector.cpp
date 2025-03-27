@@ -154,4 +154,4 @@ int luaopen_TagLib_ByteVector(lua_State* L) {
 }
 
 #include "shared/userdata.tcc"
-template class BaseUserdata<TagLib::ByteVector>;
+template class LuaTagLib::BaseUserdata<TagLib::ByteVector>;

@@ -53,6 +53,6 @@ const UserdataMetatable XM::File::base::metatable = {
 
 #undef T
 #include "../shared/userdata.tcc"
-template class DerivedUserdata<TagLib::XM::File, Mod::FileBase>;
+template class LuaTagLib::DerivedUserdata<TagLib::XM::File, Mod::FileBase>;
 
 #endif

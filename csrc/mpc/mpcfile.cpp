@@ -180,6 +180,6 @@ const UserdataMetatable MPC::File::base::metatable = {
 };
 
 #include "../shared/userdata.tcc"
-template class DerivedUserdata<TagLib::MPC::File, LuaTagLib::File>;
+template class LuaTagLib::DerivedUserdata<TagLib::MPC::File, LuaTagLib::File>;
 
 #endif

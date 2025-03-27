@@ -74,6 +74,6 @@ const UserdataMetatable T::base::metatable = {
 
 #undef T
 #include "../../shared/userdata.tcc"
-template class DerivedUserdata<TagLib::Ogg::FLAC::File, LuaTagLib::Ogg::File>;
+template class LuaTagLib::DerivedUserdata<TagLib::Ogg::FLAC::File, LuaTagLib::Ogg::File>;
 
 #endif

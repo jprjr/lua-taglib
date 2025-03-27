@@ -29,7 +29,7 @@ const UserdataMetatable Mod::FileBase::base::metatable = {
 };
 
 #include "../shared/userdata.tcc"
-template class DerivedUserdata<TagLib::Mod::FileBase, LuaTagLib::File>;
+template class LuaTagLib::DerivedUserdata<TagLib::Mod::FileBase, LuaTagLib::File>;
 
 #endif
 

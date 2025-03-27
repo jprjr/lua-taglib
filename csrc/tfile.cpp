@@ -405,14 +405,14 @@ int luaopen_TagLib_File(lua_State *L) {
 
 #include "shared/enum.tcc"
 
-template class Enum<TagLib::File::Position>;
+template class LuaTagLib::Enum<TagLib::File::Position>;
 
 #if LTAGLIB_HAS_FILE_STRIPTAGS
-template class Enum<TagLib::File::StripTags>;
+template class LuaTagLib::Enum<TagLib::File::StripTags>;
 #endif
 
 #if LTAGLIB_HAS_FILE_DUPLICATETAGS
-template class Enum<TagLib::File::DuplicateTags>;
+template class LuaTagLib::Enum<TagLib::File::DuplicateTags>;
 #endif
 
 template<>
@@ -424,4 +424,4 @@ const UserdataTable File::base::mod = {
 
 
 #include "shared/userdata.tcc"
-template class BaseUserdata<TagLib::File>;
+template class LuaTagLib::BaseUserdata<TagLib::File>;

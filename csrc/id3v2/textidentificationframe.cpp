@@ -157,7 +157,7 @@ const UserdataMetatable T::base::metatable = {
 
 #undef T
 #include "../shared/userdata.tcc"
-template class DerivedUserdata<TagLib::ID3v2::TextIdentificationFrame, LuaTagLib::ID3v2::Frame>;
+template class LuaTagLib::DerivedUserdata<TagLib::ID3v2::TextIdentificationFrame, LuaTagLib::ID3v2::Frame>;
 
 #if LTAGLIB_HAS_USERTEXTIDENTIFICATIONFRAME
 
@@ -283,6 +283,6 @@ const UserdataMetatable T::base::metatable = {
 };
 
 #undef T
-template class DerivedUserdata<TagLib::ID3v2::UserTextIdentificationFrame, LuaTagLib::ID3v2::TextIdentificationFrame>;
+template class LuaTagLib::DerivedUserdata<TagLib::ID3v2::UserTextIdentificationFrame, LuaTagLib::ID3v2::TextIdentificationFrame>;
 
 #endif

@@ -281,8 +281,8 @@ const char* PageList::base::__name = "TagLib::List<TagLib::Ogg::Page*>";
 
 #include "../shared/enum.tcc"
 
-template class Enum<TagLib::Ogg::Page::ContainsPacketFlags>;
-template class Enum<TagLib::Ogg::Page::PaginationStrategy>;
+template class LuaTagLib::Enum<TagLib::Ogg::Page::ContainsPacketFlags>;
+template class LuaTagLib::Enum<TagLib::Ogg::Page::PaginationStrategy>;
 
 #include "../shared/userdata.tcc"
-template class BaseUserdata<TagLib::Ogg::Page>;
+template class LuaTagLib::BaseUserdata<TagLib::Ogg::Page>;

@@ -85,4 +85,4 @@ const UserdataMetatable T::base::metatable = {
 
 #undef T
 #include "../../shared/userdata.tcc"
-template class DerivedUserdata<TagLib::Ogg::Vorbis::Properties, LuaTagLib::AudioProperties>;
+template class LuaTagLib::DerivedUserdata<TagLib::Ogg::Vorbis::Properties, LuaTagLib::AudioProperties>;

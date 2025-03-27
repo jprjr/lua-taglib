@@ -208,9 +208,9 @@ template<>
 const char * PtrList< TagLib::List<TagLib::FLAC::Picture*>, FLAC::Picture>::base::__name = "TagLib::List<TagLib::FLAC::Picture *>";
 
 #include "../shared/enum.tcc"
-template class Enum<TagLib::FLAC::Picture::Type>;
+template class LuaTagLib::Enum<TagLib::FLAC::Picture::Type>;
 
 #include "../shared/userdata.tcc"
-template class DerivedUserdata<TagLib::FLAC::Picture, FLAC::MetadataBlock>;
+template class LuaTagLib::DerivedUserdata<TagLib::FLAC::Picture, FLAC::MetadataBlock>;
 
 #endif

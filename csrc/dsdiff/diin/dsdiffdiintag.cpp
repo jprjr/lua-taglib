@@ -57,6 +57,6 @@ const UserdataMetatable DSDIFF::DIIN::Tag::base::metatable = {
 
 #undef T
 #include "../../shared/userdata.tcc"
-template class DerivedUserdata<TagLib::DSDIFF::DIIN::Tag, LuaTagLib::Tag>;
+template class LuaTagLib::DerivedUserdata<TagLib::DSDIFF::DIIN::Tag, LuaTagLib::Tag>;
 
 #endif

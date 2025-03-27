@@ -239,11 +239,11 @@ template<>
 const size_t MP4::Item::Type::m_len = sizeof(mp4Types) / sizeof(mp4Types[0]);
 
 #include "../shared/enum.tcc"
-template class Enum<TagLib::MP4::Item::Type>;
+template class LuaTagLib::Enum<TagLib::MP4::Item::Type>;
 
 #endif
 
 #include "../shared/userdata.tcc"
-template class BaseUserdata<TagLib::MP4::Item>;
+template class LuaTagLib::BaseUserdata<TagLib::MP4::Item>;
 
 #endif

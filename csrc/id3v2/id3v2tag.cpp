@@ -170,4 +170,4 @@ template<>
 const char* ID3v2::FrameListMap::base::__name = "TagLib::ID3v2::FrameListMap";
 
 #include "../shared/userdata.tcc"
-template class DerivedUserdata<TagLib::ID3v2::Tag, LuaTagLib::Tag>;
+template class LuaTagLib::DerivedUserdata<TagLib::ID3v2::Tag, LuaTagLib::Tag>;

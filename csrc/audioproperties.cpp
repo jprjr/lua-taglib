@@ -106,7 +106,7 @@ const UserdataMetatable AudioProperties::base::metatable = {
 };
 
 #include "shared/enum.tcc"
-template class Enum<TagLib::AudioProperties::ReadStyle>;
+template class LuaTagLib::Enum<TagLib::AudioProperties::ReadStyle>;
 
 #include "shared/userdata.tcc"
-template class BaseUserdata<TagLib::AudioProperties>;
+template class LuaTagLib::BaseUserdata<TagLib::AudioProperties>;

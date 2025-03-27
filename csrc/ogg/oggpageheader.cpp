@@ -204,4 +204,4 @@ const UserdataMetatable Ogg::PageHeader::base::metatable = {
 };
 
 #include "../shared/userdata.tcc"
-template class BaseUserdata<TagLib::Ogg::PageHeader>;
+template class LuaTagLib::BaseUserdata<TagLib::Ogg::PageHeader>;

@@ -166,6 +166,6 @@ const char* ItemListMap::base::__name = "TagLib::APE::ItemListMap";
 
 #undef T
 #include "../shared/userdata.tcc"
-template class DerivedUserdata<TagLib::APE::Tag, LuaTagLib::Tag>;
+template class LuaTagLib::DerivedUserdata<TagLib::APE::Tag, LuaTagLib::Tag>;
 
 #endif

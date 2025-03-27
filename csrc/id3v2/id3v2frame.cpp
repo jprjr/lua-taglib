@@ -189,7 +189,7 @@ const UserdataMetatable ID3v2::Frame::base::metatable = {
 
 #undef T
 #include "../shared/userdata.tcc"
-template class BaseUserdata<TagLib::ID3v2::Frame>;
+template class LuaTagLib::BaseUserdata<TagLib::ID3v2::Frame>;
 
 #define T ID3v2::Frame
 
@@ -387,6 +387,6 @@ const UserdataMetatable T::Header::base::metatable = {
     NULL, /* indexfunc */
 };
 
-template class BaseUserdata<TagLib::ID3v2::Frame::Header>;
+template class LuaTagLib::BaseUserdata<TagLib::ID3v2::Frame::Header>;
 
 #endif

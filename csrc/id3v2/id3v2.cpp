@@ -135,6 +135,6 @@ int luaopen_TagLib_ID3v2_Version(lua_State* L) {
 }
 
 #include "../shared/enum.tcc"
-template class Enum<TagLib::ID3v2::Version>;
+template class LuaTagLib::Enum<TagLib::ID3v2::Version>;
 
 #endif

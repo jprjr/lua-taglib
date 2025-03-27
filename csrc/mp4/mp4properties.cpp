@@ -101,11 +101,11 @@ template<>
 const size_t MP4::Properties::Codec::m_len = sizeof(mp4Codec) / sizeof(mp4Codec[0]);
 
 #include "../shared/enum.tcc"
-template class Enum<TagLib::MP4::Properties::Codec>;
+template class LuaTagLib::Enum<TagLib::MP4::Properties::Codec>;
 
 #endif
 
 #include "../shared/userdata.tcc"
-template class DerivedUserdata<TagLib::MP4::Properties, LuaTagLib::AudioProperties>;
+template class LuaTagLib::DerivedUserdata<TagLib::MP4::Properties, LuaTagLib::AudioProperties>;
 
 #endif

@@ -191,10 +191,10 @@ const size_t T::TimestampFormat::m_len = sizeof(timestampFormats) / sizeof(times
 #undef T
 
 #include "../shared/enum.tcc"
-template class Enum<TagLib::ID3v2::EventTimingCodesFrame::EventType>;
-template class Enum<TagLib::ID3v2::EventTimingCodesFrame::TimestampFormat>;
+template class LuaTagLib::Enum<TagLib::ID3v2::EventTimingCodesFrame::EventType>;
+template class LuaTagLib::Enum<TagLib::ID3v2::EventTimingCodesFrame::TimestampFormat>;
 
 #include "../shared/userdata.tcc"
-template class DerivedUserdata<TagLib::ID3v2::EventTimingCodesFrame, LuaTagLib::ID3v2::Frame>;
+template class LuaTagLib::DerivedUserdata<TagLib::ID3v2::EventTimingCodesFrame, LuaTagLib::ID3v2::Frame>;
 
 #endif

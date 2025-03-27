@@ -131,4 +131,4 @@ const UserdataMetatable MPEG::Properties::base::metatable = {
 };
 
 #include "../shared/userdata.tcc"
-template class DerivedUserdata<TagLib::MPEG::Properties, LuaTagLib::AudioProperties>;
+template class LuaTagLib::DerivedUserdata<TagLib::MPEG::Properties, LuaTagLib::AudioProperties>;

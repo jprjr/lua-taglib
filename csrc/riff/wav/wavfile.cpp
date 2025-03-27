@@ -220,6 +220,6 @@ const UserdataMetatable T::base::metatable = {
 
 #undef T
 #include "../../shared/userdata.tcc"
-template class DerivedUserdata<TagLib::RIFF::WAV::File, LuaTagLib::File>;
+template class LuaTagLib::DerivedUserdata<TagLib::RIFF::WAV::File, LuaTagLib::File>;
 
 #endif

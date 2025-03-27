@@ -159,5 +159,5 @@ template<>
 const char* AttributeList::base::__name = "TagLib::ASF::AttributeList";
 
 #include "../shared/userdata.tcc"
-template class DerivedUserdata<TagLib::ASF::Tag, LuaTagLib::Tag>;
+template class LuaTagLib::DerivedUserdata<TagLib::ASF::Tag, LuaTagLib::Tag>;
 #endif

@@ -91,6 +91,6 @@ const UserdataMetatable APE::Properties::base::metatable = {
 };
 
 #include "../shared/userdata.tcc"
-template class DerivedUserdata<TagLib::APE::Properties, LuaTagLib::AudioProperties>;
+template class LuaTagLib::DerivedUserdata<TagLib::APE::Properties, LuaTagLib::AudioProperties>;
 
 #endif

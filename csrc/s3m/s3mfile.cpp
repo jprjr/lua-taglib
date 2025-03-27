@@ -53,6 +53,6 @@ const UserdataMetatable S3M::File::base::metatable = {
 
 #undef T
 #include "../shared/userdata.tcc"
-template class DerivedUserdata<TagLib::S3M::File, Mod::FileBase>;
+template class LuaTagLib::DerivedUserdata<TagLib::S3M::File, Mod::FileBase>;
 
 #endif

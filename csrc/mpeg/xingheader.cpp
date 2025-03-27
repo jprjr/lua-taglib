@@ -126,9 +126,9 @@ template<>
 const size_t MPEG::XingHeader::HeaderType::m_len = sizeof(headerType) / sizeof(headerType[0]);
 
 #include "../shared/enum.tcc"
-template class Enum<TagLib::MPEG::XingHeader::HeaderType>;
+template class LuaTagLib::Enum<TagLib::MPEG::XingHeader::HeaderType>;
 
 #endif
 
 #include "../shared/userdata.tcc"
-template class BaseUserdata<TagLib::MPEG::XingHeader>;
+template class LuaTagLib::BaseUserdata<TagLib::MPEG::XingHeader>;

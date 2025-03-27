@@ -72,9 +72,9 @@ template<>
 const size_t FLAC::MetadataBlock::BlockType::m_len = sizeof(blockTypes) / sizeof(blockTypes[0]);
 
 #include "../shared/enum.tcc"
-template class Enum<TagLib::FLAC::MetadataBlock::BlockType>;
+template class LuaTagLib::Enum<TagLib::FLAC::MetadataBlock::BlockType>;
 
 #include "../shared/userdata.tcc"
-template class BaseUserdata<TagLib::FLAC::MetadataBlock>;
+template class LuaTagLib::BaseUserdata<TagLib::FLAC::MetadataBlock>;
 
 #endif

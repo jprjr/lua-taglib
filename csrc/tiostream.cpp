@@ -385,9 +385,9 @@ namespace LuaTagLib {
 }
 
 #include "shared/enum.tcc"
-template class Enum<TagLib::IOStream::Position>;
+template class LuaTagLib::Enum<TagLib::IOStream::Position>;
 
 #include "shared/userdata.tcc"
-template class BaseUserdata<TagLib::IOStream>;
+template class LuaTagLib::BaseUserdata<TagLib::IOStream>;
 
 #endif

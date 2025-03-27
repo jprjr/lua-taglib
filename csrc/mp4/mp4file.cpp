@@ -117,6 +117,6 @@ const UserdataMetatable MP4::File::base::metatable = {
 };
 
 #include "../shared/userdata.tcc"
-template class DerivedUserdata<TagLib::MP4::File, LuaTagLib::File>;
+template class LuaTagLib::DerivedUserdata<TagLib::MP4::File, LuaTagLib::File>;
 
 #endif

@@ -242,9 +242,9 @@ const char * ValueList< TagLib::List<TT::ChannelType>, T::ChannelType>::base::__
 
 #undef T
 #include "../shared/enum.tcc"
-template class Enum<TagLib::ID3v2::RelativeVolumeFrame::ChannelType>;
+template class LuaTagLib::Enum<TagLib::ID3v2::RelativeVolumeFrame::ChannelType>;
 
 #include "../shared/userdata.tcc"
-template class DerivedUserdata<TagLib::ID3v2::RelativeVolumeFrame, LuaTagLib::ID3v2::Frame>;
+template class LuaTagLib::DerivedUserdata<TagLib::ID3v2::RelativeVolumeFrame, LuaTagLib::ID3v2::Frame>;
 
 #endif

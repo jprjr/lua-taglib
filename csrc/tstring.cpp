@@ -36,4 +36,4 @@ template<>
 const size_t String::Type::m_len = sizeof(enumValues) / sizeof(enumValues[0]);
 
 #include "shared/enum.tcc"
-template class Enum<TagLib::String::Type>;
+template class LuaTagLib::Enum<TagLib::String::Type>;

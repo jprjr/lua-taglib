@@ -98,6 +98,6 @@ const char* FieldListMap::base::__name = NAME "::FieldListMap";
 
 #undef T
 #include "../../shared/userdata.tcc"
-template class DerivedUserdata<TagLib::RIFF::Info::Tag, LuaTagLib::Tag>;
+template class LuaTagLib::DerivedUserdata<TagLib::RIFF::Info::Tag, LuaTagLib::Tag>;
 
 #endif

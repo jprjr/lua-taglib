@@ -130,11 +130,11 @@ template<>
 const size_t ASF::Properties::Codec::m_len = sizeof(asfCodec) / sizeof(asfCodec[0]);
 
 #include "../shared/enum.tcc"
-template class Enum<TagLib::ASF::Properties::Codec>;
+template class LuaTagLib::Enum<TagLib::ASF::Properties::Codec>;
 
 #endif
 
 #include "../shared/userdata.tcc"
-template class DerivedUserdata<TagLib::ASF::Properties, LuaTagLib::AudioProperties>;
+template class LuaTagLib::DerivedUserdata<TagLib::ASF::Properties, LuaTagLib::AudioProperties>;
 
 #endif

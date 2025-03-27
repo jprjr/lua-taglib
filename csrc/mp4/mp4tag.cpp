@@ -127,6 +127,6 @@ const char* ItemMap::base::__name = "TagLib::MP4::ItemMap";
 #endif
 
 #include "../shared/userdata.tcc"
-template class DerivedUserdata<TagLib::MP4::Tag, LuaTagLib::Tag>;
+template class LuaTagLib::DerivedUserdata<TagLib::MP4::Tag, LuaTagLib::Tag>;
 
 #endif

@@ -172,9 +172,9 @@ template<>
 const size_t ASF::Picture::Type::m_len = sizeof(enumValues) / sizeof(enumValues[0]);
 
 #include "../shared/enum.tcc"
-template class Enum<TagLib::ASF::Picture::Type>;
+template class LuaTagLib::Enum<TagLib::ASF::Picture::Type>;
 
 #include "../shared/userdata.tcc"
-template class BaseUserdata<TagLib::ASF::Picture>;
+template class LuaTagLib::BaseUserdata<TagLib::ASF::Picture>;
 
 #endif

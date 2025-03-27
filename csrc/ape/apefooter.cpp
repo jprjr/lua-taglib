@@ -167,6 +167,6 @@ const UserdataMetatable APE::Footer::base::metatable = {
 };
 
 #include "../shared/userdata.tcc"
-template class BaseUserdata<TagLib::APE::Footer>;
+template class LuaTagLib::BaseUserdata<TagLib::APE::Footer>;
 
 #endif

@@ -102,7 +102,7 @@ const UserdataMetatable FileStream::base::metatable = {
 };
 
 #include "shared/userdata.tcc"
-template class DerivedUserdata<TagLib::FileStream, LuaTagLib::IOStream>;
+template class LuaTagLib::DerivedUserdata<TagLib::FileStream, LuaTagLib::IOStream>;
 
 #endif
 

@@ -47,6 +47,6 @@ const UserdataMetatable ASF::File::base::metatable = {
 };
 
 #include "../shared/userdata.tcc"
-template class DerivedUserdata<TagLib::ASF::File, LuaTagLib::File>;
+template class LuaTagLib::DerivedUserdata<TagLib::ASF::File, LuaTagLib::File>;
 
 #endif

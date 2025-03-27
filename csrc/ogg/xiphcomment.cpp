@@ -263,4 +263,4 @@ template<>
 const char* FieldListMap::base::__name = "TagLib::Ogg::FieldListMap";
 
 #include "../shared/userdata.tcc"
-template class DerivedUserdata<TagLib::Ogg::XiphComment, LuaTagLib::Tag>;
+template class LuaTagLib::DerivedUserdata<TagLib::Ogg::XiphComment, LuaTagLib::Tag>;

@@ -16,7 +16,6 @@ int luaopen_TagLib_AudioProperties_ReadStyle(lua_State *L);
 
 }
 
-
 namespace LuaTagLib {
     class LTAGLIB_PRIVATE AudioProperties: public BaseUserdata<TagLib::AudioProperties> {
         public:

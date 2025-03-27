@@ -255,9 +255,9 @@ const UserdataMetatable ASF::Attribute::base::metatable = {
 };
 
 #include "../shared/enum.tcc"
-template class Enum<TagLib::ASF::Attribute::AttributeTypes>;
+template class LuaTagLib::Enum<TagLib::ASF::Attribute::AttributeTypes>;
 
 #include "../shared/userdata.tcc"
-template class BaseUserdata<TagLib::ASF::Attribute>;
+template class LuaTagLib::BaseUserdata<TagLib::ASF::Attribute>;
 
 #endif

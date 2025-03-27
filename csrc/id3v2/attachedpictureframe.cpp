@@ -157,9 +157,9 @@ const size_t ID3v2::AttachedPictureFrame::Type::m_len = sizeof(enumValues) / siz
 
 #undef T
 #include "../shared/enum.tcc"
-template class Enum<TagLib::ID3v2::AttachedPictureFrame::Type>;
+template class LuaTagLib::Enum<TagLib::ID3v2::AttachedPictureFrame::Type>;
 
 #include "../shared/userdata.tcc"
-template class DerivedUserdata<TagLib::ID3v2::AttachedPictureFrame, LuaTagLib::ID3v2::Frame>;
+template class LuaTagLib::DerivedUserdata<TagLib::ID3v2::AttachedPictureFrame, LuaTagLib::ID3v2::Frame>;
 
 #endif

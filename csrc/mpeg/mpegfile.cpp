@@ -355,4 +355,4 @@ const UserdataMetatable MPEG::File::base::metatable = {
 
 #undef T
 #include "../shared/userdata.tcc"
-template class DerivedUserdata<TagLib::MPEG::File, LuaTagLib::File>;
+template class LuaTagLib::DerivedUserdata<TagLib::MPEG::File, LuaTagLib::File>;

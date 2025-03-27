@@ -78,6 +78,6 @@ const UserdataMetatable T::base::metatable = {
 
 #undef T
 #include "../../shared/userdata.tcc"
-template class DerivedUserdata<TagLib::RIFF::AIFF::File, LuaTagLib::File>;
+template class LuaTagLib::DerivedUserdata<TagLib::RIFF::AIFF::File, LuaTagLib::File>;
 
 #endif

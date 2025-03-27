@@ -88,4 +88,4 @@ const UserdataMetatable ID3v1::Tag::base::metatable = {
 };
 
 #include "../shared/userdata.tcc"
-template class DerivedUserdata<TagLib::ID3v1::Tag, LuaTagLib::Tag>;
+template class LuaTagLib::DerivedUserdata<TagLib::ID3v1::Tag, LuaTagLib::Tag>;

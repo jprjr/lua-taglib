@@ -55,6 +55,6 @@ const UserdataMetatable ByteVectorStream::base::metatable = {
 };
 
 #include "shared/userdata.tcc"
-template class DerivedUserdata<TagLib::ByteVectorStream, LuaTagLib::IOStream>;
+template class LuaTagLib::DerivedUserdata<TagLib::ByteVectorStream, LuaTagLib::IOStream>;
 
 #endif

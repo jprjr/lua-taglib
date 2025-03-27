@@ -59,4 +59,4 @@ const UserdataMetatable ID3v2::ExtendedHeader::base::metatable = {
 };
 
 #include "../shared/userdata.tcc"
-template class BaseUserdata<TagLib::ID3v2::ExtendedHeader>;
+template class LuaTagLib::BaseUserdata<TagLib::ID3v2::ExtendedHeader>;

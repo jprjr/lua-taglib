@@ -150,6 +150,6 @@ const UserdataMetatable APE::File::base::metatable = {
 };
 
 #include "../shared/userdata.tcc"
-template class DerivedUserdata<TagLib::APE::File, LuaTagLib::File>;
+template class LuaTagLib::DerivedUserdata<TagLib::APE::File, LuaTagLib::File>;
 
 #endif

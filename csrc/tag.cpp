@@ -257,4 +257,4 @@ const UserdataMetatable Tag::base::metatable = {
 };
 
 #include "shared/userdata.tcc"
-template class BaseUserdata<TagLib::Tag>;
+template class LuaTagLib::BaseUserdata<TagLib::Tag>;

@@ -112,6 +112,6 @@ const UserdataMetatable T::base::metatable = {
 
 #undef T
 #include "../shared/userdata.tcc"
-template class DerivedUserdata<TagLib::ID3v2::OwnershipFrame, LuaTagLib::ID3v2::Frame>;
+template class LuaTagLib::DerivedUserdata<TagLib::ID3v2::OwnershipFrame, LuaTagLib::ID3v2::Frame>;
 
 #endif

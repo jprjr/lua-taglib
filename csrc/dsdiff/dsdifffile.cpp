@@ -178,6 +178,6 @@ const UserdataMetatable DSDIFF::File::base::metatable = {
 
 #undef T
 #include "../shared/userdata.tcc"
-template class DerivedUserdata<TagLib::DSDIFF::File, LuaTagLib::File>;
+template class LuaTagLib::DerivedUserdata<TagLib::DSDIFF::File, LuaTagLib::File>;
 
 #endif

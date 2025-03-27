@@ -263,11 +263,11 @@ const size_t MPEG::Header::ChannelConfiguration::m_len = sizeof(channelConfigura
 #endif
 
 #include "../shared/enum.tcc"
-template class Enum<TagLib::MPEG::Header::Version>;
-template class Enum<TagLib::MPEG::Header::ChannelMode>;
+template class LuaTagLib::Enum<TagLib::MPEG::Header::Version>;
+template class LuaTagLib::Enum<TagLib::MPEG::Header::ChannelMode>;
 #if LTAGLIB_HAS_MPEG_HEADER_CHANNELCONFIGURATION
-template class Enum<TagLib::MPEG::Header::ChannelConfiguration>;
+template class LuaTagLib::Enum<TagLib::MPEG::Header::ChannelConfiguration>;
 #endif
 
 #include "../shared/userdata.tcc"
-template class BaseUserdata<TagLib::MPEG::Header>;
+template class LuaTagLib::BaseUserdata<TagLib::MPEG::Header>;

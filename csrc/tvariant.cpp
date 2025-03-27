@@ -181,6 +181,6 @@ template<>
 const char* VariantMapList::base::__name = "TagLib::List<TagLib::VariantMap>";
 
 #include "shared/enum.tcc"
-template class Enum<TagLib::Variant::Type>;
+template class LuaTagLib::Enum<TagLib::Variant::Type>;
 
 #endif

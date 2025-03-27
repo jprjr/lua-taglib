@@ -282,9 +282,9 @@ template<>
 const size_t APE::Item::ItemTypes::m_len = sizeof(apeItemTypes) / sizeof(apeItemTypes[0]);
 
 #include "../shared/enum.tcc"
-template class Enum<TagLib::APE::Item::ItemTypes>;
+template class LuaTagLib::Enum<TagLib::APE::Item::ItemTypes>;
 
 #include "../shared/userdata.tcc"
-template class BaseUserdata<TagLib::APE::Item>;
+template class LuaTagLib::BaseUserdata<TagLib::APE::Item>;
 
 #endif

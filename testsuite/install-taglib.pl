@@ -81,7 +81,7 @@ if(-e $patchfile) {
 }
 
 if($taglib_config->{'use_cmake'}) {
-    my @args = ('cmake', '-DCMAKE_INSTALL_PREFIX=' . $install_dir, '-B', 'build');
+    my @args = ('cmake', '-DCMAKE_INSTALL_PREFIX=' . $install_dir, '-DBUILD_SHARED_LIBS=on', '-B', 'build');
     if($taglib_major_ver == 1) {
         push(@args, '-DWITH_MP4=on', '-DWITH_ASF=on');
     }

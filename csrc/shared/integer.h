@@ -13,7 +13,7 @@ namespace LuaTagLib {
                 lua_pushinteger(L, i);
             }
 
-            static inline lua_Integer checkValue(lua_State* L, lua_Integer idx) {
+            static inline lua_Integer checkValue(lua_State* L, int idx) {
                 return luaL_checkinteger(L, idx);
             }
     };

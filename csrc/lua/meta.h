@@ -23,10 +23,10 @@ namespace LuaTagLib {
     void* newuserdata(lua_State* L, std::size_t size);
 
     LTAGLIB_PRIVATE
-    bool hasmetatable(lua_State* L, lua_Integer idx, const void* key);
+    bool hasmetatable(lua_State* L, int idx, const void* key);
 
     LTAGLIB_PRIVATE
-    void* testuserdata(lua_State* L, lua_Integer idx, const void* key);
+    void* testuserdata(lua_State* L, int idx, const void* key);
 
     LTAGLIB_PRIVATE
     const void* getReferenceKey();

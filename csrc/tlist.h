@@ -76,7 +76,7 @@ namespace LuaTagLib {
         int tidx = lua_gettop(L) + 1;
         lua_Integer i;
 #if LTAGLIB_ATLEAST(LTAGLIB_2_0)
-        T list = {};
+        T list{};
 #else
         T list = T();
 #endif

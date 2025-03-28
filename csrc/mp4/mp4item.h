@@ -40,6 +40,9 @@ namespace LuaTagLib {
 #if LTAGLIB_ATLEAST(LTAGLIB_2_0)
             typedef Enum<TagLib::MP4::Item::Type> Type;
 #endif
+                static TagLib::MP4::Item* pushValue(lua_State* L, const TagLib::MP4::Item& val) {
+                    return UserdataExtra::pushValue<LuaTagLib::MP4::Item>(L, val);
+                }
 
     };
     }

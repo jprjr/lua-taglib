@@ -34,6 +34,9 @@ namespace LuaTagLib {
         class LTAGLIB_PRIVATE Picture: public BaseUserdata<TagLib::ASF::Picture> {
             public:
                 typedef Enum<TagLib::ASF::Picture::Type> Type;
+                static TagLib::ASF::Picture* pushValue(lua_State* L, const TagLib::ASF::Picture& val) {
+                    return UserdataExtra::pushValue<LuaTagLib::ASF::Picture>(L, val);
+                }
         };
     }
 }

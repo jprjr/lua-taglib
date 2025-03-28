@@ -33,6 +33,9 @@ namespace LuaTagLib {
         class LTAGLIB_PRIVATE Attribute: public BaseUserdata<TagLib::ASF::Attribute> {
             public:
                 typedef Enum<TagLib::ASF::Attribute::AttributeTypes> AttributeTypes;
+                static TagLib::ASF::Attribute* pushValue(lua_State* L, const TagLib::ASF::Attribute& val) {
+                    return UserdataExtra::pushValue<LuaTagLib::ASF::Attribute>(L, val);
+                }
         };
     }
 }

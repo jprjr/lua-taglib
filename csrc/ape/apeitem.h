@@ -34,6 +34,9 @@ namespace LuaTagLib {
         class LTAGLIB_PRIVATE Item : public BaseUserdata<TagLib::APE::Item> {
             public:
                 typedef Enum<TagLib::APE::Item::ItemTypes> ItemTypes;
+                static TagLib::APE::Item* pushValue(lua_State* L, const TagLib::APE::Item& val) {
+                    return UserdataExtra::pushValue<LuaTagLib::APE::Item>(L, val);
+                }
         };
     }
 }

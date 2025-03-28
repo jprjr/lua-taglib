@@ -36,6 +36,9 @@ namespace LuaTagLib {
         class LTAGLIB_PRIVATE CoverArt: public BaseUserdata<TagLib::MP4::CoverArt> {
             public:
                 typedef Enum<TagLib::MP4::CoverArt::Format> Format;
+                static TagLib::MP4::CoverArt* pushValue(lua_State* L, const TagLib::MP4::CoverArt& val) {
+                    return UserdataExtra::pushValue<LuaTagLib::MP4::CoverArt>(L, val);
+                }
         };
         typedef ValueList<TagLib::MP4::CoverArtList,CoverArt> CoverArtList;
     }

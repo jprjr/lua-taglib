@@ -95,7 +95,6 @@ namespace LuaTagLib {
             static T* castPtr(lua_State* L, int idx);
             static T* pushPtr(lua_State* L, T* val, int parent, bool managed = false);
             static T* pushPtr(lua_State* L, T* val);
-            static T* pushValue(lua_State* L, const T& val);
     };
 
     template<typename T>
@@ -110,6 +109,15 @@ namespace LuaTagLib {
         public:
             static void onMetatable(lua_State* L);
             static T* castPtrImpl(lua_State* L, int idx);
+    };
+
+    class LTAGLIB_PRIVATE UserdataExtra {
+        public:
+            template<typename T>
+            static typename T::taglib_type* pushValue(lua_State* L, const typename T::taglib_type& value) {
+                return T::pushPtr(L, new typename T::taglib_type(value));
+            }
+
     };
 }
 

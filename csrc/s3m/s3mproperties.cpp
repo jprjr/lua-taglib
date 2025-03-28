@@ -227,13 +227,6 @@ const UserdataMetatable T::base::metatable = {
     NULL, /* indexfunc */
 };
 
-template<>
-TagLib::S3M::Properties* LuaTagLib::Userdata<TagLib::S3M::Properties, LuaTagLib::DerivedUserdata<TagLib::S3M::Properties, LuaTagLib::AudioProperties> >::pushValue(lua_State* L, const TagLib::S3M::Properties& val) {
-    luaL_error(L, "unable to push S3M::Properties by value");
-    (void)val;
-    return NULL;
-}
-
 #undef T
 #include "../shared/userdata.tcc"
 template class LuaTagLib::DerivedUserdata<TagLib::S3M::Properties, LuaTagLib::AudioProperties>;

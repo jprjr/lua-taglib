@@ -183,12 +183,6 @@ const UserdataMetatable T::base::metatable = {
     NULL, /* indexfunc */
 };
 
-template<>
-TagLib::XM::Properties* Userdata<TagLib::XM::Properties, LuaTagLib::AudioProperties>::pushValue(lua_State* L, const TagLib::XM::Properties& val) {
-    luaL_error(L, "unable to push XM::Properties by value");
-    return NULL;
-}
-
 #undef T
 #include "../shared/userdata.tcc"
 template class LuaTagLib::DerivedUserdata<TagLib::XM::Properties, LuaTagLib::AudioProperties>;

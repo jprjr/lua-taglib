@@ -59,8 +59,11 @@ static int File_setComplexProperties(lua_State* L) {
 
 static int File_name(lua_State* L) {
     TagLib::File* f = File::checkPtr(L, 1);
-
+#ifdef _WIN32
+    String::pushValue(L, f->name().toString());
+#else
     lua_pushstring(L, f->name());
+#endif
     return 1;
 }
 

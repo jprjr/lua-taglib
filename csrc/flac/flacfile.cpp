@@ -293,6 +293,22 @@ static int File__submodules(lua_State* L) {
     return 0;
 }
 
+#if LTAGLIB_ATLEAST(LTAGLIB_1_12)
+static int
+File_static_isSupported(lua_State* L) {
+    lua_pushboolean(L, TagLib::FLAC::File::isSupported(IOStream::checkPtr(L, 1)));
+    return 1;
+}
+#endif
+
+static
+const luaL_Reg File__static[] = {
+#if LTAGLIB_ATLEAST(LTAGLIB_1_12)
+    { "isSupported", File_static_isSupported },
+#endif
+    { NULL, NULL }
+};
+
 #if LTAGLIB_ATLEAST(LTAGLIB_1_11)
 
 LTAGLIB_PUBLIC
@@ -327,7 +343,7 @@ int luaopen_TagLib_FLAC_File(lua_State *L) {
 template<>
 const UserdataTable FLAC::File::base::mod = {
     FLACFile__call,
-    NULL,
+    File__static,
     File__submodules,
 };
 

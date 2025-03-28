@@ -104,6 +104,22 @@ const luaL_Reg File__index[] = {
     { NULL, NULL }
 };
 
+#if LTAGLIB_ATLEAST(LTAGLIB_1_12)
+static int
+File_static_isSupported(lua_State* L) {
+    lua_pushboolean(L, TagLib::APE::File::isSupported(IOStream::checkPtr(L, 1)));
+    return 1;
+}
+#endif
+
+static
+const luaL_Reg File__static[] = {
+#if LTAGLIB_ATLEAST(LTAGLIB_1_12)
+    { "isSupported", File_static_isSupported },
+#endif
+    { NULL, NULL }
+};
+
 
 LTAGLIB_PUBLIC
 int luaopen_TagLib_APE_File_TagTypes(lua_State *L) {
@@ -133,7 +149,7 @@ static int File__submodules(lua_State* L) {
 template<>
 const UserdataTable APE::File::base::mod = {
     File__call<APE::File>,
-    NULL,
+    File__static,
     File__submodules,
 };
 

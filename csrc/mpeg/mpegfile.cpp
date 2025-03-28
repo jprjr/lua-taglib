@@ -310,6 +310,22 @@ static int File__submodules(lua_State* L) {
     return 0;
 }
 
+#if LTAGLIB_ATLEAST(LTAGLIB_1_12)
+static int
+File_static_isSupported(lua_State* L) {
+    lua_pushboolean(L, TagLib::MPEG::File::isSupported(IOStream::checkPtr(L, 1)));
+    return 1;
+}
+#endif
+
+static
+const luaL_Reg File__static[] = {
+#if LTAGLIB_ATLEAST(LTAGLIB_1_12)
+    { "isSupported", File_static_isSupported },
+#endif
+    { NULL, NULL }
+};
+
 LTAGLIB_PUBLIC
 int luaopen_TagLib_MPEG_File_TagTypes(lua_State *L) {
     lua_newtable(L);
@@ -342,7 +358,7 @@ int luaopen_TagLib_MPEG_File(lua_State *L) {
 template<>
 const UserdataTable MPEG::File::base::mod = {
     MPEGFile__call,
-    NULL,
+    File__static,
     File__submodules,
 };
 

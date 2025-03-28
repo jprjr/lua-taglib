@@ -110,6 +110,22 @@ static int File__submodules(lua_State* L) {
     return 0;
 }
 
+#if LTAGLIB_ATLEAST(LTAGLIB_1_12)
+static int
+File_static_isSupported(lua_State* L) {
+    lua_pushboolean(L, TagLib::TrueAudio::File::isSupported(IOStream::checkPtr(L, 1)));
+    return 1;
+}
+#endif
+
+static
+const luaL_Reg File__static[] = {
+#if LTAGLIB_ATLEAST(LTAGLIB_1_12)
+    { "isSupported", File_static_isSupported },
+#endif
+    { NULL, NULL }
+};
+
 LTAGLIB_PUBLIC
 int luaopen_TagLib_TrueAudio_File_TagTypes(lua_State *L) {
     lua_newtable(L);
@@ -137,7 +153,7 @@ int luaopen_TagLib_TrueAudio_File(lua_State *L) {
 template<>
 const UserdataTable TrueAudio::File::base::mod = {
     File__call<TrueAudio::File>,
-    NULL,
+    File__static,
     File__submodules,
 };
 

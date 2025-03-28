@@ -27,6 +27,22 @@ const luaL_Reg File__index[] = {
     { NULL, NULL }
 };
 
+#if LTAGLIB_ATLEAST(LTAGLIB_1_12)
+static int
+File_static_isSupported(lua_State* L) {
+    lua_pushboolean(L, TagLib::ASF::File::isSupported(IOStream::checkPtr(L, 1)));
+    return 1;
+}
+#endif
+
+static
+const luaL_Reg File__static[] = {
+#if LTAGLIB_ATLEAST(LTAGLIB_1_12)
+    { "isSupported", File_static_isSupported },
+#endif
+    { NULL, NULL }
+};
+
 LTAGLIB_PUBLIC
 int luaopen_TagLib_ASF_File(lua_State *L) {
     return ASF::File::open(L);
@@ -35,7 +51,7 @@ int luaopen_TagLib_ASF_File(lua_State *L) {
 template<>
 const UserdataTable ASF::File::base::mod = {
     File__call<ASF::File>,
-    NULL,
+    File__static,
     NULL,
 };
 

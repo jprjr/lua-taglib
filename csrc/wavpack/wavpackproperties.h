@@ -21,9 +21,15 @@ int luaopen_TagLib_WavPack_Properties(lua_State *L);
 }
 
 
-namespace LuaTagLib { namespace WavPack {
-    typedef DerivedUserdata<TagLib::WavPack::Properties, LuaTagLib::AudioProperties> Properties;
-} }
+namespace LuaTagLib {
+
+    template<> const UserdataMetatable UserdataCommon<TagLib::WavPack::Properties>::metatable;
+    template<> const UserdataTable     UserdataCommon<TagLib::WavPack::Properties>::mod;
+
+    namespace WavPack {
+        typedef DerivedUserdata<TagLib::WavPack::Properties, LuaTagLib::AudioProperties> Properties;
+    }
+}
 
 #endif
 

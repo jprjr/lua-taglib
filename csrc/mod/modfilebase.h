@@ -19,9 +19,14 @@ int luaopen_TagLib_Mod_FileBase(lua_State *L);
 
 }
 
-namespace LuaTagLib { namespace Mod {
-    typedef DerivedUserdata<TagLib::Mod::FileBase, LuaTagLib::File> FileBase;
-} }
+namespace LuaTagLib {
+    template<> const UserdataMetatable UserdataCommon<TagLib::Mod::FileBase>::metatable;
+    template<> const UserdataTable     UserdataCommon<TagLib::Mod::FileBase>::mod;
+
+    namespace Mod {
+        typedef DerivedUserdata<TagLib::Mod::FileBase, LuaTagLib::File> FileBase;
+    }
+} 
 
 #endif
 

@@ -34,50 +34,27 @@ luaopen_TagLib_String_Type(lua_State* L);
 }
 
 namespace LuaTagLib {
+
     class LTAGLIB_PRIVATE String {
         public:
             typedef Enum<TagLib::String::Type> Type;
 
             typedef TagLib::String taglib_type;
 
-            static void pushValue(lua_State* L, const TagLib::String& str) {
-                std::string s = str.to8Bit(true);
-                lua_pushlstring(L, s.data(), s.size());
-            }
+            static void pushValue(lua_State* L, const TagLib::String& str);
 
             /* returns true if the value at index is a Lua string */
-            static bool isValid(lua_State* L, int idx) {
-                return isstring(L, idx);
-            }
+            static bool isValid(lua_State* L, int idx);
 
-            /* TODO is there a benefit to go to a ByteVector first?
-             *
-             * The idea is if I use an intermediate bytevector, I can
-             * use checklstring to get the length and avoid a strlen-type
-             * call, but I think that results in two copies of the data
-             * being done - once into the bytevector, again into the string.
-             *
-             * The two things I try to avoid are calls to strlen, and copies,
-             * and I'm forced to choose one here.
-             */
-            static TagLib::String checkValue(lua_State* L, int idx) {
-                const char* str_data;
-                std::size_t str_len;
-                TagLib::String str;
-
-                str_data = checklstring(L, idx, &str_len);
-                str = TagLib::String(TagLib::ByteVector(str_data, str_len), TagLib::String::UTF8);
-                lua_pop(L, 1);
-                return str;
-            }
+            static TagLib::String checkValue(lua_State* L, int idx);
 
             /* return the taglib null string if the index is not a string */
-            static TagLib::String optValue(lua_State* L, int idx) {
-                if(lua_isnoneornil(L, idx)) return TagLib::String();
+            static TagLib::String optValue(lua_State* L, int idx);
 
-                return checkValue(L, idx);
-            }
     };
+
+    template<>
+    const String::Type::enum_type* String::Type::m_values;
 }
 
 #endif

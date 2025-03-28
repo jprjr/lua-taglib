@@ -19,9 +19,15 @@ namespace TagLib { namespace Ogg { namespace Vorbis {
 } } }
 #endif
 
-namespace LuaTagLib { namespace Ogg { namespace Vorbis {
-    typedef DerivedUserdata<TagLib::Ogg::Vorbis::Properties, LuaTagLib::AudioProperties> Properties;
-} } }
+namespace LuaTagLib {
+
+    template<> const UserdataMetatable UserdataCommon<TagLib::Ogg::Vorbis::Properties>::metatable;
+    template<> const UserdataTable     UserdataCommon<TagLib::Ogg::Vorbis::Properties>::mod;
+
+    namespace Ogg { namespace Vorbis {
+        typedef DerivedUserdata<TagLib::Ogg::Vorbis::Properties, LuaTagLib::AudioProperties> Properties;
+    } }
+}
 
 #endif
 

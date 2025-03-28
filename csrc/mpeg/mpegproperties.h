@@ -13,9 +13,13 @@ int luaopen_TagLib_MPEG_Properties(lua_State *L);
 
 }
 
-namespace LuaTagLib { namespace MPEG {
-    typedef DerivedUserdata<TagLib::MPEG::Properties,LuaTagLib::AudioProperties> Properties;
-} }
+namespace LuaTagLib {
+    template<> const UserdataMetatable UserdataCommon<TagLib::MPEG::Properties>::metatable;
+    template<> const UserdataTable     UserdataCommon<TagLib::MPEG::Properties>::mod;
+    namespace MPEG {
+        typedef DerivedUserdata<TagLib::MPEG::Properties,LuaTagLib::AudioProperties> Properties;
+    }
+}
 
 #endif
 

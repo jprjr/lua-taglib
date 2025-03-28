@@ -20,7 +20,16 @@ int luaopen_TagLib_ID3v2_UserTextIdentificationFrame(lua_State* L);
 
 }
 
-namespace LuaTagLib { namespace ID3v2 {
+namespace LuaTagLib {
+
+    template<> const UserdataMetatable UserdataCommon<TagLib::ID3v2::TextIdentificationFrame>::metatable;
+    template<> const UserdataTable     UserdataCommon<TagLib::ID3v2::TextIdentificationFrame>::mod;
+#if LTAGLIB_HAS_USERTEXTIDENTIFICATIONFRAME
+    template<> const UserdataMetatable UserdataCommon<TagLib::ID3v2::UserTextIdentificationFrame>::metatable;
+    template<> const UserdataTable     UserdataCommon<TagLib::ID3v2::UserTextIdentificationFrame>::mod;
+#endif
+
+    namespace ID3v2 {
     typedef DerivedUserdata<TagLib::ID3v2::TextIdentificationFrame, Frame> TextIdentificationFrame;
 #if LTAGLIB_HAS_USERTEXTIDENTIFICATIONFRAME
     typedef DerivedUserdata<TagLib::ID3v2::UserTextIdentificationFrame, TextIdentificationFrame> UserTextIdentificationFrame;

@@ -16,9 +16,15 @@ int luaopen_TagLib_ASF_File(lua_State *L);
 
 }
 
-namespace LuaTagLib { namespace ASF {
-    typedef DerivedUserdata<TagLib::ASF::File, LuaTagLib::File> File;
-} }
+namespace LuaTagLib {
+
+    template<> const UserdataMetatable UserdataCommon<TagLib::ASF::File>::metatable;
+    template<> const UserdataTable     UserdataCommon<TagLib::ASF::File>::mod;
+
+    namespace ASF {
+        typedef DerivedUserdata<TagLib::ASF::File, LuaTagLib::File> File;
+    }
+}
 
 #endif
 

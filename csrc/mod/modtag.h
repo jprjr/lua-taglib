@@ -17,9 +17,15 @@ LTAGLIB_PUBLIC
 int luaopen_TagLib_Mod_Tag(lua_State *L);
 
 }
-namespace LuaTagLib { namespace Mod {
-    typedef DerivedUserdata<TagLib::Mod::Tag, LuaTagLib::Tag> Tag;
-} }
+namespace LuaTagLib {
+
+    template<> const UserdataMetatable UserdataCommon<TagLib::Mod::Tag>::metatable;
+    template<> const UserdataTable     UserdataCommon<TagLib::Mod::Tag>::mod;
+
+    namespace Mod {
+        typedef DerivedUserdata<TagLib::Mod::Tag, LuaTagLib::Tag> Tag;
+    }
+}
 
 #endif
 

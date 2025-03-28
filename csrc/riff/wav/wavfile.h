@@ -24,9 +24,15 @@ int luaopen_TagLib_RIFF_WAV_File_TagTypes(lua_State *L);
 
 }
 
-namespace LuaTagLib { namespace RIFF { namespace WAV {
-    typedef DerivedUserdata<TagLib::RIFF::WAV::File, LuaTagLib::File> File;
-} } }
+namespace LuaTagLib {
+
+    template<> const UserdataMetatable UserdataCommon<TagLib::RIFF::WAV::File>::metatable;
+    template<> const UserdataTable     UserdataCommon<TagLib::RIFF::WAV::File>::mod;
+
+    namespace RIFF { namespace WAV {
+        typedef DerivedUserdata<TagLib::RIFF::WAV::File, LuaTagLib::File> File;
+    }
+} }
 
 #endif
 

@@ -19,9 +19,15 @@ int luaopen_TagLib_Ogg_Opus_Properties(lua_State *L);
 }
 
 
-namespace LuaTagLib { namespace Ogg { namespace Opus {
-    typedef DerivedUserdata<TagLib::Ogg::Opus::Properties, LuaTagLib::AudioProperties> Properties;
-} } }
+namespace LuaTagLib {
+
+    template<> const UserdataMetatable UserdataCommon<TagLib::Ogg::Opus::Properties>::metatable;
+    template<> const UserdataTable     UserdataCommon<TagLib::Ogg::Opus::Properties>::mod;
+
+    namespace Ogg { namespace Opus {
+        typedef DerivedUserdata<TagLib::Ogg::Opus::Properties, LuaTagLib::AudioProperties> Properties;
+    } }
+}
 
 #endif
 

@@ -19,9 +19,15 @@ int luaopen_TagLib_S3M_Properties(lua_State *L);
 
 }
 
-namespace LuaTagLib { namespace S3M {
-    class LTAGLIB_PUBLIC Properties: public DerivedUserdata<TagLib::S3M::Properties, LuaTagLib::AudioProperties> { };
-} }
+namespace LuaTagLib {
+
+    template<> const UserdataMetatable UserdataCommon<TagLib::S3M::Properties>::metatable;
+    template<> const UserdataTable     UserdataCommon<TagLib::S3M::Properties>::mod;
+
+    namespace S3M {
+        class LTAGLIB_PUBLIC Properties: public DerivedUserdata<TagLib::S3M::Properties, LuaTagLib::AudioProperties> { };
+    }
+}
 
 #endif
 

@@ -22,9 +22,15 @@ int luaopen_TagLib_DSF_File_TagTypes(lua_State *L);
 
 }
 
-namespace LuaTagLib { namespace DSF {
-    typedef DerivedUserdata<TagLib::DSF::File, LuaTagLib::File> File;
-} }
+namespace LuaTagLib {
+
+    template<> const UserdataMetatable UserdataCommon<TagLib::DSF::File>::metatable;
+    template<> const UserdataTable     UserdataCommon<TagLib::DSF::File>::mod;
+
+    namespace DSF {
+        typedef DerivedUserdata<TagLib::DSF::File, LuaTagLib::File> File;
+    }
+}
 
 #endif
 

@@ -15,9 +15,15 @@ LTAGLIB_PUBLIC
 int luaopen_TagLib_MP4_Tag(lua_State *L);
 
 }
-namespace LuaTagLib { namespace MP4 {
-    typedef DerivedUserdata<TagLib::MP4::Tag, LuaTagLib::Tag> Tag;
-} }
+namespace LuaTagLib {
+
+    template<> const UserdataMetatable UserdataCommon<TagLib::MP4::Tag>::metatable;
+    template<> const UserdataTable     UserdataCommon<TagLib::MP4::Tag>::mod;
+
+    namespace MP4 {
+        typedef DerivedUserdata<TagLib::MP4::Tag, LuaTagLib::Tag> Tag;
+    }
+}
 
 #endif
 

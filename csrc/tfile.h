@@ -37,6 +37,10 @@ int luaopen_TagLib_File_DuplicateTags(lua_State *L);
 }
 
 namespace LuaTagLib {
+
+    template<> const UserdataMetatable UserdataCommon<TagLib::File>::metatable;
+    template<> const UserdataTable     UserdataCommon<TagLib::File>::mod;
+
     class LTAGLIB_PRIVATE File: public BaseUserdata<TagLib::File> {
         public:
             typedef Enum<TagLib::File::Position> Position;

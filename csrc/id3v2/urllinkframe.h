@@ -20,7 +20,15 @@ int luaopen_TagLib_ID3v2_UserUrlLinkFrame(lua_State* L);
 
 }
 
-namespace LuaTagLib { namespace ID3v2 {
+namespace LuaTagLib {
+
+    template<> const UserdataMetatable UserdataCommon<TagLib::ID3v2::UrlLinkFrame>::metatable;
+    template<> const UserdataTable     UserdataCommon<TagLib::ID3v2::UrlLinkFrame>::mod;
+
+    template<> const UserdataMetatable UserdataCommon<TagLib::ID3v2::UserUrlLinkFrame>::metatable;
+    template<> const UserdataTable     UserdataCommon<TagLib::ID3v2::UserUrlLinkFrame>::mod;
+
+    namespace ID3v2 {
     typedef DerivedUserdata<TagLib::ID3v2::UrlLinkFrame, Frame> UrlLinkFrame;
     typedef DerivedUserdata<TagLib::ID3v2::UserUrlLinkFrame, UrlLinkFrame> UserUrlLinkFrame;
 } }

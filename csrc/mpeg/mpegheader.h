@@ -29,7 +29,12 @@ int luaopen_TagLib_MPEG_Header_ChannelConfiguration(lua_State *L);
 
 }
 
-namespace LuaTagLib { namespace MPEG {
+namespace LuaTagLib {
+
+    template<> const UserdataMetatable UserdataCommon<TagLib::MPEG::Header>::metatable;
+    template<> const UserdataTable     UserdataCommon<TagLib::MPEG::Header>::mod;
+
+    namespace MPEG {
     class LTAGLIB_PRIVATE Header: public BaseUserdata<TagLib::MPEG::Header> {
         public:
             typedef Enum<TagLib::MPEG::Header::Version> Version;

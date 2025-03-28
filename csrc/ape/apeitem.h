@@ -22,6 +22,10 @@ int luaopen_TagLib_APE_Item_ItemTypes(lua_State *L);
 }
 
 namespace LuaTagLib {
+
+    template<> const UserdataMetatable UserdataCommon<TagLib::APE::Item>::metatable;
+    template<> const UserdataTable     UserdataCommon<TagLib::APE::Item>::mod;
+
     namespace APE {
         class LTAGLIB_PRIVATE Item : public BaseUserdata<TagLib::APE::Item> {
             public:

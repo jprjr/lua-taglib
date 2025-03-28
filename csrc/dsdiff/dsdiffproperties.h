@@ -20,9 +20,15 @@ int luaopen_TagLib_DSDIFF_Properties(lua_State *L);
 
 }
 
-namespace LuaTagLib { namespace DSDIFF {
-    typedef DerivedUserdata<TagLib::DSDIFF::Properties, LuaTagLib::AudioProperties> Properties;
-} }
+namespace LuaTagLib {
+
+    template<> const UserdataMetatable UserdataCommon<TagLib::DSDIFF::Properties>::metatable;
+    template<> const UserdataTable     UserdataCommon<TagLib::DSDIFF::Properties>::mod;
+
+    namespace DSDIFF {
+        typedef DerivedUserdata<TagLib::DSDIFF::Properties, LuaTagLib::AudioProperties> Properties;
+    }
+}
 
 #endif
 

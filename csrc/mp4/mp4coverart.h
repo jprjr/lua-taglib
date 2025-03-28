@@ -23,13 +23,19 @@ int luaopen_TagLib_MP4_CoverArt_Format(lua_State *L);
 
 }
 
-namespace LuaTagLib { namespace MP4 {
-    class LTAGLIB_PRIVATE CoverArt: public BaseUserdata<TagLib::MP4::CoverArt> {
-        public:
-            typedef Enum<TagLib::MP4::CoverArt::Format> Format;
-    };
-    typedef ValueList<TagLib::MP4::CoverArtList,CoverArt> CoverArtList;
-} }
+namespace LuaTagLib {
+
+    template<> const UserdataMetatable UserdataCommon<TagLib::MP4::CoverArt>::metatable;
+    template<> const UserdataTable     UserdataCommon<TagLib::MP4::CoverArt>::mod;
+
+    namespace MP4 {
+        class LTAGLIB_PRIVATE CoverArt: public BaseUserdata<TagLib::MP4::CoverArt> {
+            public:
+                typedef Enum<TagLib::MP4::CoverArt::Format> Format;
+        };
+        typedef ValueList<TagLib::MP4::CoverArtList,CoverArt> CoverArtList;
+    }
+}
 
 #endif
 

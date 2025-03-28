@@ -20,9 +20,13 @@ int luaopen_TagLib_Mod_Properties(lua_State *L);
 
 }
 
-namespace LuaTagLib { namespace Mod {
-    typedef DerivedUserdata<TagLib::Mod::Properties, LuaTagLib::AudioProperties> Properties;
-} }
+namespace LuaTagLib {
+    template<> const UserdataMetatable UserdataCommon<TagLib::Mod::Properties>::metatable;
+    template<> const UserdataTable     UserdataCommon<TagLib::Mod::Properties>::mod;
+    namespace Mod {
+        typedef DerivedUserdata<TagLib::Mod::Properties, LuaTagLib::AudioProperties> Properties;
+    }
+}
 
 #endif
 

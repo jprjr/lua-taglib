@@ -24,6 +24,7 @@ int luaopen_TagLib_IOStream_Position(lua_State* L);
 
 
 namespace LuaTagLib {
+
     class LTAGLIB_PRIVATE LuaIOStream: public TagLib::IOStream {
         public:
 #if LTAGLIB_UNDER(LTAGLIB_2_0)
@@ -58,6 +59,9 @@ namespace LuaTagLib {
         private:
             void loadUserdata() const;
     };
+
+    template<> const UserdataMetatable UserdataCommon<TagLib::IOStream>::metatable;
+    template<> const UserdataTable     UserdataCommon<TagLib::IOStream>::mod;
 
     class LTAGLIB_PRIVATE IOStream: public BaseUserdata<TagLib::IOStream> {
         public:

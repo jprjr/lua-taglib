@@ -18,9 +18,15 @@ int luaopen_TagLib_Ogg_FLAC_File(lua_State *L);
 
 }
 
-namespace LuaTagLib { namespace Ogg { namespace FLAC {
-    typedef DerivedUserdata<TagLib::Ogg::FLAC::File, LuaTagLib::Ogg::File> File;
-} } }
+namespace LuaTagLib {
+
+    template<> const UserdataMetatable UserdataCommon<TagLib::Ogg::FLAC::File>::metatable;
+    template<> const UserdataTable     UserdataCommon<TagLib::Ogg::FLAC::File>::mod;
+
+    namespace Ogg { namespace FLAC {
+        typedef DerivedUserdata<TagLib::Ogg::FLAC::File, LuaTagLib::Ogg::File> File;
+    } }
+}
 
 #endif
 

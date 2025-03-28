@@ -12,9 +12,15 @@ int luaopen_TagLib_Ogg_PageHeader(lua_State *L);
 }
 
 
-namespace LuaTagLib { namespace Ogg {
-    typedef BaseUserdata<TagLib::Ogg::PageHeader> PageHeader;
-} }
+namespace LuaTagLib {
+
+    template<> const UserdataMetatable UserdataCommon<TagLib::Ogg::PageHeader>::metatable;
+    template<> const UserdataTable     UserdataCommon<TagLib::Ogg::PageHeader>::mod;
+
+    namespace Ogg {
+        typedef BaseUserdata<TagLib::Ogg::PageHeader> PageHeader;
+    }
+}
 
 #endif
 

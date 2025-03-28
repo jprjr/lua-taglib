@@ -17,9 +17,15 @@ int luaopen_TagLib_XM_File(lua_State *L);
 
 }
 
-namespace LuaTagLib { namespace XM {
-    typedef DerivedUserdata<TagLib::XM::File, LuaTagLib::Mod::FileBase> File;
-}}
+namespace LuaTagLib {
+
+    template<> const UserdataMetatable UserdataCommon<TagLib::XM::File>::metatable;
+    template<> const UserdataTable     UserdataCommon<TagLib::XM::File>::mod;
+
+    namespace XM {
+        typedef DerivedUserdata<TagLib::XM::File, LuaTagLib::Mod::FileBase> File;
+    }
+}
 
 #endif
 

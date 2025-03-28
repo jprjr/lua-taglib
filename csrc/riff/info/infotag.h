@@ -19,9 +19,13 @@ int luaopen_TagLib_RIFF_Info_Tag(lua_State *L);
 
 }
 
-namespace LuaTagLib { namespace RIFF { namespace Info {
-    typedef DerivedUserdata<TagLib::RIFF::Info::Tag,LuaTagLib::Tag> Tag;
-} } }
+namespace LuaTagLib {
+    template<> const UserdataMetatable UserdataCommon<TagLib::RIFF::Info::Tag>::metatable;
+    template<> const UserdataTable     UserdataCommon<TagLib::RIFF::Info::Tag>::mod;
+    namespace RIFF { namespace Info {
+        typedef DerivedUserdata<TagLib::RIFF::Info::Tag,LuaTagLib::Tag> Tag;
+    } }
+}
 
 
 #endif

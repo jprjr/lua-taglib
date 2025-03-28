@@ -12,9 +12,15 @@ luaopen_TagLib_ID3v2_ExtendedHeader(lua_State* L);
 
 }
 
-namespace LuaTagLib { namespace ID3v2 {
-    typedef BaseUserdata<TagLib::ID3v2::ExtendedHeader> ExtendedHeader;
-} }
+namespace LuaTagLib {
+
+    template<> const UserdataMetatable UserdataCommon<TagLib::ID3v2::ExtendedHeader>::metatable;
+    template<> const UserdataTable     UserdataCommon<TagLib::ID3v2::ExtendedHeader>::mod;
+
+    namespace ID3v2 {
+        typedef BaseUserdata<TagLib::ID3v2::ExtendedHeader> ExtendedHeader;
+    }
+}
 
 #endif
 

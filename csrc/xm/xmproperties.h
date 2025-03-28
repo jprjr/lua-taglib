@@ -19,9 +19,15 @@ int luaopen_TagLib_XM_Properties(lua_State *L);
 
 }
 
-namespace LuaTagLib { namespace XM {
-    typedef DerivedUserdata<TagLib::XM::Properties, LuaTagLib::AudioProperties> Properties;
-} }
+namespace LuaTagLib {
+
+    template<> const UserdataMetatable UserdataCommon<TagLib::XM::Properties>::metatable;
+    template<> const UserdataTable     UserdataCommon<TagLib::XM::Properties>::mod;
+
+    namespace XM {
+       typedef DerivedUserdata<TagLib::XM::Properties, LuaTagLib::AudioProperties> Properties;
+    }
+} 
 
 #endif
 

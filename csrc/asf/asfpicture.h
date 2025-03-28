@@ -21,12 +21,18 @@ int luaopen_TagLib_ASF_Picture_Type(lua_State *L);
 
 }
 
-namespace LuaTagLib { namespace ASF {
-    class LTAGLIB_PRIVATE Picture: public BaseUserdata<TagLib::ASF::Picture> {
-        public:
-            typedef Enum<TagLib::ASF::Picture::Type> Type;
-    };
-} }
+namespace LuaTagLib {
+
+    template<> const UserdataMetatable UserdataCommon<TagLib::ASF::Picture>::metatable;
+    template<> const UserdataTable     UserdataCommon<TagLib::ASF::Picture>::mod;
+
+    namespace ASF {
+        class LTAGLIB_PRIVATE Picture: public BaseUserdata<TagLib::ASF::Picture> {
+            public:
+                typedef Enum<TagLib::ASF::Picture::Type> Type;
+        };
+    }
+}
 
 #endif
 

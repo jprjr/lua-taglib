@@ -21,9 +21,15 @@ int luaopen_TagLib_APE_File_TagTypes(lua_State *L);
 
 }
 
-namespace LuaTagLib { namespace APE {
-    typedef DerivedUserdata<TagLib::APE::File, LuaTagLib::File> File;
-} }
+namespace LuaTagLib {
+
+    template<> const UserdataMetatable UserdataCommon<TagLib::APE::File>::metatable;
+    template<> const UserdataTable     UserdataCommon<TagLib::APE::File>::mod;
+
+    namespace APE {
+        typedef DerivedUserdata<TagLib::APE::File, LuaTagLib::File> File;
+    }
+}
 
 #endif
 

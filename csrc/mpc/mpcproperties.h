@@ -20,9 +20,14 @@ int luaopen_TagLib_MPC_Properties(lua_State *L);
 
 }
 
-namespace LuaTagLib { namespace MPC {
-    typedef DerivedUserdata<TagLib::MPC::Properties, LuaTagLib::AudioProperties> Properties;
-} }
+namespace LuaTagLib {
+    template<> const UserdataMetatable UserdataCommon<TagLib::MPC::Properties>::metatable;
+    template<> const UserdataTable     UserdataCommon<TagLib::MPC::Properties>::mod;
+
+    namespace MPC {
+        typedef DerivedUserdata<TagLib::MPC::Properties, LuaTagLib::AudioProperties> Properties;
+    }
+}
 
 #endif
 

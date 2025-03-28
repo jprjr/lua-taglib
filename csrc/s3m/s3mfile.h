@@ -17,9 +17,13 @@ int luaopen_TagLib_S3M_File(lua_State *L);
 
 }
 
-namespace LuaTagLib { namespace S3M {
-    typedef DerivedUserdata<TagLib::S3M::File, LuaTagLib::Mod::FileBase> File;
-}}
+namespace LuaTagLib {
+    template<> const UserdataMetatable UserdataCommon<TagLib::S3M::File>::metatable;
+    template<> const UserdataTable     UserdataCommon<TagLib::S3M::File>::mod;
+    namespace S3M {
+        typedef DerivedUserdata<TagLib::S3M::File, LuaTagLib::Mod::FileBase> File;
+    }
+}
 
 #endif
 

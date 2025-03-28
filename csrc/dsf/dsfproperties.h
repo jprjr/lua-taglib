@@ -20,9 +20,15 @@ int luaopen_TagLib_DSF_Properties(lua_State *L);
 
 }
 
-namespace LuaTagLib { namespace DSF {
-    typedef DerivedUserdata<TagLib::DSF::Properties, LuaTagLib::AudioProperties> Properties;
-} }
+namespace LuaTagLib {
+
+    template<> const UserdataMetatable UserdataCommon<TagLib::DSF::Properties>::metatable;
+    template<> const UserdataTable     UserdataCommon<TagLib::DSF::Properties>::mod;
+
+    namespace DSF {
+        typedef DerivedUserdata<TagLib::DSF::Properties, LuaTagLib::AudioProperties> Properties;
+    }
+}
 
 #endif
 

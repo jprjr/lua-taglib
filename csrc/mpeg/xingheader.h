@@ -24,7 +24,10 @@ int luaopen_TagLib_MPEG_XingHeader_HeaderType(lua_State* L);
 }
 
 
-namespace LuaTagLib { namespace MPEG {
+namespace LuaTagLib {
+    template<> const UserdataMetatable UserdataCommon<TagLib::MPEG::XingHeader>::metatable;
+    template<> const UserdataTable     UserdataCommon<TagLib::MPEG::XingHeader>::mod;
+    namespace MPEG {
     class LTAGLIB_PRIVATE XingHeader: public BaseUserdata<TagLib::MPEG::XingHeader> {
         public:
 #if LTAGLIB_HAS_MPEG_XINGHEADER_TYPE

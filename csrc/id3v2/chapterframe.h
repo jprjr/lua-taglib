@@ -17,9 +17,13 @@ int luaopen_TagLib_ID3v2_ChapterFrame(lua_State* L);
 
 }
 
-namespace LuaTagLib { namespace ID3v2 {
-    typedef DerivedUserdata<TagLib::ID3v2::ChapterFrame, Frame> ChapterFrame;
-} }
+namespace LuaTagLib {
+    template<> const UserdataMetatable UserdataCommon<TagLib::ID3v2::ChapterFrame>::metatable;
+    template<> const UserdataTable     UserdataCommon<TagLib::ID3v2::ChapterFrame>::mod;
+    namespace ID3v2 {
+        typedef DerivedUserdata<TagLib::ID3v2::ChapterFrame, Frame> ChapterFrame;
+    }
+}
 
 #endif
 

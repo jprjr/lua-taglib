@@ -18,7 +18,13 @@ extern "C" {
 
 }
 
-namespace LuaTagLib { namespace ID3v2 {
+namespace LuaTagLib {
+
+    template<> const UserdataMetatable UserdataCommon<TagLib::ID3v2::Tag>::metatable;
+    template<> const UserdataTable     UserdataCommon<TagLib::ID3v2::Tag>::mod;
+
+    namespace ID3v2 {
+
     typedef DerivedUserdata<TagLib::ID3v2::Tag,LuaTagLib::Tag> Tag;
 
     typedef ConstPtrListReference<TagLib::ID3v2::FrameList,ID3v2::Frame> FrameList;
@@ -36,7 +42,11 @@ namespace LuaTagLib { namespace ID3v2 {
             };
     };
     typedef ConstImplMapReference<TagLib::ID3v2::FrameListMap, FrameListMapImpl> FrameListMap;
-} }
+    }
+
+    template<> const char* ListBase<TagLib::ID3v2::FrameList>::__name;
+    template<> const char* MapBase<TagLib::ID3v2::FrameListMap>::__name;
+}
 
 #endif
 

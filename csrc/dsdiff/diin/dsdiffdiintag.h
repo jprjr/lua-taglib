@@ -19,9 +19,15 @@ int luaopen_TagLib_DSDIFF_DIIN_Tag(lua_State *L);
 
 }
 
-namespace LuaTagLib { namespace DSDIFF { namespace DIIN {
-    typedef DerivedUserdata<TagLib::DSDIFF::DIIN::Tag,LuaTagLib::Tag> Tag;
-} } }
+namespace LuaTagLib {
+
+    template<> const UserdataMetatable UserdataCommon<TagLib::DSDIFF::DIIN::Tag>::metatable;
+    template<> const UserdataTable     UserdataCommon<TagLib::DSDIFF::DIIN::Tag>::mod;
+
+    namespace DSDIFF { namespace DIIN {
+        typedef DerivedUserdata<TagLib::DSDIFF::DIIN::Tag,LuaTagLib::Tag> Tag;
+    } }
+}
 
 
 #endif

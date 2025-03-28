@@ -22,9 +22,14 @@ int luaopen_TagLib_DSDIFF_File_TagTypes(lua_State *L);
 
 }
 
-namespace LuaTagLib { namespace DSDIFF {
-    typedef DerivedUserdata<TagLib::DSDIFF::File, LuaTagLib::File> File;
-} }
+namespace LuaTagLib {
+    template<> const UserdataMetatable UserdataCommon<TagLib::DSDIFF::File>::metatable;
+    template<> const UserdataTable     UserdataCommon<TagLib::DSDIFF::File>::mod;
+
+    namespace DSDIFF {
+        typedef DerivedUserdata<TagLib::DSDIFF::File, LuaTagLib::File> File;
+    }
+}
 
 #endif
 

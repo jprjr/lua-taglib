@@ -19,15 +19,19 @@ int luaopen_TagLib_Ogg_Page_PaginationStrategy(lua_State* L);
 
 }
 
-#include <oggpage.h>
+namespace LuaTagLib {
 
-namespace LuaTagLib { namespace Ogg {
+    template<> const UserdataMetatable UserdataCommon<TagLib::Ogg::Page>::metatable;
+    template<> const UserdataTable     UserdataCommon<TagLib::Ogg::Page>::mod;
+
+    namespace Ogg {
     class LTAGLIB_PRIVATE Page: public BaseUserdata<TagLib::Ogg::Page> {
         public:
             typedef Enum<TagLib::Ogg::Page::ContainsPacketFlags> ContainsPacketFlags;
             typedef Enum<TagLib::Ogg::Page::PaginationStrategy> PaginationStrategy;
     };
 
-} }
+}
+}
 
 #endif

@@ -11,8 +11,12 @@ int luaopen_TagLib_ID3v2_CommentsFrame(lua_State* L);
 
 }
 
-namespace LuaTagLib { namespace ID3v2 {
-    typedef DerivedUserdata<TagLib::ID3v2::CommentsFrame, Frame> CommentsFrame;
-} }
+namespace LuaTagLib {
+    template<> const UserdataMetatable UserdataCommon<TagLib::ID3v2::CommentsFrame>::metatable;
+    template<> const UserdataTable     UserdataCommon<TagLib::ID3v2::CommentsFrame>::mod;
+    namespace ID3v2 {
+        typedef DerivedUserdata<TagLib::ID3v2::CommentsFrame, Frame> CommentsFrame;
+    }
+}
 
 #endif

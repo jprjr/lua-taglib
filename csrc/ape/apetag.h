@@ -17,9 +17,16 @@ LTAGLIB_PUBLIC
 int luaopen_TagLib_APE_Tag(lua_State *L);
 
 }
-namespace LuaTagLib { namespace APE {
-    typedef DerivedUserdata<TagLib::APE::Tag, LuaTagLib::Tag> Tag;
-} }
+
+namespace LuaTagLib {
+
+    template<> const UserdataMetatable UserdataCommon<TagLib::APE::Tag>::metatable;
+    template<> const UserdataTable     UserdataCommon<TagLib::APE::Tag>::mod;
+
+    namespace APE {
+        typedef DerivedUserdata<TagLib::APE::Tag, LuaTagLib::Tag> Tag;
+    }
+}
 
 #endif
 

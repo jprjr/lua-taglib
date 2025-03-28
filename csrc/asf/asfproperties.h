@@ -26,7 +26,13 @@ int luaopen_TagLib_ASF_Properties_Codec(lua_State *L);
 }
 
 
-namespace LuaTagLib { namespace ASF {
+namespace LuaTagLib {
+
+    template<> const UserdataMetatable UserdataCommon<TagLib::ASF::Properties>::metatable;
+    template<> const UserdataTable     UserdataCommon<TagLib::ASF::Properties>::mod;
+
+    namespace ASF {
+
     class LTAGLIB_PRIVATE Properties: public DerivedUserdata<TagLib::ASF::Properties, LuaTagLib::AudioProperties> {
         public:
 #if LTAGLIB_ATLEAST(LTAGLIB_1_10)

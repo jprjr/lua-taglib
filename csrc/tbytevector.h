@@ -12,6 +12,10 @@ int luaopen_TagLib_ByteVector(lua_State* L);
 }
 
 namespace LuaTagLib {
+
+    template<> const UserdataMetatable UserdataCommon<TagLib::ByteVector>::metatable;
+    template<> const UserdataTable     UserdataCommon<TagLib::ByteVector>::mod;
+
     class LTAGLIB_PRIVATE ByteVector: public BaseUserdata<TagLib::ByteVector> {
         public:
             /* "loose" check, accepts either a ByteVector or lua string

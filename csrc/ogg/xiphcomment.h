@@ -13,9 +13,13 @@ int luaopen_TagLib_Ogg_XiphComment(lua_State *L);
 
 }
 
-namespace LuaTagLib { namespace Ogg {
-    typedef DerivedUserdata<TagLib::Ogg::XiphComment, LuaTagLib::Tag> XiphComment;
-} }
+namespace LuaTagLib {
+    template<> const UserdataMetatable UserdataCommon<TagLib::Ogg::XiphComment>::metatable;
+    template<> const UserdataTable     UserdataCommon<TagLib::Ogg::XiphComment>::mod;
+    namespace Ogg {
+        typedef DerivedUserdata<TagLib::Ogg::XiphComment, LuaTagLib::Tag> XiphComment;
+    }
+}
 
 #endif
 

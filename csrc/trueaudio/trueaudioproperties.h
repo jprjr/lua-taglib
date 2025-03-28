@@ -21,9 +21,15 @@ int luaopen_TagLib_TrueAudio_Properties(lua_State *L);
 }
 
 
-namespace LuaTagLib { namespace TrueAudio {
-    typedef DerivedUserdata<TagLib::TrueAudio::Properties, LuaTagLib::AudioProperties> Properties;
-} }
+namespace LuaTagLib {
+
+    template<> const UserdataMetatable UserdataCommon<TagLib::TrueAudio::Properties>::metatable;
+    template<> const UserdataTable     UserdataCommon<TagLib::TrueAudio::Properties>::mod;
+
+    namespace TrueAudio {
+        typedef DerivedUserdata<TagLib::TrueAudio::Properties, LuaTagLib::AudioProperties> Properties;
+    }
+}
 
 #endif
 

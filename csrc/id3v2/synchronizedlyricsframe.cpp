@@ -65,7 +65,7 @@ static int Frame_description(lua_State* L) {
 }
 
 static int Frame_synchedText(lua_State* L) {
-    TT::SynchedTextList list = T::checkPtr(L,1)->synchedText();
+    TT::SynchedTextList list(T::checkPtr(L,1)->synchedText());
 
     int i = 0;
     lua_newtable(L);

@@ -24,8 +24,12 @@ int luaopen_TagLib_FLAC_MetadataBlock_BlockType(lua_State *L);
 
 namespace LuaTagLib {
 
+#ifndef _MSC_VER 
+
     template<> const UserdataMetatable UserdataCommon<TagLib::FLAC::MetadataBlock>::metatable;
     template<> const UserdataTable     UserdataCommon<TagLib::FLAC::MetadataBlock>::mod;
+#endif 
+
 
     namespace FLAC {
     class LTAGLIB_PRIVATE MetadataBlock: public BaseUserdata<TagLib::FLAC::MetadataBlock> {

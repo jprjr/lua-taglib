@@ -28,8 +28,12 @@ int luaopen_TagLib_ASF_Properties_Codec(lua_State *L);
 
 namespace LuaTagLib {
 
+#ifndef _MSC_VER 
+
     template<> const UserdataMetatable UserdataCommon<TagLib::ASF::Properties>::metatable;
     template<> const UserdataTable     UserdataCommon<TagLib::ASF::Properties>::mod;
+#endif 
+
 
     namespace ASF {
 

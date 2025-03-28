@@ -22,8 +22,12 @@ int luaopen_TagLib_ID3v2_AttachedPictureFrame_Type(lua_State* L);
 }
 
 namespace LuaTagLib {
+#ifndef _MSC_VER 
+
     template<> const UserdataMetatable UserdataCommon<TagLib::ID3v2::AttachedPictureFrame>::metatable;
     template<> const UserdataTable     UserdataCommon<TagLib::ID3v2::AttachedPictureFrame>::mod;
+#endif 
+
     namespace ID3v2 {
     class LTAGLIB_PRIVATE AttachedPictureFrame: public DerivedUserdata<TagLib::ID3v2::AttachedPictureFrame, Frame> {
         public:

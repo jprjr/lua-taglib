@@ -22,13 +22,20 @@ int luaopen_TagLib_ASF_Attribute_AttributeTypes(lua_State *L);
 
 namespace LuaTagLib {
 
+#ifndef _MSC_VER 
+
     template<> const UserdataMetatable UserdataCommon<TagLib::ASF::Attribute>::metatable;
     template<> const UserdataTable     UserdataCommon<TagLib::ASF::Attribute>::mod;
+#endif 
+
 
     namespace ASF {
         class LTAGLIB_PRIVATE Attribute: public BaseUserdata<TagLib::ASF::Attribute> {
             public:
                 typedef Enum<TagLib::ASF::Attribute::AttributeTypes> AttributeTypes;
+                static TagLib::ASF::Attribute* pushValue(lua_State* L, const TagLib::ASF::Attribute& val) {
+                    return UserdataExtra::pushValue<LuaTagLib::ASF::Attribute>(L, val);
+                }
         };
     }
 }

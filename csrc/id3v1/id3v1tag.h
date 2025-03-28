@@ -15,8 +15,12 @@ int luaopen_TagLib_ID3v1_Tag(lua_State *L);
 
 namespace LuaTagLib {
 
+#ifndef _MSC_VER 
+
     template<> const UserdataMetatable UserdataCommon<TagLib::ID3v1::Tag>::metatable;
     template<> const UserdataTable     UserdataCommon<TagLib::ID3v1::Tag>::mod;
+#endif 
+
 
     namespace ID3v1 {
         typedef DerivedUserdata<TagLib::ID3v1::Tag,LuaTagLib::Tag> Tag;

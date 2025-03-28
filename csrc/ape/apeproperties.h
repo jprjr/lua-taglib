@@ -21,8 +21,12 @@ int luaopen_TagLib_APE_Properties(lua_State *L);
 
 namespace LuaTagLib {
 
+#ifndef _MSC_VER 
+
     template<> const UserdataMetatable UserdataCommon<TagLib::APE::Properties>::metatable;
     template<> const UserdataTable     UserdataCommon<TagLib::APE::Properties>::mod;
+#endif 
+
 
     namespace APE {
         typedef DerivedUserdata<TagLib::APE::Properties, LuaTagLib::AudioProperties> Properties;

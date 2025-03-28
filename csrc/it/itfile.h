@@ -18,8 +18,12 @@ int luaopen_TagLib_IT_File(lua_State *L);
 }
 
 namespace LuaTagLib {
+#ifndef _MSC_VER 
+
     template<> const UserdataMetatable UserdataCommon<TagLib::IT::File>::metatable;
     template<> const UserdataTable     UserdataCommon<TagLib::IT::File>::mod;
+#endif 
+
     namespace IT {
         typedef DerivedUserdata<TagLib::IT::File, LuaTagLib::Mod::FileBase> File;
     }

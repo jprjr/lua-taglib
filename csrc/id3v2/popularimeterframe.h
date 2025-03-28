@@ -19,8 +19,12 @@ int luaopen_TagLib_ID3v2_PopularimeterFrame(lua_State* L);
 
 namespace LuaTagLib {
 
+#ifndef _MSC_VER 
+
     template<> const UserdataMetatable UserdataCommon<TagLib::ID3v2::PopularimeterFrame>::metatable;
     template<> const UserdataTable     UserdataCommon<TagLib::ID3v2::PopularimeterFrame>::mod;
+#endif 
+
 
     namespace ID3v2 {
     typedef DerivedUserdata<TagLib::ID3v2::PopularimeterFrame, Frame> PopularimeterFrame;

@@ -19,8 +19,12 @@ int luaopen_TagLib_APE_Footer(lua_State *L);
 
 namespace LuaTagLib {
 
+#ifndef _MSC_VER 
+
     template<> const UserdataMetatable UserdataCommon<TagLib::APE::Footer>::metatable;
     template<> const UserdataTable     UserdataCommon<TagLib::APE::Footer>::mod;
+#endif 
+
 
     namespace APE {
         typedef BaseUserdata<TagLib::APE::Footer> Footer;

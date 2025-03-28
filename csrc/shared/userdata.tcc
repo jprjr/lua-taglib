@@ -158,12 +158,6 @@ namespace LuaTagLib {
     }
 
     template<typename T, typename P>
-    T* Userdata<T,P>::pushValue(lua_State* L, const T& val) {
-        return pushPtr(L, new T(val));
-    }
-
-
-    template<typename T, typename P>
     T* Userdata<T,P>::castPtr(lua_State* L, int idx) {
         return P::castPtrImpl(L, idx);
     }

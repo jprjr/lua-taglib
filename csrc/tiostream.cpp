@@ -68,7 +68,11 @@ static int IOStream__call(lua_State* L) {
 
 static int IOStream_name(lua_State* L) {
     TagLib::IOStream* l = IOStream::checkPtr(L, 1);
+#ifdef _WIN32
+    String::pushValue(L, l->name().toString());
+#else
     lua_pushstring(L, l->name());
+#endif
     return 1;
 }
 

@@ -19,9 +19,6 @@ jobs:
       - name: install dependencies
         run: vcpkg install lua:${{ matrix.target }} taglib:${{ matrix.target }}
 
-      - name: list taglib files
-        run:  'Get-ChildItem -Path "C:/vcpkg/packages/taglib_${{ matrix.target }}" -Recurse'
-
       - name: configure lua-taglib ${{ matrix.target }}
         run: 'cmake -B build-${{ matrix.target }} -DCMAKE_BUILD_TYPE=Debug -DVCPKG_TARGET_TRIPLET=${{ matrix.target }} -DCMAKE_TOOLCHAIN_FILE=C:\vcpkg\scripts\buildsystems\vcpkg.cmake -S .'
 

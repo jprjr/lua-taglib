@@ -60,8 +60,12 @@ namespace LuaTagLib {
             void loadUserdata() const;
     };
 
+#ifndef _MSC_VER 
+
     template<> const UserdataMetatable UserdataCommon<TagLib::IOStream>::metatable;
     template<> const UserdataTable     UserdataCommon<TagLib::IOStream>::mod;
+#endif 
+
 
     class LTAGLIB_PRIVATE IOStream: public BaseUserdata<TagLib::IOStream> {
         public:

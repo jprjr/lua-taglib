@@ -24,8 +24,12 @@ int luaopen_TagLib_FLAC_Picture_Type(lua_State *L);
 
 namespace LuaTagLib {
 
+#ifndef _MSC_VER 
+
     template<> const UserdataMetatable UserdataCommon<TagLib::FLAC::Picture>::metatable;
     template<> const UserdataTable     UserdataCommon<TagLib::FLAC::Picture>::mod;
+#endif 
+
 
     namespace FLAC {
     class LTAGLIB_PRIVATE Picture: public DerivedUserdata<TagLib::FLAC::Picture, FLAC::MetadataBlock> {

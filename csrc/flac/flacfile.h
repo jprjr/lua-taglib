@@ -22,8 +22,12 @@ int luaopen_TagLib_FLAC_File_TagTypes(lua_State *L);
 
 namespace LuaTagLib {
 
+#ifndef _MSC_VER 
+
     template<> const UserdataMetatable UserdataCommon<TagLib::FLAC::File>::metatable;
     template<> const UserdataTable     UserdataCommon<TagLib::FLAC::File>::mod;
+#endif 
+
 
     namespace FLAC {
         typedef DerivedUserdata<TagLib::FLAC::File, LuaTagLib::File> File;

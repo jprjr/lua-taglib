@@ -24,8 +24,12 @@ int luaopen_TagLib_MPC_File_TagTypes(lua_State *L);
 
 namespace LuaTagLib {
 
+#ifndef _MSC_VER 
+
     template<> const UserdataMetatable UserdataCommon<TagLib::MPC::File>::metatable;
     template<> const UserdataTable     UserdataCommon<TagLib::MPC::File>::mod;
+#endif 
+
 
     namespace MPC {
         typedef DerivedUserdata<TagLib::MPC::File, LuaTagLib::File> File;

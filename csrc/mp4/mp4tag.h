@@ -17,8 +17,12 @@ int luaopen_TagLib_MP4_Tag(lua_State *L);
 }
 namespace LuaTagLib {
 
+#ifndef _MSC_VER 
+
     template<> const UserdataMetatable UserdataCommon<TagLib::MP4::Tag>::metatable;
     template<> const UserdataTable     UserdataCommon<TagLib::MP4::Tag>::mod;
+#endif 
+
 
     namespace MP4 {
         typedef DerivedUserdata<TagLib::MP4::Tag, LuaTagLib::Tag> Tag;

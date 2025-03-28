@@ -27,8 +27,12 @@ int luaopen_TagLib_MP4_Properties_Codec(lua_State *L);
 
 namespace LuaTagLib {
 
+#ifndef _MSC_VER 
+
     template<> const UserdataMetatable UserdataCommon<TagLib::MP4::Properties>::metatable;
     template<> const UserdataTable     UserdataCommon<TagLib::MP4::Properties>::mod;
+#endif 
+
 
     namespace MP4 {
     class LTAGLIB_PRIVATE Properties: public DerivedUserdata<TagLib::MP4::Properties, LuaTagLib::AudioProperties> {

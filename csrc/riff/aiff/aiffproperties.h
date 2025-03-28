@@ -22,8 +22,12 @@ int luaopen_TagLib_RIFF_AIFF_Properties(lua_State *L);
 
 namespace LuaTagLib {
 
+#ifndef _MSC_VER 
+
     template<> const UserdataMetatable UserdataCommon<TagLib::RIFF::AIFF::Properties>::metatable;
     template<> const UserdataTable     UserdataCommon<TagLib::RIFF::AIFF::Properties>::mod;
+#endif 
+
 
     namespace RIFF { namespace AIFF {
         typedef DerivedUserdata<TagLib::RIFF::AIFF::Properties, LuaTagLib::AudioProperties> Properties;

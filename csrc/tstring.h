@@ -53,8 +53,10 @@ namespace LuaTagLib {
 
     };
 
+#ifndef _MSC_VER
     template<>
     const String::Type::enum_type* String::Type::m_values;
+#endif
 }
 
 #endif

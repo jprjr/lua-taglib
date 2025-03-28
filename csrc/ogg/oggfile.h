@@ -15,8 +15,12 @@ int luaopen_TagLib_Ogg_File(lua_State *L);
 
 namespace LuaTagLib {
 
+#ifndef _MSC_VER 
+
     template<> const UserdataMetatable UserdataCommon<TagLib::Ogg::File>::metatable;
     template<> const UserdataTable     UserdataCommon<TagLib::Ogg::File>::mod;
+#endif 
+
 
     namespace Ogg {
         typedef DerivedUserdata<TagLib::Ogg::File, LuaTagLib::File> File;

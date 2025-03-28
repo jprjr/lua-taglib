@@ -24,8 +24,12 @@ int luaopen_TagLib_TrueAudio_File_TagTypes(lua_State *L);
 
 namespace LuaTagLib {
 
+#ifndef _MSC_VER 
+
     template<> const UserdataMetatable UserdataCommon<TagLib::TrueAudio::File>::metatable;
     template<> const UserdataTable     UserdataCommon<TagLib::TrueAudio::File>::mod;
+#endif 
+
 
     namespace TrueAudio {
         typedef DerivedUserdata<TagLib::TrueAudio::File, LuaTagLib::File> File;

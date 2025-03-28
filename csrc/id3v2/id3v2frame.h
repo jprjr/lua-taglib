@@ -21,8 +21,12 @@ int luaopen_TagLib_ID3v2_Frame_Header(lua_State* L);
 
 namespace LuaTagLib { 
 
+#ifndef _MSC_VER 
+
     template<> const UserdataMetatable UserdataCommon<TagLib::ID3v2::Frame>::metatable;
     template<> const UserdataTable     UserdataCommon<TagLib::ID3v2::Frame>::mod;
+#endif 
+
 
     namespace ID3v2 {
 

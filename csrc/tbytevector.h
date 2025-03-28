@@ -13,8 +13,12 @@ int luaopen_TagLib_ByteVector(lua_State* L);
 
 namespace LuaTagLib {
 
+#ifndef _MSC_VER 
+
     template<> const UserdataMetatable UserdataCommon<TagLib::ByteVector>::metatable;
     template<> const UserdataTable     UserdataCommon<TagLib::ByteVector>::mod;
+#endif 
+
 
     class LTAGLIB_PRIVATE ByteVector: public BaseUserdata<TagLib::ByteVector> {
         public:

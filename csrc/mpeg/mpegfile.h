@@ -19,8 +19,12 @@ int luaopen_TagLib_MPEG_File_TagTypes(lua_State *L);
 
 namespace LuaTagLib {
 
+#ifndef _MSC_VER 
+
     template<> const UserdataMetatable UserdataCommon<TagLib::MPEG::File>::metatable;
     template<> const UserdataTable     UserdataCommon<TagLib::MPEG::File>::mod;
+#endif 
+
 
     namespace MPEG {
     class LTAGLIB_PRIVATE File: public DerivedUserdata<TagLib::MPEG::File, LuaTagLib::File> {

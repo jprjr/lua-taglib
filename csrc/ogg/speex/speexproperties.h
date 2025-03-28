@@ -20,8 +20,12 @@ int luaopen_TagLib_Ogg_Speex_Properties(lua_State *L);
 
 namespace LuaTagLib {
 
+#ifndef _MSC_VER 
+
     template<> const UserdataMetatable UserdataCommon<TagLib::Ogg::Speex::Properties>::metatable;
     template<> const UserdataTable     UserdataCommon<TagLib::Ogg::Speex::Properties>::mod;
+#endif 
+
 
     namespace Ogg { namespace Speex {
         typedef DerivedUserdata<TagLib::Ogg::Speex::Properties, LuaTagLib::AudioProperties> Properties;

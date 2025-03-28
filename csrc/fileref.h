@@ -14,8 +14,12 @@ int luaopen_TagLib_FileRef(lua_State *L);
 
 namespace LuaTagLib {
 
+#ifndef _MSC_VER 
+
     template<> const UserdataMetatable UserdataCommon<TagLib::FileRef>::metatable;
     template<> const UserdataTable     UserdataCommon<TagLib::FileRef>::mod;
+#endif 
+
 
     typedef BaseUserdata<TagLib::FileRef> FileRef;
 }

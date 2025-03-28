@@ -23,8 +23,12 @@ int luaopen_TagLib_WavPack_Properties(lua_State *L);
 
 namespace LuaTagLib {
 
+#ifndef _MSC_VER 
+
     template<> const UserdataMetatable UserdataCommon<TagLib::WavPack::Properties>::metatable;
     template<> const UserdataTable     UserdataCommon<TagLib::WavPack::Properties>::mod;
+#endif 
+
 
     namespace WavPack {
         typedef DerivedUserdata<TagLib::WavPack::Properties, LuaTagLib::AudioProperties> Properties;

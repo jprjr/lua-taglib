@@ -20,8 +20,12 @@ int luaopen_TagLib_FLAC_Properties(lua_State *L);
 
 namespace LuaTagLib {
 
+#ifndef _MSC_VER 
+
     template<> const UserdataMetatable UserdataCommon<TagLib::FLAC::Properties>::metatable;
     template<> const UserdataTable     UserdataCommon<TagLib::FLAC::Properties>::mod;
+#endif 
+
 
     namespace FLAC {
         typedef DerivedUserdata<TagLib::FLAC::Properties, LuaTagLib::AudioProperties> Properties;

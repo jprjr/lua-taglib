@@ -23,8 +23,12 @@ int luaopen_TagLib_ASF_Picture_Type(lua_State *L);
 
 namespace LuaTagLib {
 
+#ifndef _MSC_VER 
+
     template<> const UserdataMetatable UserdataCommon<TagLib::ASF::Picture>::metatable;
     template<> const UserdataTable     UserdataCommon<TagLib::ASF::Picture>::mod;
+#endif 
+
 
     namespace ASF {
         class LTAGLIB_PRIVATE Picture: public BaseUserdata<TagLib::ASF::Picture> {

@@ -24,8 +24,12 @@ int luaopen_TagLib_RIFF_AIFF_File_TagTypes(lua_State *L);
 
 namespace LuaTagLib {
 
+#ifndef _MSC_VER 
+
     template<> const UserdataMetatable UserdataCommon<TagLib::RIFF::AIFF::File>::metatable;
     template<> const UserdataTable     UserdataCommon<TagLib::RIFF::AIFF::File>::mod;
+#endif 
+
 
     namespace RIFF { namespace AIFF {
         typedef DerivedUserdata<TagLib::RIFF::AIFF::File, LuaTagLib::File> File;

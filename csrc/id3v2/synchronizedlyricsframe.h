@@ -26,8 +26,12 @@ int luaopen_TagLib_ID3v2_SynchronizedLyricsFrame_TimestampFormat(lua_State* L);
 
 namespace LuaTagLib {
 
+#ifndef _MSC_VER 
+
     template<> const UserdataMetatable UserdataCommon<TagLib::ID3v2::SynchronizedLyricsFrame>::metatable;
     template<> const UserdataTable     UserdataCommon<TagLib::ID3v2::SynchronizedLyricsFrame>::mod;
+#endif 
+
 
     namespace ID3v2 {
     class LTAGLIB_PRIVATE SynchronizedLyricsFrame: public DerivedUserdata<TagLib::ID3v2::SynchronizedLyricsFrame, Frame> {

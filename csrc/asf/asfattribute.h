@@ -22,8 +22,12 @@ int luaopen_TagLib_ASF_Attribute_AttributeTypes(lua_State *L);
 
 namespace LuaTagLib {
 
+#ifndef _MSC_VER 
+
     template<> const UserdataMetatable UserdataCommon<TagLib::ASF::Attribute>::metatable;
     template<> const UserdataTable     UserdataCommon<TagLib::ASF::Attribute>::mod;
+#endif 
+
 
     namespace ASF {
         class LTAGLIB_PRIVATE Attribute: public BaseUserdata<TagLib::ASF::Attribute> {

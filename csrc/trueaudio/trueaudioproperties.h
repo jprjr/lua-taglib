@@ -23,8 +23,12 @@ int luaopen_TagLib_TrueAudio_Properties(lua_State *L);
 
 namespace LuaTagLib {
 
+#ifndef _MSC_VER 
+
     template<> const UserdataMetatable UserdataCommon<TagLib::TrueAudio::Properties>::metatable;
     template<> const UserdataTable     UserdataCommon<TagLib::TrueAudio::Properties>::mod;
+#endif 
+
 
     namespace TrueAudio {
         typedef DerivedUserdata<TagLib::TrueAudio::Properties, LuaTagLib::AudioProperties> Properties;

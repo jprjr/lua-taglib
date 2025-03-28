@@ -20,8 +20,12 @@ extern "C" {
 
 namespace LuaTagLib {
 
+#ifndef _MSC_VER 
+
     template<> const UserdataMetatable UserdataCommon<TagLib::ID3v2::Tag>::metatable;
     template<> const UserdataTable     UserdataCommon<TagLib::ID3v2::Tag>::mod;
+#endif 
+
 
     namespace ID3v2 {
 

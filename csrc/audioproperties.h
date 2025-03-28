@@ -17,8 +17,12 @@ int luaopen_TagLib_AudioProperties_ReadStyle(lua_State *L);
 }
 
 namespace LuaTagLib {
+#ifndef _MSC_VER 
+
     template<> const UserdataMetatable UserdataCommon<TagLib::AudioProperties>::metatable;
     template<> const UserdataTable     UserdataCommon<TagLib::AudioProperties>::mod;
+#endif 
+
 
     class LTAGLIB_PRIVATE AudioProperties: public BaseUserdata<TagLib::AudioProperties> {
         public:

@@ -21,8 +21,12 @@ int luaopen_TagLib_Ogg_Page_PaginationStrategy(lua_State* L);
 
 namespace LuaTagLib {
 
+#ifndef _MSC_VER 
+
     template<> const UserdataMetatable UserdataCommon<TagLib::Ogg::Page>::metatable;
     template<> const UserdataTable     UserdataCommon<TagLib::Ogg::Page>::mod;
+#endif 
+
 
     namespace Ogg {
     class LTAGLIB_PRIVATE Page: public BaseUserdata<TagLib::Ogg::Page> {

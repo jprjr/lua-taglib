@@ -27,8 +27,12 @@ int luaopen_TagLib_MP4_Item_Type(lua_State* L);
 
 namespace LuaTagLib {
 
+#ifndef _MSC_VER 
+
     template<> const UserdataMetatable UserdataCommon<TagLib::MP4::Item>::metatable;
     template<> const UserdataTable     UserdataCommon<TagLib::MP4::Item>::mod;
+#endif 
+
 
     namespace MP4 {
     class LTAGLIB_PRIVATE Item: public BaseUserdata<TagLib::MP4::Item> {

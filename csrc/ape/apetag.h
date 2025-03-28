@@ -20,8 +20,12 @@ int luaopen_TagLib_APE_Tag(lua_State *L);
 
 namespace LuaTagLib {
 
+#ifndef _MSC_VER 
+
     template<> const UserdataMetatable UserdataCommon<TagLib::APE::Tag>::metatable;
     template<> const UserdataTable     UserdataCommon<TagLib::APE::Tag>::mod;
+#endif 
+
 
     namespace APE {
         typedef DerivedUserdata<TagLib::APE::Tag, LuaTagLib::Tag> Tag;

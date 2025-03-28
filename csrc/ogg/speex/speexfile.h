@@ -20,8 +20,12 @@ int luaopen_TagLib_Ogg_Speex_File(lua_State *L);
 
 namespace LuaTagLib {
 
+#ifndef _MSC_VER 
+
     template<> const UserdataMetatable UserdataCommon<TagLib::Ogg::Speex::File>::metatable;
     template<> const UserdataTable     UserdataCommon<TagLib::Ogg::Speex::File>::mod;
+#endif 
+
 
     namespace Ogg { namespace Speex {
         typedef DerivedUserdata<TagLib::Ogg::Speex::File, LuaTagLib::Ogg::File> File;

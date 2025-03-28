@@ -21,7 +21,6 @@ extern "C" {
 namespace LuaTagLib {
 
 #ifndef _MSC_VER 
-
     template<> const UserdataMetatable UserdataCommon<TagLib::ID3v2::Tag>::metatable;
     template<> const UserdataTable     UserdataCommon<TagLib::ID3v2::Tag>::mod;
 #endif 
@@ -48,8 +47,11 @@ namespace LuaTagLib {
     typedef ConstImplMapReference<TagLib::ID3v2::FrameListMap, FrameListMapImpl> FrameListMap;
     }
 
+#ifndef _MSC_VER 
     template<> const char* ListBase<TagLib::ID3v2::FrameList>::__name;
     template<> const char* MapBase<TagLib::ID3v2::FrameListMap>::__name;
+#endif
+
 }
 
 #endif

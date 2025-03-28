@@ -228,8 +228,9 @@ const UserdataMetatable T::base::metatable = {
 };
 
 template<>
-TagLib::S3M::Properties* LuaTagLib::Userdata<TagLib::S3M::Properties, LuaTagLib::AudioProperties>::pushValue(lua_State* L, const TagLib::S3M::Properties& val) {
+TagLib::S3M::Properties* LuaTagLib::Userdata<TagLib::S3M::Properties, LuaTagLib::DerivedUserdata<TagLib::S3M::Properties, LuaTagLib::AudioProperties> >::pushValue(lua_State* L, const TagLib::S3M::Properties& val) {
     luaL_error(L, "unable to push S3M::Properties by value");
+    (void)val;
     return NULL;
 }
 

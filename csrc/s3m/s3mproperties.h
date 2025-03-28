@@ -26,6 +26,8 @@ namespace LuaTagLib {
     template<> const UserdataTable     UserdataCommon<TagLib::S3M::Properties>::mod;
 #endif 
 
+    extern template class DerivedUserdata<TagLib::S3M::Properties, LuaTagLib::AudioProperties>;
+
     namespace S3M {
         class LTAGLIB_PUBLIC Properties: public DerivedUserdata<TagLib::S3M::Properties, LuaTagLib::AudioProperties> { };
     }

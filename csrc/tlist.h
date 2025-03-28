@@ -73,13 +73,10 @@ namespace LuaTagLib {
 
     template<typename T, typename Impl>
     T List<T, Impl>::checkList(lua_State* L, int idx) {
+        T list = T();
+
         int tidx = lua_gettop(L) + 1;
         lua_Integer i;
-#if LTAGLIB_ATLEAST(LTAGLIB_2_0)
-        T list{};
-#else
-        T list = T();
-#endif
 
         luaL_checktype(L, idx, LUA_TTABLE);
 

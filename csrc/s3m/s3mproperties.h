@@ -29,6 +29,7 @@ namespace LuaTagLib {
     namespace S3M {
         class LTAGLIB_PUBLIC Properties: public DerivedUserdata<TagLib::S3M::Properties, LuaTagLib::AudioProperties> { };
     }
+
 }
 
 #endif

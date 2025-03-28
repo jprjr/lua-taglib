@@ -280,6 +280,12 @@ const UserdataMetatable T::base::metatable = {
     NULL, /* indexfunc */
 };
 
+template<>
+TagLib::IT::Properties* Userdata<TagLib::IT::Properties, LuaTagLib::AudioProperties>::pushValue(lua_State* L, const TagLib::IT::Properties& val) {
+    luaL_error(L, "unable to push IT::Properties by value");
+    return NULL;
+}
+
 #undef T
 #include "../shared/userdata.tcc"
 template class LuaTagLib::DerivedUserdata<TagLib::IT::Properties, LuaTagLib::AudioProperties>;

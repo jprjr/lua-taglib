@@ -45,58 +45,43 @@ find_library(TAGLIB_LIBRARY
 )
 mark_as_advanced(TAGLIB_LIBRARY)
 
-if(DEFINED PC_TAGLIB_VERSION AND NOT PC_TAGLIB_VERSION STREQUAL "")
-    set(TAGLIB_VERSION "${PC_TAGLIB_VERSION}")
-endif()
+if(DEFINED TAGLIB_INCLUDE_DIR AND EXISTS "${TAGLIB_INCLUDE_DIR}/taglib.h")
+    file(READ "${TAGLIB_INCLUDE_DIR}/taglib.h" TAGLIB_H_CONTENTS)
 
-include(FindPackageHandleStandardArgs)
-find_package_handle_standard_args(
-  TagLib
-  REQUIRED_VARS TAGLIB_LIBRARY TAGLIB_INCLUDE_DIR
-  VERSION_VAR TAGLIB_VERSION
-)
+    string(
+      REGEX MATCH
+      "#define TAGLIB_MAJOR_VERSION ([0-9]+)"
+      _dummy
+      "${TAGLIB_H_CONTENTS}"
+    )
+    set(TAGLIB_VERSION_MAJOR "${CMAKE_MATCH_1}")
 
-if(DEFINED PC_TAGLIB_VERSION AND NOT PC_TAGLIB_VERSION STREQUAL "")
-    set(TAGLIB_VERSION "${PC_TAGLIB_VERSION}")
-else()
-    if(EXISTS "${TAGLIB_INCLUDE_DIR}/taglib.h")
-        file(READ "${TAGLIB_INCLUDE_DIR}/taglib.h" TAGLIB_H_CONTENTS)
+    string(
+      REGEX MATCH
+      "#define TAGLIB_MINOR_VERSION ([0-9]+)"
+      _dummy
+      "${TAGLIB_H_CONTENTS}"
+    )
+    set(TAGLIB_VERSION_MINOR "${CMAKE_MATCH_1}")
 
-        string(
-          REGEX MATCH
-          "#define TAGLIB_MAJOR_VERSION ([0-9]+)"
-          _dummy
-          "${TAGLIB_H_CONTENTS}"
-        )
-        set(TAGLIB_VERSION_MAJOR "${CMAKE_MATCH_1}")
+    string(
+      REGEX MATCH
+      "#define TAGLIB_PATCH_VERSION ([0-9]+)"
+      _dummy
+      "${TAGLIB_H_CONTENTS}"
+    )
+    set(TAGLIB_VERSION_PATCH "${CMAKE_MATCH_1}")
 
-        string(
-          REGEX MATCH
-          "#define TAGLIB_MINOR_VERSION ([0-9]+)"
-          _dummy
-          "${TAGLIB_H_CONTENTS}"
-        )
-        set(TAGLIB_VERSION_MINOR "${CMAKE_MATCH_1}")
+    # PATCH is optional, versions 1.0 and 1.1 didn't have it
+    if(TAGLIB_VERSION_PATCH STREQUAL "")
+        set(TAGLIB_VERSION_PATCH "0")
+    endif()
 
-        string(
-          REGEX MATCH
-          "#define TAGLIB_PATCH_VERSION ([0-9]+)"
-          _dummy
-          "${TAGLIB_H_CONTENTS}"
-        )
-        set(TAGLIB_VERSION_PATCH "${CMAKE_MATCH_1}")
-
-        # PATCH is optional, versions 1.0 and 1.1 didn't have it
-        if(TAGLIB_VERSION_PATCH STREQUAL "")
-            set(TAGLIB_VERSION_PATCH "0")
-        endif()
-
-        if(
-            NOT TAGLIB_VERSION_MAJOR STREQUAL ""
-            AND NOT TAGLIB_VERSION_MINOR STREQUAL ""
-        )
-            set(TAGLIB_VERSION "${TAGLIB_VERSION_MAJOR}.${TAGLIB_VERSION_MINOR}.${TAGLIB_VERSION_PATCH}")
-        endif()
+    if(
+        NOT TAGLIB_VERSION_MAJOR STREQUAL ""
+        AND NOT TAGLIB_VERSION_MINOR STREQUAL ""
+    )
+        set(TAGLIB_VERSION "${TAGLIB_VERSION_MAJOR}.${TAGLIB_VERSION_MINOR}.${TAGLIB_VERSION_PATCH}")
     endif()
 endif()
 

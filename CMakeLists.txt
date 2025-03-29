@@ -161,6 +161,12 @@ target_include_directories(LuaTagLib PRIVATE ${LUA_INCLUDE_DIR})
 
 target_link_libraries(LuaTagLib PRIVATE TagLib::TagLib)
 
+if(TAGLIB_VERSION VERSION_GREATER_EQUAL 2.0.0)
+    set_property(TARGET LuaTagLib PROPERTY CXX_STANDARD 17)
+else()
+    set_property(TARGET LuaTagLib PROPERTY CXX_STANDARD 11)
+endif()
+
 # TODO - on apple systems, does using module automatically add "-undefined dynamic_lookup"?
 #if(APPLE)
 #    set(CMAKE_SHARED_LIBRARY_CREATE_C_FLAGS "${CMAKE_SHARED_LIBRARY_CREATE_C_FLAGS} -undefined dynamic_lookup")
@@ -169,7 +175,7 @@ target_link_libraries(LuaTagLib PRIVATE TagLib::TagLib)
 #    endif()
 #endif()
 
-set_target_properties(LuaTagLib PROPERTIES PREFIX "" OUTPUT_NAME "TagLib" POSITION_INDEPENDENT_CODE ON)
+set_target_properties(LuaTagLib PROPERTIES PREFIX "" OUTPUT_NAME "TagLib" POSITION_INDEPENDENT_CODE ON CXX_STANDARD_REQUIRED ON CXX_EXTENSIONS OFF)
 set_target_properties(LuaTagLib PROPERTIES C_VISIBILITY_PRESET hidden CXX_VISIBILITY_PRESET hidden)
 
 if(LTO_SUPPORTED)

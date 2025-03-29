@@ -23,8 +23,10 @@ int luaopen_TagLib_APE_File_TagTypes(lua_State *L);
 
 namespace LuaTagLib {
 
+#ifndef _MSC_VER
     template<> const UserdataMetatable UserdataCommon<TagLib::APE::File>::metatable;
     template<> const UserdataTable     UserdataCommon<TagLib::APE::File>::mod;
+#endif
 
     namespace APE {
         typedef DerivedUserdata<TagLib::APE::File, LuaTagLib::File> File;

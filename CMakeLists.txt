@@ -152,7 +152,8 @@ list(APPEND luataglib_sources "csrc/xm/xm.cpp")
 list(APPEND luataglib_sources "csrc/xm/xmfile.cpp")
 list(APPEND luataglib_sources "csrc/xm/xmproperties.cpp")
 
-add_library(LuaTagLib MODULE ${luataglib_sources})
+add_library(LuaTagLib SHARED ${luataglib_sources})
+
 if(WIN32)
     target_link_libraries(LuaTagLib PRIVATE ${LUA_LIBRARIES})
 endif()

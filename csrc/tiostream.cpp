@@ -4,6 +4,10 @@
 
 #include "tbytevector.h"
 
+#ifdef _WIN32
+#include "tstring.h"
+#endif
+
 using namespace LuaTagLib;
 
 static

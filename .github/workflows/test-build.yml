@@ -17,12 +17,12 @@ jobs:
         uses: actions/checkout@v4
 
       - name: install dependencies
-        run: vcpkg install lua:${{ matrix.target }} taglib:${{ matrix.target }}
+        run: vcpkg install lua:${{ matrix.target.triplet }} taglib:${{ matrix.target.triplet }}
 
-      - name: configure lua-taglib ${{ matrix.target }}
+      - name: configure lua-taglib ${{ matrix.target.arch }}
         run: 'cmake -B build-${{ matrix.target.arch }} -DCMAKE_BUILD_TYPE=Debug -DVCPKG_TARGET_TRIPLET=${{ matrix.target.triplet }}  -DVCPKG_TARGET_ARCHITECTURE=${{ matrix.target.arch }} -DCMAKE_TOOLCHAIN_FILE=C:\vcpkg\scripts\buildsystems\vcpkg.cmake -S .'
 
-      - name: build lua-taglib ${{ matrix.target }}
+      - name: build lua-taglib ${{ matrix.target.arch }}
         run: 'cmake --build build-${{ matrix.target.arch }} --config Debug'
 
   build-linux:

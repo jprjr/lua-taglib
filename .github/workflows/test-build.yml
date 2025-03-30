@@ -8,7 +8,7 @@ jobs:
       matrix:
         target:
           - { triplet: 'x86-windows', arch: 'x86' }
-          - { triplet: 'x64-windows', arch: 'x86' }
+          - { triplet: 'x64-windows', arch: 'x64' }
 
     runs-on: windows-latest
 

@@ -13,6 +13,7 @@ using namespace LuaTagLib;
 static int FileStream__call(lua_State* L) {
     TagLib::FileStream* f = NULL;
     int args = lua_gettop(L);
+    int parent = 0;
 #if LTAGLIB_ATLEAST(LTAGLIB_1_12)
 #if LUA_VERSION_NUM > 501
     luaL_Stream* fstream = NULL;
@@ -30,12 +31,18 @@ static int FileStream__call(lua_State* L) {
 #if LUA_VERSION_NUM > 501
             if( (fstream = (luaL_Stream*) luaL_testudata(L, 1, LUA_FILEHANDLE)) != NULL )
             {
-                if(fstream->f != NULL) f = new TagLib::FileStream(fileno(fstream->f));
+                if(fstream->f != NULL) {
+                    f = new TagLib::FileStream(fileno(fstream->f));
+                    parent = 1;
+                }
             }
 #else
             if( (fstream = (FILE**) luaL_testudata(L, 1, LUA_FILEHANDLE)) != NULL )
             {
-                if(*fstream != NULL) f = new TagLib::FileStream(fileno(*fstream));
+                if(*fstream != NULL) {
+                    f = new TagLib::FileStream(fileno(*fstream));
+                    parent = 1;
+                }
             }
 #endif
             else
@@ -54,12 +61,18 @@ static int FileStream__call(lua_State* L) {
 #if LUA_VERSION_NUM > 501
             if( (fstream = (luaL_Stream*) luaL_testudata(L, 1, LUA_FILEHANDLE)) != NULL )
             {
-                if(fstream->f != NULL) f = new TagLib::FileStream(fileno(fstream->f), lua_toboolean(L, 2));
+                if(fstream->f != NULL) {
+                    f = new TagLib::FileStream(fileno(fstream->f), lua_toboolean(L, 2));
+                    parent = 1;
+                }
             }
 #else
             if( (fstream = (FILE**) luaL_testudata(L, 1, LUA_FILEHANDLE)) != NULL )
             {
-                if(*fstream != NULL) f = new TagLib::FileStream(fileno(*fstream), lua_toboolean(L, 2));
+                if(*fstream != NULL) {
+                    f = new TagLib::FileStream(fileno(*fstream), lua_toboolean(L, 2));
+                    parent = 1;
+                }
             }
 #endif
             else
@@ -74,7 +87,7 @@ static int FileStream__call(lua_State* L) {
     }
 
     if(f == NULL) return luaL_error(L, "invalid arguments");
-    FileStream::pushPtr(L, f);
+    FileStream::pushPtr(L, f, parent, true);
     return 1;
 }
 

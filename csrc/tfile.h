@@ -60,12 +60,14 @@ namespace LuaTagLib {
     int File__call(lua_State* L) {
         int args = lua_gettop(L);
         typename T::taglib_type * f = NULL;
+        int parent = 0;
     
         switch(args) {
             case 1: {
 #if LTAGLIB_HAS_IOSTREAM
                 if(IOStream::isValid(L, 1)) {
                     f = new typename T::taglib_type(IOStream::checkPtr(L, 1));
+                    parent = 1;
                     break;
                 }
 #endif
@@ -77,6 +79,7 @@ namespace LuaTagLib {
 #if LTAGLIB_HAS_IOSTREAM
                 if(IOStream::isValid(L, 1)) {
                     f = new typename T::taglib_type(IOStream::checkPtr(L, 1), lua_toboolean(L,2));
+                    parent = 1;
                     break;
                 }
 #endif
@@ -88,6 +91,7 @@ namespace LuaTagLib {
 #if LTAGLIB_HAS_IOSTREAM
                 if(IOStream::isValid(L, 1)) {
                     f = new typename T::taglib_type(IOStream::checkPtr(L, 1), lua_toboolean(L,2), AudioProperties::ReadStyle::checkValue(L, 3));
+                    parent = 1;
                     break;
                 }
 #endif
@@ -99,7 +103,7 @@ namespace LuaTagLib {
         }
     
         if(f == NULL) return luaL_error(L, "invalid arguments");
-        T::pushPtr(L, f);
+        T::pushPtr(L, f, parent, true);
         return 1;
     }
 }

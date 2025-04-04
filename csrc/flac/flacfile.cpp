@@ -21,6 +21,7 @@ using namespace LuaTagLib;
 static int FLACFile__call(lua_State* L) {
     int args = lua_gettop(L);
     TT* f = NULL;
+    int parent = 0;
 
     switch(args) {
         case 1: {
@@ -31,6 +32,7 @@ static int FLACFile__call(lua_State* L) {
 #else
                 f = new TT(IOStream::checkPtr(L, 1));
 #endif
+                parent = 1;
                 break;
             }
 #endif
@@ -46,6 +48,7 @@ static int FLACFile__call(lua_State* L) {
 #else
                 f = new TT(IOStream::checkPtr(L, 1), lua_toboolean(L,2));
 #endif
+                parent = 1;
                 break;
             }
 #endif
@@ -61,6 +64,7 @@ static int FLACFile__call(lua_State* L) {
 #else
                 f = new TT(IOStream::checkPtr(L, 1), lua_toboolean(L,2), AudioProperties::ReadStyle::checkValue(L, 3));
 #endif
+                parent = 1;
                 break;
             }
 #endif
@@ -72,7 +76,7 @@ static int FLACFile__call(lua_State* L) {
     }
 
     if(f == NULL) return luaL_error(L, "invalid arguments");
-    T::pushPtr(L, f);
+    T::pushPtr(L, f, parent, true);
     return 1;
 }
 

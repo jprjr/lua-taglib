@@ -79,6 +79,13 @@ static int Properties_isLossless(lua_State* L) {
 }
 #endif
 
+#if LTAGLIB_ATLEAST(LTAGLIB_2_2)
+static int Properties_isDsd(lua_State* L) {
+    lua_pushboolean(L, T::checkPtr(L,1)->isDsd());
+    return 1;
+}
+#endif
+
 static
 const luaL_Reg Properties__index[] = {
     { "bitsPerSample", Properties_bitsPerSample },
@@ -88,6 +95,9 @@ const luaL_Reg Properties__index[] = {
 #endif
 #if LTAGLIB_ATLEAST(LTAGLIB_1_10)
     { "isLossless", Properties_isLossless },
+#endif
+#if LTAGLIB_ATLEAST(LTAGLIB_2_2)
+    { "isDsd", Properties_isDsd },
 #endif
     { NULL, NULL },
 };

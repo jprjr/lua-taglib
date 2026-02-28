@@ -63,6 +63,10 @@
 #include "mp4/mp4.h"
 #endif
 
+#if LTAGLIB_HAS_SHORTEN
+#include "shorten/shorten.h"
+#endif
+
 #if LTAGLIB_HAS_TRUEAUDIO
 #include "trueaudio/trueaudio.h"
 #endif
@@ -143,6 +147,10 @@ int luaopen_TagLib(lua_State* L) {
 
 #if LTAGLIB_HAS_RIFF
     load(RIFF)
+#endif
+
+#if LTAGLIB_HAS_SHORTEN
+    load(Shorten)
 #endif
 
 #if LTAGLIB_HAS_TRUEAUDIO

@@ -194,6 +194,10 @@ if(TagLib_FOUND)
         set(TAGLIB_WITH_TRUEAUDIO ON)
     endif()
 
+    if(EXISTS "${TAGLIB_INCLUDE_DIR}/shortenfile.h")
+        set(TAGLIB_WITH_SHORTEN ON)
+    endif()
+
     if(EXISTS "${TAGLIB_INCLUDE_DIR}/oggfile.h")
         set(TAGLIB_WITH_VORBIS ON)
     endif()

@@ -185,6 +185,17 @@ if(TAGLIB_WITH_RIFF_INFO)
     source_compile_def("csrc/riff/wav/wavfile.cpp" "LTAGLIB_HAS_RIFF_INFO")
 endif()
 
+if(TAGLIB_WITH_SHORTEN)
+    list(APPEND luataglib_sources "csrc/shorten/shorten.cpp")
+    list(APPEND luataglib_sources "csrc/shorten/shortenfile.cpp")
+    list(APPEND luataglib_sources "csrc/shorten/shortenproperties.cpp")
+    list(APPEND luataglib_sources "csrc/shorten/shortentag.cpp")
+
+    list(APPEND luataglib_iostream_sources "csrc/shorten/shortenfile.cpp")
+
+    source_compile_def("csrc/taglib.cpp" "LTAGLIB_HAS_SHORTEN")
+endif()
+
 if(TAGLIB_WITH_TRUEAUDIO)
     list(APPEND luataglib_sources "csrc/trueaudio/trueaudio.cpp")
     list(APPEND luataglib_sources "csrc/trueaudio/trueaudiofile.cpp")

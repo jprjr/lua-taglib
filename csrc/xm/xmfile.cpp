@@ -1,10 +1,11 @@
 #include "xmfile.h"
 
-#if LTAGLIB_HAS_XM_FILE
-
 #include "xmproperties.h"
 #include "../mod/modtag.h"
+
+#if LTAGLIB_HAS_IOSTREAM
 #include "../tiostream.h"
+#endif
 
 #define T XM::File
 #define TT TagLib::T
@@ -54,5 +55,3 @@ const UserdataMetatable XM::File::base::metatable = {
 #undef T
 #include "../shared/userdata.tcc"
 template class LuaTagLib::DerivedUserdata<TagLib::XM::File, Mod::FileBase>;
-
-#endif

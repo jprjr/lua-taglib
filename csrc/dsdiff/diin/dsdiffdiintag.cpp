@@ -1,7 +1,5 @@
 #include "dsdiffdiintag.h"
 
-#if LTAGLIB_HAS_DSDIFF_DIIN_TAG
-
 #include "../../tfile.h"
 #include "../../tbytevector.h"
 
@@ -58,5 +56,3 @@ const UserdataMetatable DSDIFF::DIIN::Tag::base::metatable = {
 #undef T
 #include "../../shared/userdata.tcc"
 template class LuaTagLib::DerivedUserdata<TagLib::DSDIFF::DIIN::Tag, LuaTagLib::Tag>;
-
-#endif

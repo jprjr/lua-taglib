@@ -3,10 +3,6 @@
 
 #include "../../taglib.h"
 
-#define LTAGLIB_HAS_RIFF_AIFF_PROPERTIES (LTAGLIB_VERSION >= LTAGLIB_VERSION_NUM(1,6,0))
-
-#if LTAGLIB_HAS_RIFF_AIFF_PROPERTIES
-
 #include "../../audioproperties.h"
 #include "../../shared/userdata.h"
 
@@ -33,7 +29,5 @@ namespace LuaTagLib {
         typedef DerivedUserdata<TagLib::RIFF::AIFF::Properties, LuaTagLib::AudioProperties> Properties;
     } }
 }
-
-#endif
 
 #endif

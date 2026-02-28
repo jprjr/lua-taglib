@@ -1,7 +1,5 @@
 #include "asfproperties.h"
 
-#if LTAGLIB_HAS_ASF
-
 #include "../tbytevector.h"
 
 #if LTAGLIB_ATLEAST(LTAGLIB_1_10)
@@ -136,5 +134,3 @@ template class LuaTagLib::Enum<TagLib::ASF::Properties::Codec>;
 
 #include "../shared/userdata.tcc"
 template class LuaTagLib::DerivedUserdata<TagLib::ASF::Properties, LuaTagLib::AudioProperties>;
-
-#endif

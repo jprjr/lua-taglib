@@ -3,10 +3,6 @@
 
 #include "../taglib.h"
 
-#define LTAGLIB_HAS_ATTACHEDPICTUREFRAME (LTAGLIB_VERSION >= LTAGLIB_VERSION_NUM(1,2,0))
-
-#if LTAGLIB_HAS_ATTACHEDPICTUREFRAME
-
 #include "id3v2frame.h"
 #include "../shared/enum.h"
 #include <attachedpictureframe.h>
@@ -37,4 +33,3 @@ namespace LuaTagLib {
 
 #endif
 
-#endif

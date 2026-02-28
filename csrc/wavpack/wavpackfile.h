@@ -3,14 +3,9 @@
 
 #include "../taglib.h"
 
-#define LTAGLIB_HAS_WAVPACK_FILE (LTAGLIB_VERSION >= LTAGLIB_VERSION_NUM(1,5,0))
-
-#if LTAGLIB_HAS_WAVPACK_FILE
-
 #include "../tfile.h"
 #include "../shared/userdata.h"
 #include <wavpackfile.h>
-
 
 extern "C" {
 
@@ -38,4 +33,3 @@ namespace LuaTagLib {
 
 #endif
 
-#endif

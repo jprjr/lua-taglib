@@ -1,11 +1,15 @@
 #include "wavfile.h"
 
-#if LTAGLIB_HAS_RIFF_WAV_FILE
-
 #include "wavproperties.h"
 #include "../../id3v2/id3v2tag.h"
+
+#if LTAGLIB_HAS_RIFF_INFO
 #include "../info/infotag.h"
+#endif
+
+#if LTAGLIB_HAS_IOSTREAM
 #include "../../tiostream.h"
+#endif
 
 #if LTAGLIB_ATLEAST(LTAGLIB_1_12)
 #include "../../id3v2/id3v2.h"
@@ -237,5 +241,3 @@ const UserdataMetatable T::base::metatable = {
 #undef T
 #include "../../shared/userdata.tcc"
 template class LuaTagLib::DerivedUserdata<TagLib::RIFF::WAV::File, LuaTagLib::File>;
-
-#endif

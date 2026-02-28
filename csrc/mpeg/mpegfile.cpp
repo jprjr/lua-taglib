@@ -4,8 +4,14 @@
 #include "../id3v2/id3v2.h"
 #include "../id3v2/id3v2tag.h"
 #include "../id3v1/id3v1tag.h"
+
+#if LTAGLIB_HAS_APE
 #include "../ape/apetag.h"
+#endif
+
+#if LTAGLIB_HAS_IOSTREAM
 #include "../tiostream.h"
+#endif
 
 #define T MPEG::File
 #define TT TagLib::T
@@ -74,7 +80,7 @@ static int MPEGFile__call(lua_State* L) {
     return 1;
 }
 
-#if LTAGLIB_HAS_APE_TAG
+#if LTAGLIB_HAS_APE
 static int File_APETag(lua_State* L) {
     TagLib::MPEG::File* f = MPEG::File::checkPtr(L, 1);
     int args = lua_gettop(L);
@@ -288,7 +294,7 @@ static int File_lastFrameOffset(lua_State* L) {
 }
 
 static const luaL_Reg File__index[] = {
-#if LTAGLIB_HAS_APE_TAG
+#if LTAGLIB_HAS_APE
     { "APETag", File_APETag },
 #endif
 #if LTAGLIB_VERSION >= LTAGLIB_VERSION_NUM(1,9,0)
@@ -343,7 +349,7 @@ int luaopen_TagLib_MPEG_File_TagTypes(lua_State *L) {
     lua_pushinteger(L, TagLib::MPEG::File::ID3v2);
     lua_setfield(L, -2, "ID3v2");
 
-#if LTAGLIB_HAS_APE_TAG
+#if LTAGLIB_HAS_APE
     lua_pushinteger(L, TagLib::MPEG::File::APE);
     lua_setfield(L, -2, "APE");
 #endif

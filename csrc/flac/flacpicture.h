@@ -3,10 +3,6 @@
 
 #include "../taglib.h"
 
-#define LTAGLIB_HAS_FLAC_PICTURE (LTAGLIB_VERSION >= LTAGLIB_VERSION_NUM(1,7,0))
-
-#if LTAGLIB_HAS_FLAC_PICTURE
-
 #include "../shared/userdata.h"
 #include "../shared/enum.h"
 #include "flacmetadatablock.h"
@@ -37,7 +33,5 @@ namespace LuaTagLib {
             typedef Enum<TagLib::FLAC::Picture::Type> Type;
     };
 } }
-
-#endif
 
 #endif

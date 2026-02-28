@@ -1,7 +1,5 @@
 #include "dsfproperties.h"
 
-#if LTAGLIB_HAS_DSF_PROPERTIES
-
 #include "../tbytevector.h"
 
 #define T DSF::Properties
@@ -94,4 +92,3 @@ const UserdataMetatable T::base::metatable = {
 #include "../shared/userdata.tcc"
 template class LuaTagLib::DerivedUserdata<TagLib::DSF::Properties, LuaTagLib::AudioProperties>;
 
-#endif

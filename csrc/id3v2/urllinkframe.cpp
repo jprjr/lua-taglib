@@ -1,10 +1,11 @@
 #include "urllinkframe.h"
 
-#if LTAGLIB_HAS_URLLINKFRAME
-
 #include "../tbytevector.h"
 #include "../tstring.h"
+
+#if LTAGLIB_HAS_PROPERTYMAP
 #include "../tpropertymap.h"
+#endif
 
 #if LTAGLIB_ATLEAST(LTAGLIB_1_8)
 #include "id3v2tag.h"
@@ -193,5 +194,3 @@ const UserdataMetatable T::base::metatable = {
 #include "../shared/userdata.tcc"
 template class LuaTagLib::DerivedUserdata<TagLib::ID3v2::UrlLinkFrame, LuaTagLib::ID3v2::Frame>;
 template class LuaTagLib::DerivedUserdata<TagLib::ID3v2::UserUrlLinkFrame, LuaTagLib::ID3v2::UrlLinkFrame>;
-
-#endif

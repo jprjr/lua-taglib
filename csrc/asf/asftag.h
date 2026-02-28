@@ -3,8 +3,6 @@
 
 #include "asf.h"
 
-#if LTAGLIB_HAS_ASF
-
 #include "../tag.h"
 #include "../shared/userdata.h"
 
@@ -30,7 +28,5 @@ namespace LuaTagLib {
         typedef DerivedUserdata<TagLib::ASF::Tag,LuaTagLib::Tag> Tag;
     }
 }
-
-#endif
 
 #endif

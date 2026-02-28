@@ -1,7 +1,5 @@
 #include "apeproperties.h"
 
-#if LTAGLIB_HAS_APE_PROPERTIES
-
 #include "apefile.h"
 #include "../tbytevector.h"
 
@@ -92,5 +90,3 @@ const UserdataMetatable APE::Properties::base::metatable = {
 
 #include "../shared/userdata.tcc"
 template class LuaTagLib::DerivedUserdata<TagLib::APE::Properties, LuaTagLib::AudioProperties>;
-
-#endif

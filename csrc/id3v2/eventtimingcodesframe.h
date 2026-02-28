@@ -3,10 +3,6 @@
 
 #include "../taglib.h"
 
-#define LTAGLIB_HAS_EVENTTIMINGCODESFRAME (LTAGLIB_ATLEAST(LTAGLIB_1_10))
-
-#if LTAGLIB_HAS_EVENTTIMINGCODESFRAME
-
 #include "../shared/enum.h"
 #include "id3v2frame.h"
 #include <eventtimingcodesframe.h>
@@ -43,4 +39,3 @@ namespace LuaTagLib {
 
 #endif
 
-#endif

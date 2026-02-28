@@ -3,10 +3,6 @@
 
 #include "../taglib.h"
 
-#define LTAGLIB_HAS_PODCASTFRAME (LTAGLIB_ATLEAST(LTAGLIB_1_11))
-
-#if LTAGLIB_HAS_PODCASTFRAME
-
 #include "id3v2frame.h"
 #include <podcastframe.h>
 
@@ -29,7 +25,5 @@ namespace LuaTagLib {
     namespace ID3v2 {
     typedef DerivedUserdata<TagLib::ID3v2::PodcastFrame, Frame> PodcastFrame;
 } }
-
-#endif
 
 #endif

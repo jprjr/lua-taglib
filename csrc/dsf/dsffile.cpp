@@ -1,13 +1,17 @@
 #include "dsffile.h"
 
-#if LTAGLIB_HAS_DSF_FILE
-
 #include "dsfproperties.h"
 
-#include "../tpropertymap.h"
 #include "../id3v2/id3v2tag.h"
 #include "../id3v2/id3v2.h"
+
+#if LTAGLIB_HAS_IOSTREAM
 #include "../tiostream.h"
+#endif
+
+#if LTAGLIB_HAS_PROPERTYMAP
+#include "../tpropertymap.h"
+#endif
 
 #define T DSF::File
 #define TT TagLib::T
@@ -86,4 +90,3 @@ const UserdataMetatable DSF::File::base::metatable = {
 #include "../shared/userdata.tcc"
 template class LuaTagLib::DerivedUserdata<TagLib::DSF::File, LuaTagLib::File>;
 
-#endif

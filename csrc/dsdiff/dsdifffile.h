@@ -3,10 +3,6 @@
 
 #include "../taglib.h"
 
-#define LTAGLIB_HAS_DSDIFF_FILE (LTAGLIB_ATLEAST(LTAGLIB_2_0))
-
-#if LTAGLIB_HAS_DSDIFF_FILE
-
 #include "../tfile.h"
 #include "../shared/userdata.h"
 #include <dsdifffile.h>
@@ -34,7 +30,5 @@ namespace LuaTagLib {
         typedef DerivedUserdata<TagLib::DSDIFF::File, LuaTagLib::File> File;
     }
 }
-
-#endif
 
 #endif

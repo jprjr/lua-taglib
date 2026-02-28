@@ -1,7 +1,5 @@
 #include "mp4properties.h"
 
-#if LTAGLIB_HAS_MP4
-
 #include "mp4file.h"
 #include "../tbytevector.h"
 
@@ -107,5 +105,3 @@ template class LuaTagLib::Enum<TagLib::MP4::Properties::Codec>;
 
 #include "../shared/userdata.tcc"
 template class LuaTagLib::DerivedUserdata<TagLib::MP4::Properties, LuaTagLib::AudioProperties>;
-
-#endif

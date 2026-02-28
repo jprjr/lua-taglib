@@ -1,7 +1,5 @@
 #include "trueaudioproperties.h"
 
-#if LTAGLIB_HAS_TRUEAUDIO_PROPERTIES
-
 #include "../tbytevector.h"
 
 #define T TrueAudio::Properties
@@ -83,4 +81,3 @@ const UserdataMetatable T::base::metatable = {
 #include "../shared/userdata.tcc"
 template class LuaTagLib::DerivedUserdata<TagLib::TrueAudio::Properties, LuaTagLib::AudioProperties>;
 
-#endif

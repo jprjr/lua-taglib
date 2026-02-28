@@ -1,6 +1,7 @@
 #include "s3m.h"
 
-#if LTAGLIB_HAS_S3M
+#include "s3mfile.h"
+#include "s3mproperties.h"
 
 using namespace LuaTagLib;
 
@@ -17,6 +18,3 @@ int luaopen_TagLib_S3M(lua_State* L) {
 
     return 1;
 }
-
-#endif
-

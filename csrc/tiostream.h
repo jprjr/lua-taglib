@@ -3,10 +3,6 @@
 
 #include "taglib.h"
 
-#define LTAGLIB_HAS_IOSTREAM (LTAGLIB_ATLEAST(LTAGLIB_1_8))
-
-#if LTAGLIB_HAS_IOSTREAM
-
 #include "shared/userdata.h"
 #include "shared/enum.h"
 #include <tiostream.h>
@@ -20,8 +16,6 @@ LTAGLIB_PUBLIC
 int luaopen_TagLib_IOStream_Position(lua_State* L);
 
 }
-
-
 
 namespace LuaTagLib {
 
@@ -74,7 +68,5 @@ namespace LuaTagLib {
 
 
 }
-
-#endif
 
 #endif

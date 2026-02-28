@@ -3,10 +3,6 @@
 
 #include "../../taglib.h"
 
-#define LTAGLIB_HAS_OPUSPROPERTIES (LTAGLIB_ATLEAST(LTAGLIB_1_9))
-
-#if LTAGLIB_HAS_OPUSPROPERTIES
-
 #include "../../shared/userdata.h"
 #include "../../audioproperties.h"
 #include <opusproperties.h>
@@ -34,6 +30,3 @@ namespace LuaTagLib {
 }
 
 #endif
-
-#endif
-

@@ -1,10 +1,11 @@
 #include "unsynchronizedlyricsframe.h"
 
-#if LTAGLIB_HAS_UNSYNCHRONIZEDLYRICSFRAME
-
 #include "../tbytevector.h"
 #include "../tstring.h"
+
+#if LTAGLIB_HAS_PROPERTYMAP
 #include "../tpropertymap.h"
+#endif
 
 #if LTAGLIB_VERSION >= LTAGLIB_VERSION_NUM(1,8,0)
 /* used in the findByDescription static method */
@@ -163,5 +164,3 @@ const UserdataMetatable T::base::metatable = {
 #undef T
 #include "../shared/userdata.tcc"
 template class LuaTagLib::DerivedUserdata<TagLib::ID3v2::UnsynchronizedLyricsFrame, LuaTagLib::ID3v2::Frame>;
-
-#endif

@@ -4,8 +4,11 @@
 #include "taglib.h"
 #include "shared/enum.h"
 #include "shared/userdata.h"
-#include "tiostream.h"
 #include "audioproperties.h"
+
+#if LTAGLIB_HAS_IOSTREAM
+#include "tiostream.h"
+#endif
 
 #include <tfile.h>
 

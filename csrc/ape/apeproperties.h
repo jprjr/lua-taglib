@@ -3,10 +3,6 @@
 
 #include "../taglib.h"
 
-#define LTAGLIB_HAS_APE_PROPERTIES (LTAGLIB_VERSION >= LTAGLIB_VERSION_NUM(1,7,0))
-
-#if LTAGLIB_HAS_APE_PROPERTIES
-
 #include "../audioproperties.h"
 #include "../shared/userdata.h"
 #include <apeproperties.h>
@@ -32,8 +28,6 @@ namespace LuaTagLib {
         typedef DerivedUserdata<TagLib::APE::Properties, LuaTagLib::AudioProperties> Properties;
     }
 }
-
-#endif
 
 #endif
 

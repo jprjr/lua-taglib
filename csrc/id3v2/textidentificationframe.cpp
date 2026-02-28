@@ -3,8 +3,11 @@
 #include "../tbytevector.h"
 #include "../tstring.h"
 #include "../tstringlist.h"
-#include "../tpropertymap.h"
 #include "../tmap.h"
+
+#if LTAGLIB_HAS_PROPERTYMAP
+#include "../tpropertymap.h"
+#endif
 
 #if LTAGLIB_HAS_USERTEXTIDENTIFICATIONFRAME
 #if LTAGLIB_ATLEAST(LTAGLIB_1_5)

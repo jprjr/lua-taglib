@@ -3,10 +3,6 @@
 
 #include "../taglib.h"
 
-#define LTAGLIB_HAS_OWNERSHIPFRAME (LTAGLIB_ATLEAST(LTAGLIB_1_8))
-
-#if LTAGLIB_HAS_OWNERSHIPFRAME
-
 #include "id3v2frame.h"
 #include <ownershipframe.h>
 
@@ -30,4 +26,3 @@ namespace LuaTagLib {
 
 #endif
 
-#endif

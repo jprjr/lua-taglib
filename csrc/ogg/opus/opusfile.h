@@ -3,10 +3,6 @@
 
 #include "../../taglib.h"
 
-#define LTAGLIB_HAS_OPUSFILE (LTAGLIB_ATLEAST(LTAGLIB_1_9))
-
-#if LTAGLIB_HAS_OPUSFILE
-
 #include "../oggfile.h"
 #include "../../shared/userdata.h"
 #include <opusfile.h>
@@ -33,6 +29,3 @@ namespace LuaTagLib {
 }
 
 #endif
-
-#endif
-

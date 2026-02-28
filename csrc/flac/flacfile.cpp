@@ -1,14 +1,20 @@
 #include "flacfile.h"
-#include "flacpicture.h"
 #include "flacproperties.h"
 
 #include "../tlist.h"
 #include "../id3v1/id3v1tag.h"
 #include "../id3v2/id3v2tag.h"
 #include "../ogg/xiphcomment.h"
-#include "../tiostream.h"
 
-#if LTAGLIB_ATLEAST(LTAGLIB_1_8) && LTAGLIB_UNDER(LTAGLIB_1_12)
+#if LTAGLIB_HAS_IOSTREAM
+#include "../tiostream.h"
+#endif
+
+#if LTAGLIB_HAS_FLAC_PICTURE
+#include "flacpicture.h"
+#endif
+
+#if LTAGLIB_UNDER(LTAGLIB_1_12)
 /* needed for streamInfoData() */
 #include "../tbytevector.h"
 #endif
@@ -124,6 +130,7 @@ static int File_removePicture(lua_State* L) {
     lua_settop(L,1);
     return 1;
 }
+#endif
 
 #if LTAGLIB_UNDER(LTAGLIB_1_12)
 static int File_streamInfoData(lua_State* L) {
@@ -133,7 +140,6 @@ static int File_streamInfoData(lua_State* L) {
 }
 #endif
 
-#endif
 
 #if LTAGLIB_ATLEAST(LTAGLIB_1_2)
 static int File_ID3v2Tag(lua_State* L) {
@@ -256,6 +262,9 @@ static int File_audioProperties(lua_State* L) {
 
 static
 const luaL_Reg File__index[] = {
+#if LTAGLIB_UNDER(LTAGLIB_1_12)
+    { "streamInfoData", File_streamInfoData },
+#endif
 #if LTAGLIB_ATLEAST(LTAGLIB_1_2)
     { "ID3v2Tag", File_ID3v2Tag },
     { "ID3v1Tag", File_ID3v1Tag },
@@ -271,9 +280,6 @@ const luaL_Reg File__index[] = {
 #endif
 #if LTAGLIB_ATLEAST(LTAGLIB_1_8)
     { "removePicture", File_removePicture },
-#if LTAGLIB_UNDER(LTAGLIB_1_12)
-    { "streamInfoData", File_streamInfoData },
-#endif
 #endif
 #if LTAGLIB_ATLEAST(LTAGLIB_1_9)
     { "hasID3v2Tag", File_hasID3v2Tag },

@@ -1,14 +1,15 @@
 #include "tableofcontentsframe.h"
 
-#if LTAGLIB_HAS_TABLEOFCONTENTSFRAME
-
 #include "../tbytevector.h"
 #include "../tstring.h"
 #include "../tlist.h"
-#include "../tpropertymap.h"
 #include "../tbytevectorlist.h"
 #include "id3v2header.h"
 #include "id3v2tag.h"
+
+#if LTAGLIB_HAS_PROPERTYMAP
+#include "../tpropertymap.h"
+#endif
 
 #define T ID3v2::TableOfContentsFrame
 #define TT TagLib::T
@@ -240,6 +241,3 @@ const UserdataMetatable T::base::metatable = {
 #undef T
 #include "../shared/userdata.tcc"
 template class LuaTagLib::DerivedUserdata<TagLib::ID3v2::TableOfContentsFrame, LuaTagLib::ID3v2::Frame>;
-
-#endif
-

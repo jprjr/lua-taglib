@@ -2,7 +2,10 @@
 
 #include "../xiphcomment.h"
 #include "vorbisproperties.h"
+
+#if LTAGLIB_HAS_IOSTREAM
 #include "../../tiostream.h"
+#endif
 
 #define T Ogg::Vorbis::File
 #define TT TagLib::T

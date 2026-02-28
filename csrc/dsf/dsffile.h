@@ -3,14 +3,9 @@
 
 #include "../taglib.h"
 
-#define LTAGLIB_HAS_DSF_FILE (LTAGLIB_ATLEAST(LTAGLIB_2_0))
-
-#if LTAGLIB_HAS_DSF_FILE
-
 #include "../tfile.h"
 #include "../shared/userdata.h"
 #include <dsffile.h>
-
 
 extern "C" {
 
@@ -35,7 +30,5 @@ namespace LuaTagLib {
         typedef DerivedUserdata<TagLib::DSF::File, LuaTagLib::File> File;
     }
 }
-
-#endif
 
 #endif

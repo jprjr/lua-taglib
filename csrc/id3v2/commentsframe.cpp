@@ -2,9 +2,12 @@
 
 #include "../tbytevector.h"
 #include "../tstring.h"
-#include "../tpropertymap.h"
 #if LTAGLIB_VERSION >= LTAGLIB_VERSION_NUM(1,5,0)
 #include "id3v2tag.h"
+#endif
+
+#if LTAGLIB_HAS_PROPERTYMAP
+#include "../tpropertymap.h"
 #endif
 
 #define T ID3v2::CommentsFrame

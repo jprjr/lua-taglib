@@ -1,7 +1,5 @@
 #include "info.h"
 
-#if LTAGLIB_HAS_RIFF_INFO
-
 using namespace LuaTagLib;
 
 LTAGLIB_PUBLIC
@@ -13,5 +11,3 @@ int luaopen_TagLib_RIFF_Info(lua_State* L) {
 
     return 1;
 }
-
-#endif

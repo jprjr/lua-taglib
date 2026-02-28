@@ -1,7 +1,5 @@
 #include "privateframe.h"
 
-#if LTAGLIB_HAS_PRIVATEFRAME
-
 #include "../tbytevector.h"
 #include "../tstring.h"
 
@@ -92,4 +90,3 @@ const UserdataMetatable T::base::metatable = {
 #include "../shared/userdata.tcc"
 template class LuaTagLib::DerivedUserdata<TagLib::ID3v2::PrivateFrame, LuaTagLib::ID3v2::Frame>;
 
-#endif

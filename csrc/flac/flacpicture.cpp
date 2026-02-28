@@ -1,7 +1,5 @@
 #include "flacpicture.h"
 
-#if LTAGLIB_HAS_FLAC_PICTURE
-
 #include "../tbytevector.h"
 #include "../tstring.h"
 #include "../tpicture.h"
@@ -212,5 +210,3 @@ template class LuaTagLib::Enum<TagLib::FLAC::Picture::Type>;
 
 #include "../shared/userdata.tcc"
 template class LuaTagLib::DerivedUserdata<TagLib::FLAC::Picture, FLAC::MetadataBlock>;
-
-#endif

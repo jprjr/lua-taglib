@@ -3,10 +3,6 @@
 
 #include "../taglib.h"
 
-#define LTAGLIB_HAS_GENERALENCAPSULATEDOBJECTFRAME (LTAGLIB_VERSION >= LTAGLIB_VERSION_NUM(1,5,0))
-
-#if LTAGLIB_HAS_GENERALENCAPSULATEDOBJECTFRAME
-
 #include "id3v2frame.h"
 #include <generalencapsulatedobjectframe.h>
 
@@ -30,4 +26,3 @@ namespace LuaTagLib {
 
 #endif
 
-#endif

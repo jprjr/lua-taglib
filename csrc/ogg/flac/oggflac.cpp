@@ -1,7 +1,5 @@
 #include "oggflac.h"
 
-#if LTAGLIB_HAS_OGGFLAC
-
 #include "oggflacfile.h"
 
 using namespace LuaTagLib;
@@ -16,4 +14,3 @@ int luaopen_TagLib_Ogg_FLAC(lua_State *L) {
     return 1;
 }
 
-#endif

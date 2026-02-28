@@ -1,13 +1,14 @@
 #include "wavpackfile.h"
 
-#if LTAGLIB_HAS_WAVPACK_FILE
-
 #include "wavpackproperties.h"
 
 #include "../tlist.h"
 #include "../id3v1/id3v1tag.h"
 #include "../ape/apetag.h"
+
+#if LTAGLIB_HAS_IOSTREAM
 #include "../tiostream.h"
+#endif
 
 using namespace LuaTagLib;
 
@@ -166,4 +167,3 @@ const UserdataMetatable WavPack::File::base::metatable = {
 #include "../shared/userdata.tcc"
 template class LuaTagLib::DerivedUserdata<TagLib::WavPack::File, LuaTagLib::File>;
 
-#endif

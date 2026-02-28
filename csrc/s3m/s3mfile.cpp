@@ -1,10 +1,11 @@
 #include "s3mfile.h"
 
-#if LTAGLIB_HAS_S3M_FILE
-
 #include "s3mproperties.h"
 #include "../mod/modtag.h"
+
+#if LTAGLIB_HAS_IOSTREAM
 #include "../tiostream.h"
+#endif
 
 #define T S3M::File
 #define TT TagLib::T
@@ -54,5 +55,3 @@ const UserdataMetatable S3M::File::base::metatable = {
 #undef T
 #include "../shared/userdata.tcc"
 template class LuaTagLib::DerivedUserdata<TagLib::S3M::File, Mod::FileBase>;
-
-#endif

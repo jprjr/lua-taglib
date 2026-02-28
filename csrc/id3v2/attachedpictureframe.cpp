@@ -1,7 +1,5 @@
 #include "attachedpictureframe.h"
 
-#if LTAGLIB_HAS_ATTACHEDPICTUREFRAME
-
 #include "../tbytevector.h"
 #include "../tstring.h"
 #include "../tpicture.h"
@@ -162,4 +160,3 @@ template class LuaTagLib::Enum<TagLib::ID3v2::AttachedPictureFrame::Type>;
 #include "../shared/userdata.tcc"
 template class LuaTagLib::DerivedUserdata<TagLib::ID3v2::AttachedPictureFrame, LuaTagLib::ID3v2::Frame>;
 
-#endif

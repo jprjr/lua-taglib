@@ -3,10 +3,6 @@
 
 #include "../taglib.h"
 
-#define LTAGLIB_HAS_CHAPTERFRAME (LTAGLIB_ATLEAST(LTAGLIB_1_10))
-
-#if LTAGLIB_HAS_CHAPTERFRAME
-
 #include "id3v2frame.h"
 #include <chapterframe.h>
 
@@ -31,4 +27,3 @@ namespace LuaTagLib {
 
 #endif
 
-#endif

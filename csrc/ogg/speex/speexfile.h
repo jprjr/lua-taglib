@@ -3,10 +3,6 @@
 
 #include "../../taglib.h"
 
-#define LTAGLIB_HAS_SPEEXFILE (LTAGLIB_ATLEAST(LTAGLIB_1_5))
-
-#if LTAGLIB_HAS_SPEEXFILE
-
 #include "../oggfile.h"
 #include "../../shared/userdata.h"
 #include <speexfile.h>
@@ -33,6 +29,3 @@ namespace LuaTagLib {
 }
 
 #endif
-
-#endif
-

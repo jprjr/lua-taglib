@@ -1,11 +1,12 @@
 #include "uniquefileidentifierframe.h"
 
-#if LTAGLIB_HAS_UNIQUEFILEIDENTIFIERFRAME
-
 #include "../tstring.h"
 #include "../tbytevector.h"
-#include "../tpropertymap.h"
 #include "id3v2tag.h"
+
+#if LTAGLIB_HAS_PROPERTYMAP
+#include "../tpropertymap.h"
+#endif
 
 #define T ID3v2::UniqueFileIdentifierFrame
 #define TT TagLib::T
@@ -122,4 +123,3 @@ const UserdataMetatable T::base::metatable = {
 #include "../shared/userdata.tcc"
 template class LuaTagLib::DerivedUserdata<TagLib::ID3v2::UniqueFileIdentifierFrame, LuaTagLib::ID3v2::Frame>;
 
-#endif

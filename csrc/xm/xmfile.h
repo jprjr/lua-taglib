@@ -3,10 +3,6 @@
 
 #include "../taglib.h"
 
-#define LTAGLIB_HAS_XM_FILE (LTAGLIB_ATLEAST(LTAGLIB_1_8))
-
-#if LTAGLIB_HAS_XM_FILE
-
 #include "../mod/modfilebase.h"
 #include <xmfile.h>
 
@@ -30,7 +26,5 @@ namespace LuaTagLib {
         typedef DerivedUserdata<TagLib::XM::File, LuaTagLib::Mod::FileBase> File;
     }
 }
-
-#endif
 
 #endif

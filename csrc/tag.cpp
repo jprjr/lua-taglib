@@ -2,8 +2,14 @@
 
 #include "tstring.h"
 #include "tstringlist.h"
+
+#if LTAGLIB_HAS_PROPERTYMAP
 #include "tpropertymap.h"
+#endif
+
+#if LTAGLIB_HAS_VARIANT
 #include "tvariant.h"
+#endif
 
 using namespace LuaTagLib;
 

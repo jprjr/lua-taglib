@@ -1,12 +1,13 @@
 #include "asf.h"
 
-#if LTAGLIB_HAS_ASF
-
 #include "asfattribute.h"
 #include "asfproperties.h"
 #include "asffile.h"
 #include "asftag.h"
+
+#if LTAGLIB_HAS_ASF_PICTURE
 #include "asfpicture.h"
+#endif
 
 using namespace LuaTagLib;
 
@@ -28,5 +29,3 @@ LTAGLIB_PUBLIC int luaopen_TagLib_ASF(lua_State* L) {
 
     return 1;
 }
-
-#endif

@@ -3,10 +3,6 @@
 
 #include "../taglib.h"
 
-#define LTAGLIB_HAS_DSDIFF_PROPERTIES (LTAGLIB_ATLEAST(LTAGLIB_2_0))
-
-#if LTAGLIB_HAS_DSDIFF_PROPERTIES
-
 #include "../audioproperties.h"
 #include "../shared/userdata.h"
 
@@ -35,6 +31,3 @@ namespace LuaTagLib {
 }
 
 #endif
-
-#endif
-

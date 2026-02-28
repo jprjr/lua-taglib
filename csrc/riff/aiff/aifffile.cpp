@@ -1,10 +1,11 @@
 #include "aifffile.h"
 
-#if LTAGLIB_HAS_RIFF_AIFF_FILE
-
 #include "aiffproperties.h"
 #include "../../id3v2/id3v2tag.h"
+
+#if LTAGLIB_HAS_IOSTREAM
 #include "../../tiostream.h"
+#endif
 
 #define T RIFF::AIFF::File
 #define TT TagLib::T
@@ -96,4 +97,3 @@ const UserdataMetatable T::base::metatable = {
 #include "../../shared/userdata.tcc"
 template class LuaTagLib::DerivedUserdata<TagLib::RIFF::AIFF::File, LuaTagLib::File>;
 
-#endif

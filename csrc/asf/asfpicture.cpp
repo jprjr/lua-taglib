@@ -1,7 +1,5 @@
 #include "asfpicture.h"
 
-#if LTAGLIB_HAS_ASF_PICTURE
-
 #include "../tbytevector.h"
 #include "../tstring.h"
 #include "../tpicture.h"
@@ -176,5 +174,3 @@ template class LuaTagLib::Enum<TagLib::ASF::Picture::Type>;
 
 #include "../shared/userdata.tcc"
 template class LuaTagLib::BaseUserdata<TagLib::ASF::Picture>;
-
-#endif

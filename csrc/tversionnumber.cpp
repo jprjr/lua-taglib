@@ -2,9 +2,7 @@
 
 #include "taglib.h"
 
-#define LTAGLIB_HAVE_VERSIONNUMBER (LTAGLIB_VERSION >= LTAGLIB_VERSION_NUM(2,0,0))
-
-#if LTAGLIB_HAVE_VERSIONNUMBER
+#if LTAGLIB_HAS_VERSIONNUMBER
 #include <tversionnumber.h>
 #endif
 
@@ -179,6 +177,11 @@ static int callWrap(lua_State* L) {
     return lua_gettop(L);
 }
 
+static int getMetatable(lua_State* L) {
+    luaTagLib_VersionNumber_Metatable(L);
+    return 1;
+}
+
 LTAGLIB_PUBLIC
 int luaopen_TagLib_VersionNumber(lua_State* L) {
     lua_newtable(L);
@@ -187,6 +190,8 @@ int luaopen_TagLib_VersionNumber(lua_State* L) {
     lua_pushcclosure(L, callWrap, 1);
     lua_setfield(L, -2, "__call");
     lua_setmetatable(L, -2);
+    lua_pushcclosure(L, getMetatable, 0);
+    lua_setfield(L, -2, "getMetatable");
     return 1;
 }
 
@@ -209,7 +214,7 @@ int luaopen_TagLib_compiletimeVersion(lua_State* L) {
 
 static int
 luaTagLib_runtimeVersion(lua_State *L) {
-#if LTAGLIB_HAVE_VERSIONNUMBER
+#if LTAGLIB_HAS_VERSIONNUMBER
     TagLib::VersionNumber v = TagLib::runtimeVersion();
     lua_newtable(L);
     lua_pushinteger(L, v.combinedVersion());

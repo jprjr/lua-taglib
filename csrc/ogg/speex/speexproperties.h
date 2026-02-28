@@ -3,10 +3,6 @@
 
 #include "../../taglib.h"
 
-#define LTAGLIB_HAS_SPEEXPROPERTIES (LTAGLIB_VERSION >= LTAGLIB_VERSION_NUM(1,5,0))
-
-#if LTAGLIB_HAS_SPEEXPROPERTIES
-
 #include "../../shared/userdata.h"
 #include "../../audioproperties.h"
 #include <speexproperties.h>
@@ -33,6 +29,3 @@ namespace LuaTagLib {
 }
 
 #endif
-
-#endif
-

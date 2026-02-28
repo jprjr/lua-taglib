@@ -3,10 +3,6 @@
 
 #include "../taglib.h"
 
-#define LTAGLIB_HAS_MOD_FILE (LTAGLIB_ATLEAST(LTAGLIB_1_8))
-
-#if LTAGLIB_HAS_MOD_FILE
-
 #include "modfilebase.h"
 #include <modfile.h>
 
@@ -28,7 +24,5 @@ namespace LuaTagLib {
         typedef DerivedUserdata<TagLib::Mod::File, LuaTagLib::Mod::FileBase> File;
     }
 }
-
-#endif
 
 #endif

@@ -3,10 +3,6 @@
 
 #include "../taglib.h"
 
-#define LTAGLIB_HAS_APE_TAG (LTAGLIB_ATLEAST(LTAGLIB_1_3))
-
-#if LTAGLIB_HAS_APE_TAG
-
 #include "../tag.h"
 #include "../shared/userdata.h"
 #include <apetag.h>
@@ -33,7 +29,4 @@ namespace LuaTagLib {
 }
 
 #endif
-
-#endif
-
 

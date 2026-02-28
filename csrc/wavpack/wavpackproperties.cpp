@@ -1,7 +1,5 @@
 #include "wavpackproperties.h"
 
-#if LTAGLIB_HAS_WAVPACK_PROPERTIES
-
 #include "../tbytevector.h"
 #include "../audioproperties.h"
 
@@ -117,5 +115,3 @@ const UserdataMetatable T::base::metatable = {
 #undef T
 #include "../shared/userdata.tcc"
 template class LuaTagLib::DerivedUserdata<TagLib::WavPack::Properties, LuaTagLib::AudioProperties>;
-
-#endif

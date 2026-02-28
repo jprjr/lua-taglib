@@ -5,7 +5,10 @@
 #include "../tstringlist.h"
 #include "../tlist.h"
 #include "../tmap.h"
+
+#if LTAGLIB_VERSION >= LTAGLIB_VERSION_NUM(1,11,0)
 #include "../flac/flacpicture.h"
+#endif
 
 using namespace LuaTagLib;
 

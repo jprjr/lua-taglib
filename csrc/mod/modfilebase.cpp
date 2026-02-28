@@ -1,6 +1,5 @@
 #include "modfilebase.h"
 
-#if LTAGLIB_HAS_MOD_FILEBASE
 using namespace LuaTagLib;
 
 /* ensures we create an empty __index metatable for
@@ -30,6 +29,3 @@ const UserdataMetatable Mod::FileBase::base::metatable = {
 
 #include "../shared/userdata.tcc"
 template class LuaTagLib::DerivedUserdata<TagLib::Mod::FileBase, LuaTagLib::File>;
-
-#endif
-

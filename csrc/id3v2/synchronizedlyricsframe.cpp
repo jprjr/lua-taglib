@@ -1,7 +1,5 @@
 #include "synchronizedlyricsframe.h"
 
-#if LTAGLIB_HAS_SYNCHRONIZEDLYRICSFRAME
-
 #include "../tbytevector.h"
 #include "../tstring.h"
 #include "../tlist.h"
@@ -239,4 +237,3 @@ template class LuaTagLib::Enum<TagLib::ID3v2::SynchronizedLyricsFrame::Timestamp
 #include "../shared/userdata.tcc"
 template class LuaTagLib::DerivedUserdata<TagLib::ID3v2::SynchronizedLyricsFrame, LuaTagLib::ID3v2::Frame>;
 
-#endif

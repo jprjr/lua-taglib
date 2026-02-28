@@ -1,7 +1,5 @@
 #include "popularimeterframe.h"
 
-#if LTAGLIB_HAS_POPULARIMETERFRAME
-
 #include "../tbytevector.h"
 #include "../tstring.h"
 
@@ -106,5 +104,3 @@ const UserdataMetatable T::base::metatable = {
 #undef T
 #include "../shared/userdata.tcc"
 template class LuaTagLib::DerivedUserdata<TagLib::ID3v2::PopularimeterFrame, LuaTagLib::ID3v2::Frame>;
-
-#endif

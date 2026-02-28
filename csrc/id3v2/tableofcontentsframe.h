@@ -3,10 +3,6 @@
 
 #include "../taglib.h"
 
-#define LTAGLIB_HAS_TABLEOFCONTENTSFRAME (LTAGLIB_ATLEAST(LTAGLIB_1_10))
-
-#if LTAGLIB_HAS_TABLEOFCONTENTSFRAME
-
 #include "id3v2frame.h"
 #include <tbytevectorlist.h>
 #include <tableofcontentsframe.h>
@@ -33,4 +29,3 @@ namespace LuaTagLib {
 
 #endif
 
-#endif

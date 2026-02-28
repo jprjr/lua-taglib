@@ -1,10 +1,11 @@
 #include "itfile.h"
 
-#if LTAGLIB_HAS_IT_FILE
-
 #include "itproperties.h"
 #include "../mod/modtag.h"
+
+#if LTAGLIB_HAS_IOSTREAM
 #include "../tiostream.h"
+#endif
 
 #define T IT::File
 #define TT TagLib::T
@@ -55,5 +56,3 @@ const UserdataMetatable IT::File::base::metatable = {
 #undef T
 #include "../shared/userdata.tcc"
 template class LuaTagLib::DerivedUserdata<TagLib::IT::File, Mod::FileBase>;
-
-#endif

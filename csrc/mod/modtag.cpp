@@ -1,7 +1,5 @@
 #include "modtag.h"
 
-#if LTAGLIB_HAS_MOD_TAG
-
 #include "../tstring.h"
 
 #define T Mod::Tag
@@ -68,6 +66,3 @@ const UserdataMetatable Mod::Tag::base::metatable = {
 #undef T
 #include "../shared/userdata.tcc"
 template class LuaTagLib::DerivedUserdata<TagLib::Mod::Tag, LuaTagLib::Tag>;
-
-#endif
-

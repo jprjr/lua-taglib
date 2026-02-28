@@ -1,7 +1,5 @@
 #include "flacmetadatablock.h"
 
-#if LTAGLIB_HAS_FLAC_METADATABLOCK
-
 #include "../tbytevector.h"
 
 using namespace LuaTagLib;
@@ -76,5 +74,3 @@ template class LuaTagLib::Enum<TagLib::FLAC::MetadataBlock::BlockType>;
 
 #include "../shared/userdata.tcc"
 template class LuaTagLib::BaseUserdata<TagLib::FLAC::MetadataBlock>;
-
-#endif

@@ -1,7 +1,5 @@
 #include "eventtimingcodesframe.h"
 
-#if LTAGLIB_HAS_EVENTTIMINGCODESFRAME
-
 #include "../tbytevector.h"
 #include "../tstring.h"
 #include "../tlist.h"
@@ -197,4 +195,3 @@ template class LuaTagLib::Enum<TagLib::ID3v2::EventTimingCodesFrame::TimestampFo
 #include "../shared/userdata.tcc"
 template class LuaTagLib::DerivedUserdata<TagLib::ID3v2::EventTimingCodesFrame, LuaTagLib::ID3v2::Frame>;
 
-#endif

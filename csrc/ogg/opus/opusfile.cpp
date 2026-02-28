@@ -1,10 +1,11 @@
 #include "opusfile.h"
 
-#if LTAGLIB_HAS_OPUSFILE
-
 #include "opusproperties.h"
 #include "../xiphcomment.h"
+
+#if LTAGLIB_HAS_IOSTREAM
 #include "../../tiostream.h"
+#endif
 
 #define T Ogg::Opus::File
 #define TT TagLib::T
@@ -71,5 +72,3 @@ const UserdataMetatable T::base::metatable = {
 #undef T
 #include "../../shared/userdata.tcc"
 template class LuaTagLib::DerivedUserdata<TagLib::Ogg::Opus::File, LuaTagLib::Ogg::File>;
-
-#endif

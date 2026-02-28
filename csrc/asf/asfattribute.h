@@ -3,8 +3,6 @@
 
 #include "asf.h"
 
-#if LTAGLIB_HAS_ASF
-
 #include "../shared/userdata.h"
 #include "../shared/enum.h"
 
@@ -41,6 +39,3 @@ namespace LuaTagLib {
 }
 
 #endif
-
-#endif
-

@@ -3,10 +3,6 @@
 
 #include "../taglib.h"
 
-#define LTAGLIB_HAS_UNIQUEFILEIDENTIFIERFRAME (LTAGLIB_VERSION >= LTAGLIB_VERSION_NUM(1,3,0))
-
-#if LTAGLIB_HAS_UNIQUEFILEIDENTIFIERFRAME
-
 #include "id3v2frame.h"
 #include <uniquefileidentifierframe.h>
 
@@ -29,7 +25,5 @@ namespace LuaTagLib {
     namespace ID3v2 {
     typedef DerivedUserdata<TagLib::ID3v2::UniqueFileIdentifierFrame, Frame> UniqueFileIdentifierFrame;
 } }
-
-#endif
 
 #endif

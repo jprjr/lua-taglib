@@ -3,10 +3,6 @@
 
 #include "../taglib.h"
 
-#define LTAGLIB_HAS_RELATIVEVOLUMEFRAME (LTAGLIB_VERSION >= LTAGLIB_VERSION_NUM(1,2,0))
-
-#if LTAGLIB_HAS_RELATIVEVOLUMEFRAME
-
 #include "id3v2frame.h"
 #include "../shared/enum.h"
 #include <relativevolumeframe.h>
@@ -36,7 +32,5 @@ namespace LuaTagLib {
             typedef Enum<TagLib::ID3v2::RelativeVolumeFrame::ChannelType> ChannelType;
     };
 } }
-
-#endif
 
 #endif

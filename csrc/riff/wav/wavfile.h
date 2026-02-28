@@ -3,10 +3,6 @@
 
 #include "../../taglib.h"
 
-#define LTAGLIB_HAS_RIFF_WAV_FILE (LTAGLIB_VERSION >= LTAGLIB_VERSION_NUM(1,6,0))
-
-#if LTAGLIB_HAS_RIFF_WAV_FILE
-
 #include "../../tfile.h"
 #include "../../shared/userdata.h"
 #include <wavfile.h>
@@ -37,7 +33,5 @@ namespace LuaTagLib {
         typedef DerivedUserdata<TagLib::RIFF::WAV::File, LuaTagLib::File> File;
     }
 } }
-
-#endif
 
 #endif

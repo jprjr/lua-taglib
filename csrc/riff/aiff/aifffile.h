@@ -3,10 +3,6 @@
 
 #include "../../taglib.h"
 
-#define LTAGLIB_HAS_RIFF_AIFF_FILE (LTAGLIB_VERSION >= LTAGLIB_VERSION_NUM(1,6,0))
-
-#if LTAGLIB_HAS_RIFF_AIFF_FILE
-
 #include "../../tfile.h"
 #include "../../shared/userdata.h"
 #include <aifffile.h>
@@ -35,7 +31,5 @@ namespace LuaTagLib {
         typedef DerivedUserdata<TagLib::RIFF::AIFF::File, LuaTagLib::File> File;
     } }
 }
-
-#endif
 
 #endif

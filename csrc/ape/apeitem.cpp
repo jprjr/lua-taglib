@@ -1,7 +1,5 @@
 #include "apeitem.h"
 
-#if LTAGLIB_HAS_APE_ITEM
-
 #include "../tstring.h"
 #include "../tstringlist.h"
 #include "../tbytevector.h"
@@ -286,5 +284,3 @@ template class LuaTagLib::Enum<TagLib::APE::Item::ItemTypes>;
 
 #include "../shared/userdata.tcc"
 template class LuaTagLib::BaseUserdata<TagLib::APE::Item>;
-
-#endif

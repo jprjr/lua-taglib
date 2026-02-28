@@ -2,11 +2,6 @@
 #define LTAGLIB_DSF_PROPERTIES_INCLUDE_GUARD
 
 #include "../taglib.h"
-
-#define LTAGLIB_HAS_DSF_PROPERTIES (LTAGLIB_ATLEAST(LTAGLIB_2_0))
-
-#if LTAGLIB_HAS_DSF_PROPERTIES
-
 #include "../audioproperties.h"
 #include "../shared/userdata.h"
 
@@ -33,8 +28,6 @@ namespace LuaTagLib {
         typedef DerivedUserdata<TagLib::DSF::Properties, LuaTagLib::AudioProperties> Properties;
     }
 }
-
-#endif
 
 #endif
 

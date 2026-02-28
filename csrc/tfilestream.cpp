@@ -1,7 +1,5 @@
 #include "tfilestream.h"
 
-#if LTAGLIB_HAS_FILESTREAM
-
 #include "tstring.h"
 
 #if LTAGLIB_ATLEAST(LTAGLIB_1_12)
@@ -116,6 +114,3 @@ const UserdataMetatable FileStream::base::metatable = {
 
 #include "shared/userdata.tcc"
 template class LuaTagLib::DerivedUserdata<TagLib::FileStream, LuaTagLib::IOStream>;
-
-#endif
-

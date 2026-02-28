@@ -1,10 +1,11 @@
 #include "asfattribute.h"
 
-#if LTAGLIB_HAS_ASF
-
 #include "../tstring.h"
 #include "../tbytevector.h"
+
+#if LTAGLIB_HAS_ASF_PICTURE
 #include "asfpicture.h"
+#endif
 
 using namespace LuaTagLib;
 
@@ -259,5 +260,3 @@ template class LuaTagLib::Enum<TagLib::ASF::Attribute::AttributeTypes>;
 
 #include "../shared/userdata.tcc"
 template class LuaTagLib::BaseUserdata<TagLib::ASF::Attribute>;
-
-#endif

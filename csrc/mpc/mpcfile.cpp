@@ -1,13 +1,14 @@
 #include "mpcfile.h"
 
-#if LTAGLIB_HAS_MPC_FILE
-
 #include "mpcproperties.h"
 
 #include "../tlist.h"
 #include "../id3v1/id3v1tag.h"
 #include "../ape/apetag.h"
+
+#if LTAGLIB_HAS_IOSTREAM
 #include "../tiostream.h"
+#endif
 
 using namespace LuaTagLib;
 
@@ -198,4 +199,3 @@ const UserdataMetatable MPC::File::base::metatable = {
 #include "../shared/userdata.tcc"
 template class LuaTagLib::DerivedUserdata<TagLib::MPC::File, LuaTagLib::File>;
 
-#endif

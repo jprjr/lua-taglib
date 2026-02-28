@@ -1,10 +1,11 @@
 #include "asffile.h"
 
-#if LTAGLIB_HAS_ASF
-
 #include "asfproperties.h"
 #include "asftag.h"
+
+#if LTAGLIB_HAS_IOSTREAM
 #include "../tiostream.h"
+#endif
 
 using namespace LuaTagLib;
 
@@ -64,5 +65,3 @@ const UserdataMetatable ASF::File::base::metatable = {
 
 #include "../shared/userdata.tcc"
 template class LuaTagLib::DerivedUserdata<TagLib::ASF::File, LuaTagLib::File>;
-
-#endif

@@ -1,7 +1,5 @@
 #include "it.h"
 
-#if LTAGLIB_HAS_IT
-
 using namespace LuaTagLib;
 
 #define load(mod) \
@@ -17,6 +15,3 @@ int luaopen_TagLib_IT(lua_State* L) {
 
     return 1;
 }
-
-#endif
-

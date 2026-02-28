@@ -1,7 +1,5 @@
 #include "apefooter.h"
 
-#if LTAGLIB_HAS_APE_FOOTER
-
 #include "../tbytevector.h"
 
 using namespace LuaTagLib;
@@ -168,5 +166,3 @@ const UserdataMetatable APE::Footer::base::metatable = {
 
 #include "../shared/userdata.tcc"
 template class LuaTagLib::BaseUserdata<TagLib::APE::Footer>;
-
-#endif

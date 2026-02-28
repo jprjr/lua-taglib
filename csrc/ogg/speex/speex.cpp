@@ -1,7 +1,5 @@
 #include "speex.h"
 
-#if LTAGLIB_HAS_SPEEX
-
 #include "speexfile.h"
 #include "speexproperties.h"
 
@@ -19,5 +17,3 @@ int luaopen_TagLib_Ogg_Speex(lua_State *L) {
 
     return 1;
 }
-
-#endif

@@ -1,10 +1,11 @@
 #include "mp4file.h"
 
-#if LTAGLIB_HAS_MP4
-
 #include "mp4properties.h"
 #include "mp4tag.h"
+
+#if LTAGLIB_HAS_IOSTREAM
 #include "../tiostream.h"
+#endif
 
 using namespace LuaTagLib;
 
@@ -134,5 +135,3 @@ const UserdataMetatable MP4::File::base::metatable = {
 
 #include "../shared/userdata.tcc"
 template class LuaTagLib::DerivedUserdata<TagLib::MP4::File, LuaTagLib::File>;
-
-#endif

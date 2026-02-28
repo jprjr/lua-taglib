@@ -3,10 +3,6 @@
 
 #include "../../taglib.h"
 
-#define LTAGLIB_HAS_DSDIFF_DIIN_TAG (LTAGLIB_ATLEAST(LTAGLIB_2_0))
-
-#if LTAGLIB_HAS_DSDIFF_DIIN_TAG
-
 #include "../../tag.h"
 #include "../../shared/userdata.h"
 
@@ -33,7 +29,5 @@ namespace LuaTagLib {
     } }
 }
 
-
-#endif
 
 #endif

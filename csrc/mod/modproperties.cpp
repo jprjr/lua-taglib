@@ -1,7 +1,5 @@
 #include "modproperties.h"
 
-#if LTAGLIB_HAS_MOD_PROPERTIES
-
 #include "../tbytevector.h"
 
 #define T Mod::Properties
@@ -90,5 +88,3 @@ const UserdataMetatable T::base::metatable = {
 #undef T
 #include "../shared/userdata.tcc"
 template class LuaTagLib::DerivedUserdata<TagLib::Mod::Properties, LuaTagLib::AudioProperties>;
-
-#endif

@@ -1,7 +1,5 @@
 #include "mp4coverart.h"
 
-#if LTAGLIB_HAS_MP4_COVERART
-
 using namespace LuaTagLib;
 
 static int CoverArt__call(lua_State* L) {
@@ -108,5 +106,3 @@ template class LuaTagLib::Enum<TagLib::MP4::CoverArt::Format>;
 
 #include "../shared/userdata.tcc"
 template class LuaTagLib::BaseUserdata<TagLib::MP4::CoverArt>;
-
-#endif

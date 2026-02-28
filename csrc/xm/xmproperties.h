@@ -2,11 +2,6 @@
 #define LTAGLIB_XM_PROPERTIES_INCLUDE_GUARD
 
 #include "../taglib.h"
-
-#define LTAGLIB_HAS_XM_PROPERTIES (LTAGLIB_ATLEAST(LTAGLIB_1_8))
-
-#if LTAGLIB_HAS_XM_PROPERTIES
-
 #include "../audioproperties.h"
 #include "../shared/userdata.h"
 
@@ -32,8 +27,6 @@ namespace LuaTagLib {
        typedef DerivedUserdata<TagLib::XM::Properties, LuaTagLib::AudioProperties> Properties;
     }
 } 
-
-#endif
 
 #endif
 

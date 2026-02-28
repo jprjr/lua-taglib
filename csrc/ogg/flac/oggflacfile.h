@@ -3,10 +3,6 @@
 
 #include "../../taglib.h"
 
-#define LTAGLIB_HAS_OGGFLACFILE (LTAGLIB_VERSION >= LTAGLIB_VERSION_NUM(1,2,0))
-
-#if LTAGLIB_HAS_OGGFLACFILE
-
 #include "../../shared/userdata.h"
 #include "../oggfile.h"
 #include <oggflacfile.h>
@@ -31,7 +27,5 @@ namespace LuaTagLib {
         typedef DerivedUserdata<TagLib::Ogg::FLAC::File, LuaTagLib::Ogg::File> File;
     } }
 }
-
-#endif
 
 #endif

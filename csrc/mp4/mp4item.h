@@ -3,8 +3,6 @@
 
 #include "mp4.h"
 
-#if LTAGLIB_HAS_MP4
-
 #include "../shared/userdata.h"
 #if LTAGLIB_ATLEAST(LTAGLIB_2_0)
 #include "../shared/enum.h"
@@ -48,5 +46,4 @@ namespace LuaTagLib {
     }
 }
 
-#endif
 #endif

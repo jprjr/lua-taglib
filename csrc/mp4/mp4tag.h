@@ -3,8 +3,6 @@
 
 #include "mp4.h"
 
-#if LTAGLIB_HAS_MP4
-
 #include "../shared/userdata.h"
 #include "../tag.h"
 #include <mp4tag.h>
@@ -30,7 +28,3 @@ namespace LuaTagLib {
 }
 
 #endif
-
-#endif
-
-

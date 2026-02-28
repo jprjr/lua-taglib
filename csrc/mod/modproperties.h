@@ -3,10 +3,6 @@
 
 #include "../taglib.h"
 
-#define LTAGLIB_HAS_MOD_PROPERTIES (LTAGLIB_ATLEAST(LTAGLIB_1_8))
-
-#if LTAGLIB_HAS_MOD_PROPERTIES
-
 #include "../audioproperties.h"
 #include "../shared/userdata.h"
 
@@ -33,6 +29,3 @@ namespace LuaTagLib {
 }
 
 #endif
-
-#endif
-

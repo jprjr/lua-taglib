@@ -1,8 +1,6 @@
 #include "podcastframe.h"
 
-#if LTAGLIB_HAS_PODCASTFRAME
-
-#if LTAGLIB_ATLEAST(LTAGLIB_1_12)
+#if LTAGLIB_HAS_PROPERTYMAP
 #include "../tpropertymap.h"
 #endif
 
@@ -68,4 +66,3 @@ const UserdataMetatable T::base::metatable = {
 #include "../shared/userdata.tcc"
 template class LuaTagLib::DerivedUserdata<TagLib::ID3v2::PodcastFrame, LuaTagLib::ID3v2::Frame>;
 
-#endif

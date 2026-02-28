@@ -3,10 +3,6 @@
 
 #include "../taglib.h"
 
-#define LTAGLIB_HAS_APE_ITEM (LTAGLIB_VERSION >= LTAGLIB_VERSION_NUM(1,3,0))
-
-#if LTAGLIB_HAS_APE_ITEM
-
 #include "../shared/userdata.h"
 #include "../shared/enum.h"
 #include <apeitem.h>
@@ -42,6 +38,3 @@ namespace LuaTagLib {
 }
 
 #endif
-
-#endif
-

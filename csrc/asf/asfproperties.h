@@ -3,8 +3,6 @@
 
 #include "asf.h"
 
-#if LTAGLIB_HAS_ASF
-
 #include "../audioproperties.h"
 #include "../shared/userdata.h"
 
@@ -46,6 +44,3 @@ namespace LuaTagLib {
 } }
 
 #endif
-
-#endif
-

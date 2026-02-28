@@ -3,10 +3,6 @@
 
 #include "../taglib.h"
 
-#define LTAGLIB_HAS_S3M_FILE (LTAGLIB_ATLEAST(LTAGLIB_1_8))
-
-#if LTAGLIB_HAS_S3M_FILE
-
 #include "../mod/modfilebase.h"
 #include <s3mfile.h>
 
@@ -28,7 +24,5 @@ namespace LuaTagLib {
         typedef DerivedUserdata<TagLib::S3M::File, LuaTagLib::Mod::FileBase> File;
     }
 }
-
-#endif
 
 #endif

@@ -1,7 +1,5 @@
 #include "tbytevectorstream.h"
 
-#if LTAGLIB_HAS_BYTEVECTORSTREAM
-
 #include "tbytevector.h"
 
 using namespace LuaTagLib;
@@ -57,4 +55,3 @@ const UserdataMetatable ByteVectorStream::base::metatable = {
 #include "shared/userdata.tcc"
 template class LuaTagLib::DerivedUserdata<TagLib::ByteVectorStream, LuaTagLib::IOStream>;
 
-#endif

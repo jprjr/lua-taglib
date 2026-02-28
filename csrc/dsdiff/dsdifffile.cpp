@@ -1,14 +1,18 @@
 #include "dsdifffile.h"
 
-#if LTAGLIB_HAS_DSDIFF_FILE
-
 #include "dsdiffproperties.h"
 
-#include "../tpropertymap.h"
 #include "../id3v2/id3v2tag.h"
 #include "../id3v2/id3v2.h"
 #include "diin/dsdiffdiintag.h"
+
+#if LTAGLIB_HAS_IOSTREAM
 #include "../tiostream.h"
+#endif
+
+#if LTAGLIB_HAS_PROPERTYMAP
+#include "../tpropertymap.h"
+#endif
 
 #define T DSDIFF::File
 #define TT TagLib::T
@@ -179,5 +183,3 @@ const UserdataMetatable DSDIFF::File::base::metatable = {
 #undef T
 #include "../shared/userdata.tcc"
 template class LuaTagLib::DerivedUserdata<TagLib::DSDIFF::File, LuaTagLib::File>;
-
-#endif

@@ -1,9 +1,15 @@
 #include "flac.h"
 
-#include "flacmetadatablock.h"
 #include "flacproperties.h"
 #include "flacfile.h"
+
+#if LTAGLIB_HAS_FLAC_PICTURE
 #include "flacpicture.h"
+#endif
+
+#if LTAGLIB_HAS_FLAC_METADATABLOCK
+#include "flacmetadatablock.h"
+#endif
 
 using namespace LuaTagLib;
 

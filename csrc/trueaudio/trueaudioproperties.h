@@ -3,10 +3,6 @@
 
 #include "../taglib.h"
 
-#define LTAGLIB_HAS_TRUEAUDIO_PROPERTIES (LTAGLIB_VERSION >= LTAGLIB_VERSION_NUM(1,5,0))
-
-#if LTAGLIB_HAS_TRUEAUDIO_PROPERTIES
-
 #include "../audioproperties.h"
 #include "../shared/userdata.h"
 
@@ -34,7 +30,5 @@ namespace LuaTagLib {
         typedef DerivedUserdata<TagLib::TrueAudio::Properties, LuaTagLib::AudioProperties> Properties;
     }
 }
-
-#endif
 
 #endif

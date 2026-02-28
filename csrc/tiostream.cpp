@@ -1,7 +1,5 @@
 #include "tiostream.h"
 
-#if LTAGLIB_HAS_IOSTREAM
-
 #include "tbytevector.h"
 
 #ifdef _WIN32
@@ -397,5 +395,3 @@ template class LuaTagLib::Enum<TagLib::IOStream::Position>;
 
 #include "shared/userdata.tcc"
 template class LuaTagLib::BaseUserdata<TagLib::IOStream>;
-
-#endif

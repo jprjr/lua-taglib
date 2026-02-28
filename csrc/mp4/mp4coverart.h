@@ -3,10 +3,6 @@
 
 #include "mp4.h"
 
-#define LTAGLIB_HAS_MP4_COVERART (LTAGLIB_HAS_MP4 && LTAGLIB_VERSION >= LTAGLIB_VERSION_NUM(1,7,0))
-
-#if LTAGLIB_HAS_MP4_COVERART
-
 #include "../shared/userdata.h"
 #include "../shared/enum.h"
 #include "../tlist.h"
@@ -43,7 +39,5 @@ namespace LuaTagLib {
         typedef ValueList<TagLib::MP4::CoverArtList,CoverArt> CoverArtList;
     }
 }
-
-#endif
 
 #endif

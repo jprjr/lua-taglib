@@ -1,7 +1,5 @@
 #include "mp4tag.h"
 
-#if LTAGLIB_HAS_MP4
-
 #include "../tmap.h"
 #include "../tstring.h"
 #include "mp4item.h"
@@ -128,5 +126,3 @@ const char* ItemMap::base::__name = "TagLib::MP4::ItemMap";
 
 #include "../shared/userdata.tcc"
 template class LuaTagLib::DerivedUserdata<TagLib::MP4::Tag, LuaTagLib::Tag>;
-
-#endif

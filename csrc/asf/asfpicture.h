@@ -3,10 +3,6 @@
 
 #include "asf.h"
 
-#define LTAGLIB_HAS_ASF_PICTURE (LTAGLIB_HAS_ASF && LTAGLIB_VERSION >= LTAGLIB_VERSION_NUM(1,7,0))
-
-#if LTAGLIB_HAS_ASF_PICTURE
-
 #include "../shared/userdata.h"
 #include "../shared/enum.h"
 #include <asfpicture.h>
@@ -40,7 +36,5 @@ namespace LuaTagLib {
         };
     }
 }
-
-#endif
 
 #endif

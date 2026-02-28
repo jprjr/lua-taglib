@@ -1,7 +1,5 @@
 #include "speexproperties.h"
 
-#if LTAGLIB_HAS_SPEEXPROPERTIES
-
 #include "speexfile.h"
 
 #define T Ogg::Speex::Properties
@@ -79,5 +77,3 @@ const UserdataMetatable T::base::metatable = {
 #undef T
 #include "../../shared/userdata.tcc"
 template class LuaTagLib::DerivedUserdata<TagLib::Ogg::Speex::Properties, LuaTagLib::AudioProperties>;
-
-#endif

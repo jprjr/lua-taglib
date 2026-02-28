@@ -3,10 +3,6 @@
 
 #include "../taglib.h"
 
-#define LTAGLIB_HAS_PRIVATEFRAME (LTAGLIB_VERSION >= LTAGLIB_VERSION_NUM(1,6,0))
-
-#if LTAGLIB_HAS_PRIVATEFRAME
-
 #include "id3v2frame.h"
 #include <privateframe.h>
 
@@ -29,7 +25,5 @@ namespace LuaTagLib {
     namespace ID3v2 {
     typedef DerivedUserdata<TagLib::ID3v2::PrivateFrame, Frame> PrivateFrame;
 } }
-
-#endif
 
 #endif

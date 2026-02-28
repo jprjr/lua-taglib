@@ -3,10 +3,6 @@
 
 #include "taglib.h"
 
-#define LTAGLIB_HAS_VARIANT (LTAGLIB_ATLEAST(LTAGLIB_2_0))
-
-#if LTAGLIB_HAS_VARIANT
-
 #include "tstring.h"
 #include "tlist.h"
 #include "tmap.h"
@@ -39,8 +35,6 @@ namespace LuaTagLib {
 
     typedef ValueList<TagLib::List<TagLib::VariantMap>,VariantMap> VariantMapList;
 }
-
-#endif
 
 #endif
 

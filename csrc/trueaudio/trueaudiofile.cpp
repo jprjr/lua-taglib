@@ -1,13 +1,14 @@
 #include "trueaudiofile.h"
 
-#if LTAGLIB_HAS_TRUEAUDIO_FILE
-
 #include "trueaudioproperties.h"
 
 #include "../tlist.h"
 #include "../id3v1/id3v1tag.h"
 #include "../id3v2/id3v2tag.h"
+
+#if LTAGLIB_HAS_IOSTREAM
 #include "../tiostream.h"
+#endif
 
 using namespace LuaTagLib;
 
@@ -167,5 +168,3 @@ const UserdataMetatable TrueAudio::File::base::metatable = {
 #undef T
 #include "../shared/userdata.tcc"
 template class LuaTagLib::DerivedUserdata<TagLib::TrueAudio::File, LuaTagLib::File>;
-
-#endif

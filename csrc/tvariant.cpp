@@ -1,7 +1,5 @@
 #include "tvariant.h"
 
-#if LTAGLIB_HAS_VARIANT
-
 #include "tbytevector.h"
 #include "tbytevectorlist.h"
 #include "tstring.h"
@@ -182,5 +180,3 @@ const char* VariantMapList::base::__name = "TagLib::List<TagLib::VariantMap>";
 
 #include "shared/enum.tcc"
 template class LuaTagLib::Enum<TagLib::Variant::Type>;
-
-#endif

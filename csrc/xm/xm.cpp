@@ -1,7 +1,5 @@
 #include "xm.h"
 
-#if LTAGLIB_HAS_XM
-
 using namespace LuaTagLib;
 
 #define load(mod) \
@@ -17,6 +15,3 @@ int luaopen_TagLib_XM(lua_State* L) {
 
     return 1;
 }
-
-#endif
-

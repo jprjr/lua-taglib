@@ -1,7 +1,5 @@
 #include "infotag.h"
 
-#if LTAGLIB_HAS_RIFF_INFO_TAG
-
 #include "../../tbytevector.h"
 #include "../../tstring.h"
 #include "../../tmap.h"
@@ -100,4 +98,3 @@ const char* FieldListMap::base::__name = NAME "::FieldListMap";
 #include "../../shared/userdata.tcc"
 template class LuaTagLib::DerivedUserdata<TagLib::RIFF::Info::Tag, LuaTagLib::Tag>;
 
-#endif

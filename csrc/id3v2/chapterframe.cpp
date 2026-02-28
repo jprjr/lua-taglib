@@ -1,13 +1,14 @@
 #include "chapterframe.h"
 
-#if LTAGLIB_HAS_CHAPTERFRAME
-
 #include "../tbytevector.h"
 #include "../tstring.h"
 #include "../tlist.h"
-#include "../tpropertymap.h"
 #include "id3v2header.h"
 #include "id3v2tag.h"
+
+#if LTAGLIB_HAS_PROPERTYMAP
+#include "../tpropertymap.h"
+#endif
 
 #define T ID3v2::ChapterFrame
 #define TT TagLib::T
@@ -224,4 +225,3 @@ const UserdataTable ID3v2::ChapterFrame::base::mod = {
 #include "../shared/userdata.tcc"
 template class LuaTagLib::DerivedUserdata<TagLib::ID3v2::ChapterFrame, LuaTagLib::ID3v2::Frame>;
 
-#endif

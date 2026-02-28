@@ -3,10 +3,6 @@
 
 #include "../taglib.h"
 
-#define LTAGLIB_HAS_APE_FILE (LTAGLIB_VERSION >= LTAGLIB_VERSION_NUM(1,7,0))
-
-#if LTAGLIB_HAS_APE_FILE
-
 #include "../tfile.h"
 #include "../shared/userdata.h"
 #include <apefile.h>
@@ -32,8 +28,6 @@ namespace LuaTagLib {
         typedef DerivedUserdata<TagLib::APE::File, LuaTagLib::File> File;
     }
 }
-
-#endif
 
 #endif
 

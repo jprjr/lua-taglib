@@ -1,11 +1,12 @@
 #include "apefile.h"
 
-#if LTAGLIB_HAS_APE_FILE
-
 #include "apetag.h"
 #include "apeproperties.h"
 #include "../id3v1/id3v1tag.h"
+
+#if LTAGLIB_HAS_IOSTREAM
 #include "../tiostream.h"
+#endif
 
 using namespace LuaTagLib;
 
@@ -168,4 +169,3 @@ const UserdataMetatable APE::File::base::metatable = {
 #include "../shared/userdata.tcc"
 template class LuaTagLib::DerivedUserdata<TagLib::APE::File, LuaTagLib::File>;
 
-#endif

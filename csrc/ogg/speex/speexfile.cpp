@@ -1,10 +1,11 @@
 #include "speexfile.h"
 
-#if LTAGLIB_HAS_SPEEXFILE
-
 #include "../xiphcomment.h"
 #include "speexproperties.h"
+
+#if LTAGLIB_HAS_IOSTREAM
 #include "../../tiostream.h"
+#endif
 
 #define T Ogg::Speex::File
 #define TT TagLib::T
@@ -71,5 +72,3 @@ const UserdataMetatable T::base::metatable = {
 #undef T
 #include "../../shared/userdata.tcc"
 template class LuaTagLib::DerivedUserdata<TagLib::Ogg::Speex::File, LuaTagLib::Ogg::File>;
-
-#endif

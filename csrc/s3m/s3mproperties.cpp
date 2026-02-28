@@ -1,7 +1,5 @@
 #include "s3mproperties.h"
 
-#if LTAGLIB_HAS_S3M_PROPERTIES
-
 #define T S3M::Properties
 #define TT TagLib::T
 #define XSTR(s) STR(s)
@@ -230,5 +228,3 @@ const UserdataMetatable T::base::metatable = {
 #undef T
 #include "../shared/userdata.tcc"
 template class LuaTagLib::DerivedUserdata<TagLib::S3M::Properties, LuaTagLib::AudioProperties>;
-
-#endif

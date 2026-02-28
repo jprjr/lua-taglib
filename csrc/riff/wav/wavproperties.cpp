@@ -1,7 +1,5 @@
 #include "wavproperties.h"
 
-#if LTAGLIB_HAS_RIFF_WAV_PROPERTIES
-
 #include "../../tbytevector.h"
 #if LTAGLIB_ATLEAST(LTAGLIB_1_10)
 #include "wavfile.h"
@@ -110,4 +108,3 @@ const UserdataMetatable T::base::metatable = {
 #include "../../shared/userdata.tcc"
 template class LuaTagLib::DerivedUserdata<TagLib::RIFF::WAV::Properties, LuaTagLib::AudioProperties>;
 
-#endif

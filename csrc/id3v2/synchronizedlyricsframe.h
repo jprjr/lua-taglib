@@ -3,10 +3,6 @@
 
 #include "../taglib.h"
 
-#define LTAGLIB_HAS_SYNCHRONIZEDLYRICSFRAME (LTAGLIB_ATLEAST(LTAGLIB_1_10))
-
-#if LTAGLIB_HAS_SYNCHRONIZEDLYRICSFRAME
-
 #include "../shared/enum.h"
 #include "id3v2frame.h"
 #include <synchronizedlyricsframe.h>
@@ -43,4 +39,3 @@ namespace LuaTagLib {
 
 #endif
 
-#endif

@@ -1,7 +1,5 @@
 #include "relativevolumeframe.h"
 
-#if LTAGLIB_HAS_RELATIVEVOLUMEFRAME
-
 #include "../tbytevector.h"
 #include "../tlist.h"
 
@@ -246,5 +244,3 @@ template class LuaTagLib::Enum<TagLib::ID3v2::RelativeVolumeFrame::ChannelType>;
 
 #include "../shared/userdata.tcc"
 template class LuaTagLib::DerivedUserdata<TagLib::ID3v2::RelativeVolumeFrame, LuaTagLib::ID3v2::Frame>;
-
-#endif

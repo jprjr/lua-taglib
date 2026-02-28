@@ -3,10 +3,6 @@
 
 #include "taglib.h"
 
-#define LTAGLIB_HAS_BYTEVECTORSTREAM (LTAGLIB_ATLEAST(LTAGLIB_1_8))
-
-#if LTAGLIB_HAS_BYTEVECTORSTREAM
-
 #include "tiostream.h"
 #include <tbytevectorstream.h>
 
@@ -20,7 +16,5 @@ int luaopen_TagLib_ByteVectorStream(lua_State* L);
 namespace LuaTagLib {
     typedef DerivedUserdata<TagLib::ByteVectorStream, LuaTagLib::IOStream> ByteVectorStream;
 }
-
-#endif
 
 #endif

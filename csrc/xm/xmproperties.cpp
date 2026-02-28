@@ -1,7 +1,5 @@
 #include "xmproperties.h"
 
-#if LTAGLIB_HAS_XM_PROPERTIES
-
 #define T XM::Properties
 #define TT TagLib::T
 #define XSTR(s) STR(s)
@@ -186,5 +184,3 @@ const UserdataMetatable T::base::metatable = {
 #undef T
 #include "../shared/userdata.tcc"
 template class LuaTagLib::DerivedUserdata<TagLib::XM::Properties, LuaTagLib::AudioProperties>;
-
-#endif

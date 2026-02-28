@@ -3,8 +3,6 @@
 
 #include "mp4.h"
 
-#if LTAGLIB_HAS_MP4
-
 #include "../audioproperties.h"
 #include "../shared/userdata.h"
 
@@ -44,7 +42,5 @@ namespace LuaTagLib {
     };
     }
 }
-
-#endif
 
 #endif

@@ -1,7 +1,5 @@
 #include "aiffproperties.h"
 
-#if LTAGLIB_HAS_RIFF_AIFF_PROPERTIES
-
 #include "../../tbytevector.h"
 
 #if LTAGLIB_ATLEAST(LTAGLIB_1_10)
@@ -116,5 +114,3 @@ const UserdataMetatable T::base::metatable = {
 #undef T
 #include "../../shared/userdata.tcc"
 template class LuaTagLib::DerivedUserdata<TagLib::RIFF::AIFF::Properties, LuaTagLib::AudioProperties>;
-
-#endif

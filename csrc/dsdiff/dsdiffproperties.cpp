@@ -1,7 +1,5 @@
 #include "dsdiffproperties.h"
 
-#if LTAGLIB_HAS_DSDIFF_PROPERTIES
-
 #include "../tbytevector.h"
 
 #define T DSDIFF::Properties
@@ -73,5 +71,3 @@ const UserdataMetatable T::base::metatable = {
 #undef T
 #include "../shared/userdata.tcc"
 template class LuaTagLib::DerivedUserdata<TagLib::DSDIFF::Properties, LuaTagLib::AudioProperties>;
-
-#endif

@@ -1,7 +1,5 @@
 #include "apetag.h"
 
-#if LTAGLIB_HAS_APE_TAG
-
 #include "apeitem.h"
 #include "apefooter.h"
 #include "../tstring.h"
@@ -167,5 +165,3 @@ const char* ItemListMap::base::__name = "TagLib::APE::ItemListMap";
 #undef T
 #include "../shared/userdata.tcc"
 template class LuaTagLib::DerivedUserdata<TagLib::APE::Tag, LuaTagLib::Tag>;
-
-#endif

@@ -3,10 +3,6 @@
 
 #include "../taglib.h"
 
-#define LTAGLIB_HAS_TRUEAUDIO_FILE (LTAGLIB_VERSION >= LTAGLIB_VERSION_NUM(1,5,0))
-
-#if LTAGLIB_HAS_TRUEAUDIO_FILE
-
 #include "../tfile.h"
 #include "../shared/userdata.h"
 #include <trueaudiofile.h>
@@ -35,7 +31,5 @@ namespace LuaTagLib {
         typedef DerivedUserdata<TagLib::TrueAudio::File, LuaTagLib::File> File;
     }
 }
-
-#endif
 
 #endif

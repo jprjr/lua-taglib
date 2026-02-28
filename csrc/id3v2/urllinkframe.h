@@ -3,10 +3,6 @@
 
 #include "../taglib.h"
 
-#define LTAGLIB_HAS_URLLINKFRAME (LTAGLIB_VERSION >= LTAGLIB_VERSION_NUM(1,5,0))
-
-#if LTAGLIB_HAS_URLLINKFRAME
-
 #include "id3v2frame.h"
 #include <urllinkframe.h>
 
@@ -40,7 +36,5 @@ namespace LuaTagLib {
     typedef DerivedUserdata<TagLib::ID3v2::UrlLinkFrame, Frame> UrlLinkFrame;
     typedef DerivedUserdata<TagLib::ID3v2::UserUrlLinkFrame, UrlLinkFrame> UserUrlLinkFrame;
 } }
-
-#endif
 
 #endif

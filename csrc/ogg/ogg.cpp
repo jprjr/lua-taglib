@@ -4,10 +4,19 @@
 #include "oggfile.h"
 #include "oggpage.h"
 #include "oggpageheader.h"
-#include "flac/oggflac.h"
-#include "opus/opus.h"
 #include "vorbis/vorbis.h"
+
+#if LTAGLIB_HAS_OGG_FLAC
+#include "flac/oggflac.h"
+#endif
+
+#if LTAGLIB_HAS_OPUS
+#include "opus/opus.h"
+#endif
+
+#if LTAGLIB_HAS_SPEEX
 #include "speex/speex.h"
+#endif
 
 using namespace LuaTagLib;
 
@@ -18,7 +27,7 @@ int luaopen_TagLib_Ogg(lua_State *L) {
     luaL_requiref(L, "TagLib.Ogg.File", luaopen_TagLib_Ogg_File, 0);
     lua_setfield(L, -2, "File");
 
-#if LTAGLIB_HAS_OGGFLAC
+#if LTAGLIB_HAS_OGG_FLAC
     luaL_requiref(L, "TagLib.Ogg.FLAC", luaopen_TagLib_Ogg_FLAC, 0);
     lua_setfield(L, -2, "FLAC");
 #endif

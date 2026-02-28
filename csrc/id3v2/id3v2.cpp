@@ -5,23 +5,67 @@
 #include "id3v2extendedheader.h"
 #include "id3v2frame.h"
 
+#if LTAGLIB_HAS_ATTACHEDPICTUREFRAME
 #include "attachedpictureframe.h"
+#endif
+
+#if LTAGLIB_HAS_CHAPTERFRAME
 #include "chapterframe.h"
+#endif
+
 #include "commentsframe.h"
+
+#if LTAGLIB_HAS_EVENTTIMINGCODESFRAME
 #include "eventtimingcodesframe.h"
+#endif
+
+#if LTAGLIB_HAS_GENERALENCAPSULATEDOBJECTFRAME
 #include "generalencapsulatedobjectframe.h"
+#endif
+
+#if LTAGLIB_HAS_OWNERSHIPFRAME
 #include "ownershipframe.h"
+#endif
+
+#if LTAGLIB_HAS_PODCASTFRAME
 #include "podcastframe.h"
+#endif
+
+#if LTAGLIB_HAS_POPULARIMETERFRAME
 #include "popularimeterframe.h"
+#endif
+
+#if LTAGLIB_HAS_PRIVATEFRAME
 #include "privateframe.h"
+#endif
+
+#if LTAGLIB_HAS_RELATIVEVOLUMEFRAME
 #include "relativevolumeframe.h"
+#endif
+
+#if LTAGLIB_HAS_SYNCHRONIZEDLYRICSFRAME
 #include "synchronizedlyricsframe.h"
+#endif
+
 #include "textidentificationframe.h"
+
+#if LTAGLIB_HAS_TABLEOFCONTENTSFRAME
 #include "tableofcontentsframe.h"
+#endif
+
 #include "unknownframe.h"
+
+#if LTAGLIB_HAS_UNIQUEFILEIDENTIFIERFRAME
 #include "uniquefileidentifierframe.h"
+#endif
+
+#if LTAGLIB_HAS_URLLINKFRAME
 #include "urllinkframe.h"
+#endif
+
+#if LTAGLIB_HAS_UNSYNCHRONIZEDLYRICSFRAME
 #include "unsynchronizedlyricsframe.h"
+#endif
 
 using namespace LuaTagLib;
 

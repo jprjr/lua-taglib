@@ -4,8 +4,6 @@
 #include "id3v2frame.h"
 #include <textidentificationframe.h>
 
-#define LTAGLIB_HAS_USERTEXTIDENTIFICATIONFRAME (LTAGLIB_ATLEAST(LTAGLIB_1_3))
-
 extern "C" {
 
 LTAGLIB_PUBLIC

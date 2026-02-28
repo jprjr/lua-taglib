@@ -3,10 +3,6 @@
 
 #include "../taglib.h"
 
-#define LTAGLIB_HAS_FLAC_METADATABLOCK (LTAGLIB_ATLEAST(LTAGLIB_1_7))
-
-#if LTAGLIB_HAS_FLAC_METADATABLOCK
-
 #include "../shared/userdata.h"
 #include "../shared/enum.h"
 #include <flacmetadatablock.h>
@@ -37,7 +33,5 @@ namespace LuaTagLib {
             typedef Enum<TagLib::FLAC::MetadataBlock::BlockType> BlockType;
     };
 } }
-
-#endif
 
 #endif

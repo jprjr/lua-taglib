@@ -1,10 +1,11 @@
 #include "oggflacfile.h"
 
-#if LTAGLIB_HAS_OGGFLACFILE
-
 #include "../xiphcomment.h"
 #include "../../flac/flacproperties.h"
+
+#if LTAGLIB_HAS_IOSTREAM
 #include "../../tiostream.h"
+#endif
 
 #define T Ogg::FLAC::File
 #define TT TagLib::T
@@ -90,5 +91,3 @@ const UserdataMetatable T::base::metatable = {
 #undef T
 #include "../../shared/userdata.tcc"
 template class LuaTagLib::DerivedUserdata<TagLib::Ogg::FLAC::File, LuaTagLib::Ogg::File>;
-
-#endif

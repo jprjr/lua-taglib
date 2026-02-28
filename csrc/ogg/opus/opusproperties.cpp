@@ -1,7 +1,5 @@
 #include "opusproperties.h"
 
-#if LTAGLIB_HAS_OPUSPROPERTIES
-
 #include "opusfile.h"
 
 #define T Ogg::Opus::Properties
@@ -75,5 +73,3 @@ const UserdataMetatable T::base::metatable = {
 #undef T
 #include "../../shared/userdata.tcc"
 template class LuaTagLib::DerivedUserdata<TagLib::Ogg::Opus::Properties, LuaTagLib::AudioProperties>;
-
-#endif

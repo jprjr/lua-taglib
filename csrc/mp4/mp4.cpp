@@ -1,12 +1,13 @@
 #include "mp4.h"
 
-#if LTAGLIB_HAS_MP4
-
 #include "mp4file.h"
 #include "mp4item.h"
 #include "mp4properties.h"
 #include "mp4tag.h"
+
+#if LTAGLIB_HAS_MP4_COVERART
 #include "mp4coverart.h"
+#endif
 
 using namespace LuaTagLib;
 
@@ -22,6 +23,7 @@ int luaopen_TagLib_MP4(lua_State* L) {
     load(Item)
     load(Properties)
     load(Tag)
+
 #if LTAGLIB_HAS_MP4_COVERART
     load(CoverArt)
 #endif
@@ -29,4 +31,3 @@ int luaopen_TagLib_MP4(lua_State* L) {
     return 1;
 }
 
-#endif

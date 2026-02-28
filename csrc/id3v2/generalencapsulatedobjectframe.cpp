@@ -1,7 +1,5 @@
 #include "generalencapsulatedobjectframe.h"
 
-#if LTAGLIB_HAS_GENERALENCAPSULATEDOBJECTFRAME
-
 #include "../tbytevector.h"
 #include "../tstring.h"
 
@@ -132,4 +130,3 @@ const UserdataMetatable T::base::metatable = {
 #include "../shared/userdata.tcc"
 template class LuaTagLib::DerivedUserdata<TagLib::ID3v2::GeneralEncapsulatedObjectFrame, LuaTagLib::ID3v2::Frame>;
 
-#endif

@@ -1,7 +1,5 @@
 #include "mpcproperties.h"
 
-#if LTAGLIB_HAS_MPC_PROPERTIES
-
 #include "../tbytevector.h"
 #if LTAGLIB_ATLEAST(LTAGLIB_1_8)
 #include "mpcfile.h"
@@ -126,4 +124,3 @@ const UserdataMetatable T::base::metatable = {
 #include "../shared/userdata.tcc"
 template class LuaTagLib::DerivedUserdata<TagLib::MPC::Properties, LuaTagLib::AudioProperties>;
 
-#endif

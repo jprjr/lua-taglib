@@ -1,9 +1,10 @@
 #include "mp4item.h"
 
-#if LTAGLIB_HAS_MP4
-
 #include "../tstringlist.h"
+
+#if LTAGLIB_HAS_MP4_COVERART
 #include "mp4coverart.h"
+#endif
 
 #if LTAGLIB_ATLEAST(LTAGLIB_1_8)
 #include "../tbytevectorlist.h"
@@ -27,7 +28,7 @@ static int Item__call(lua_State* L) {
                 break;
             }
 
-#if LTAGLIB_ATLEAST(LTAGLIB_1_7)
+#if LTAGLIB_HAS_MP4_COVERART
             if( (MP4::CoverArtList::isValid(L, 1))) {
                 i = new TagLib::MP4::Item(MP4::CoverArtList::checkValue(L, 1));
                 break;
@@ -106,7 +107,7 @@ static int Item_isValid(lua_State* L) {
     return 1;
 }
 
-#if LTAGLIB_ATLEAST(LTAGLIB_1_7)
+#if LTAGLIB_HAS_MP4_COVERART
 static int Item_toCoverArtList(lua_State* L) {
     TagLib::MP4::Item* item = MP4::Item::checkPtr(L, 1);
 
@@ -160,7 +161,7 @@ const luaL_Reg Item__index[] = {
     { "toIntPair", Item_toIntPair },
     { "toStringList", Item_toStringList },
     { "isValid", Item_isValid },
-#if LTAGLIB_ATLEAST(LTAGLIB_1_7)
+#if LTAGLIB_HAS_MP4_COVERART
     { "toCoverArtList", Item_toCoverArtList },
 #endif
 #if LTAGLIB_ATLEAST(LTAGLIB_1_8)
@@ -223,7 +224,7 @@ const UserdataMetatable MP4::Item::base::metatable = {
     NULL, /* indexfunc */
 };
 
-#if LTAGLIB_ATLEAST(LTAGLIB_1_7)
+#if LTAGLIB_HAS_MP4_COVERART
 template<>
 const char *ValueList<TagLib::MP4::CoverArtList, MP4::CoverArt>::base::__name =
   "TagLib::MP4::CoverArtList";
@@ -245,5 +246,3 @@ template class LuaTagLib::Enum<TagLib::MP4::Item::Type>;
 
 #include "../shared/userdata.tcc"
 template class LuaTagLib::BaseUserdata<TagLib::MP4::Item>;
-
-#endif

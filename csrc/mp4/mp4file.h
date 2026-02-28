@@ -3,12 +3,9 @@
 
 #include "mp4.h"
 
-#if LTAGLIB_HAS_MP4
-
 #include "../tfile.h"
 #include "../shared/userdata.h"
 #include <mp4file.h>
-
 
 extern "C" {
 
@@ -33,7 +30,5 @@ namespace LuaTagLib {
         typedef DerivedUserdata<TagLib::MP4::File, LuaTagLib::File> File;
     }
 }
-
-#endif
 
 #endif

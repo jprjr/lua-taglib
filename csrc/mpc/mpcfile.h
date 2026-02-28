@@ -2,15 +2,9 @@
 #define LTAGLIB_MPC_FILE_INCLUDE_GUARD
 
 #include "../taglib.h"
-
-#define LTAGLIB_HAS_MPC_FILE (LTAGLIB_VERSION >= LTAGLIB_VERSION_NUM(1,3,0))
-
-#if LTAGLIB_HAS_MPC_FILE
-
 #include "../tfile.h"
 #include "../shared/userdata.h"
 #include <mpcfile.h>
-
 
 extern "C" {
 
@@ -35,7 +29,5 @@ namespace LuaTagLib {
         typedef DerivedUserdata<TagLib::MPC::File, LuaTagLib::File> File;
     }
 }
-
-#endif
 
 #endif

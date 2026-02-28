@@ -1,7 +1,5 @@
 #include "asftag.h"
 
-#if LTAGLIB_HAS_ASF
-
 #include "asfattribute.h"
 #include "../tstring.h"
 #include "../tbytevector.h"
@@ -160,4 +158,3 @@ const char* AttributeList::base::__name = "TagLib::ASF::AttributeList";
 
 #include "../shared/userdata.tcc"
 template class LuaTagLib::DerivedUserdata<TagLib::ASF::Tag, LuaTagLib::Tag>;
-#endif

@@ -3,10 +3,6 @@
 
 #include "../taglib.h"
 
-#define LTAGLIB_HAS_MOD_TAG (LTAGLIB_ATLEAST(LTAGLIB_1_8))
-
-#if LTAGLIB_HAS_MOD_TAG
-
 #include "../tag.h"
 #include "../shared/userdata.h"
 #include <modtag.h>
@@ -32,7 +28,3 @@ namespace LuaTagLib {
 }
 
 #endif
-
-#endif
-
-

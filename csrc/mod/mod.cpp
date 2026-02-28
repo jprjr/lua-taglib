@@ -1,6 +1,9 @@
 #include "mod.h"
 
-#if LTAGLIB_HAS_MOD
+#include "modfilebase.h"
+#include "modfile.h"
+#include "modproperties.h"
+#include "modtag.h"
 
 using namespace LuaTagLib;
 
@@ -19,5 +22,3 @@ int luaopen_TagLib_Mod(lua_State* L) {
 
     return 1;
 }
-
-#endif

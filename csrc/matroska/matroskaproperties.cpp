@@ -1,6 +1,5 @@
 #include "matroskaproperties.h"
-
-/* TODO include matrskafile */
+#include "matroskafile.h"
 #include "../tstring.h"
 
 #define T Matroska::Properties
@@ -10,6 +9,27 @@
 #define NAME XSTR(TT)
 
 using namespace LuaTagLib;
+
+static int Properties__call(lua_State* L) {
+    int args = lua_gettop(L);
+    TT* p = NULL;
+
+    switch(args) {
+        case 1: {
+            p = new TT(Matroska::File::checkPtr(L, 1));
+            break;
+        }
+        case 2: {
+            p = new TT(Matroska::File::checkPtr(L, 1), AudioProperties::ReadStyle::checkValue(L, 2));
+            break;
+        }
+        default: break;
+    }
+
+    if(p == NULL) return luaL_error(L, "invalid arguments");
+    T::pushPtr(L,p);
+    return 1;
+}
 
 static int Properties_bitsPerSample(lua_State* L) {
     lua_pushinteger(L, T::checkPtr(L,1)->bitsPerSample());
@@ -53,7 +73,7 @@ int luaopen_TagLib_Matroska_Properties(lua_State *L) {
 
 template<>
 const UserdataTable Matroska::Properties::base::mod = {
-    NULL, /* __call */
+    Properties__call,
     NULL, /* __index */
     NULL, /* init */
 };

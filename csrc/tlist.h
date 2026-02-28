@@ -78,6 +78,16 @@ namespace LuaTagLib {
         int tidx = lua_gettop(L) + 1;
         lua_Integer i;
 
+        /* TODO: Should I remove this table check?
+         *   With the introduction of Matroska there's some
+         *   more places where the Const List References are
+         *   used. In theory a ValueList type should also
+         *   be able to accept a Reference List, if we remove
+         *   the table type check and just iterate we ought
+         *   to be good to go.
+         *   Alternatively we could specifically check for
+         *   a const reference list in places where a list
+         *   type is accepted (Matroska::ChapterEdition(), etc) */
         luaL_checktype(L, idx, LUA_TTABLE);
 
         for(i=1; ;++i) {

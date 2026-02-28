@@ -121,6 +121,7 @@ if(TagLib_FOUND)
     set(TAGLIB_WITH_APE OFF)
     set(TAGLIB_WITH_ASF OFF)
     set(TAGLIB_WITH_DSF OFF)
+    set(TAGLIB_WITH_MATROSKA OFF)
     set(TAGLIB_WITH_MOD OFF)
     set(TAGLIB_WITH_MP4 OFF)
     set(TAGLIB_WITH_RIFF OFF)
@@ -176,6 +177,10 @@ if(TagLib_FOUND)
 
     if(EXISTS "${TAGLIB_INCLUDE_DIR}/dsffile.h")
         set(TAGLIB_WITH_DSF ON)
+    endif()
+
+    if(EXISTS "${TAGLIB_INCLUDE_DIR}/matroskafile.h")
+        set(TAGLIB_WITH_MATROSKA ON)
     endif()
 
     if(EXISTS "${TAGLIB_INCLUDE_DIR}/modfile.h")

@@ -11,9 +11,6 @@ extern "C" {
 LTAGLIB_PUBLIC
 int luaopen_TagLib_Shorten_File(lua_State *L);
 
-LTAGLIB_PUBLIC
-int luaopen_TagLib_Shorten_File_TagTypes(lua_State *L);
-
 }
 
 namespace LuaTagLib {

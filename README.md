@@ -2,7 +2,7 @@
 
 Lua bindings to [TagLib](https://taglib.org/).
 
-Compatible with TagLib 1.0 through 2.0.2.
+Compatible with TagLib 1.0 through 2.2.
 
 Only requires C++ 98 to compile for TagLib 1.0 through 1.13,
 C++11 for TagLib 2.0 (note: TagLib itself may require a newer

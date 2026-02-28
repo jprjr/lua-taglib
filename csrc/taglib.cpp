@@ -52,6 +52,10 @@
 #include "riff/riff.h"
 #endif
 
+#if LTAGLIB_HAS_MATROSKA
+#include "matroska/matroska.h"
+#endif
+
 #if LTAGLIB_HAS_MOD
 #include "mod/mod.h"
 #include "it/it.h"
@@ -137,6 +141,10 @@ int luaopen_TagLib(lua_State* L) {
 #endif
 
     load(MPEG)
+
+#if LTAGLIB_HAS_MATROSKA
+    load(Matroska)
+#endif
 
 #if LTAGLIB_HAS_MOD
     load(Mod)

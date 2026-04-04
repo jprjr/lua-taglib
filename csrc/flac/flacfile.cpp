@@ -102,8 +102,12 @@ static int File_removePictures(lua_State* L) {
 
 static int File_addPicture(lua_State* L) {
     TagLib::FLAC::File* f = FLAC::File::checkPtr(L, 1);
-    TagLib::FLAC::Picture* pic = FLAC::Picture::checkPtr(L, 2);
-    f->addPicture(pic);
+    UserdataPointer<TagLib::FLAC::Picture>* pic =
+      FLAC::Picture::checkInstance(L, 2);
+
+    f->addPicture(pic->getPtr());
+    pic->unmanage();
+
     lua_settop(L,1);
     return 1;
 }
